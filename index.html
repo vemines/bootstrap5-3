@@ -1,0 +1,4107 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap 5</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+      .carousel-item {
+        height: 30vw;
+      }
+
+      .boxHeight {
+        height: 250px;
+        background-color: #f8f9fa;
+      }
+
+      .fab {
+        width: 20px;
+        height: 30px;
+        fill: white;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #table th,
+      #table td {
+        min-width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <svg width="0" height="0" class="hidden">
+      <symbol id="arrow-up-to-line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+        <path
+          d="M24 32C10.7 32 0 42.7 0 56S10.7 80 24 80H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H24zM209.5 167.6c-4.5-4.8-10.9-7.6-17.5-7.6s-12.9 2.7-17.5 7.6l-128 136c-9.1 9.7-8.6 24.8 1 33.9s24.8 8.6 33.9-1L168 244.5V328 456c0 13.3 10.7 24 24 24s24-10.7 24-24V328 244.5l86.5 91.9c9.1 9.7 24.3 10.1 33.9 1s10.1-24.3 1-33.9l-128-136z"
+        />
+      </symbol>
+      <symbol id="lightbulb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+        <path
+          d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"
+        />
+      </symbol>
+      <symbol id="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+        <path
+          d="M144.7 98.7c-21 34.1-33.1 74.3-33.1 117.3c0 98 62.8 181.4 150.4 211.7c-12.4 2.8-25.3 4.3-38.6 4.3C126.6 432 48 353.3 48 256c0-68.9 39.4-128.4 96.8-157.3zm62.1-66C91.1 41.2 0 137.9 0 256C0 379.7 100 480 223.5 480c47.8 0 92-15 128.4-40.6c1.9-1.3 3.7-2.7 5.5-4c4.8-3.6 9.4-7.4 13.9-11.4c2.7-2.4 5.3-4.8 7.9-7.3c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-3.7 .6-7.4 1.2-11.1 1.6c-5 .5-10.1 .9-15.3 1c-1.2 0-2.5 0-3.7 0c-.1 0-.2 0-.3 0c-96.8-.2-175.2-78.9-175.2-176c0-54.8 24.9-103.7 64.1-136c1-.9 2.1-1.7 3.2-2.6c4-3.2 8.2-6.2 12.5-9c3.1-2 6.3-4 9.6-5.8c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-3.6-.3-7.1-.5-10.7-.6c-2.7-.1-5.5-.1-8.2-.1c-3.3 0-6.5 .1-9.8 .2c-2.3 .1-4.6 .2-6.9 .4z"
+        />
+      </symbol>
+      <symbol id="icon-box" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+        <path
+          d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z"
+        />
+      </symbol>
+      <symbol id="mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+        <path
+          d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+        />
+      </symbol>
+    </svg>
+
+    <template id="tab-template">
+      <li class="nav-item border border-3 rounded-3">
+        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-company"></button>
+      </li>
+    </template>
+
+    <div class="tabs">
+      <div class="nav-wrapper p-2">
+        <ul class="nav nav-pills d-flex gap-2" id="pills-tab"></ul>
+      </div>
+
+      <div class="tab-content mt-2">
+        <div class="container mb-3 w-75 tab-pane fade show active" id="accordion-collapse">
+          <h1 class="mb-3">Accordion (Collapse)</h1>
+
+          <p>
+            accordion #accordion1 > accordion-item >
+            <br />
+            accordion-header > &lt;button&gt; accordion-button
+            <span class="fw-medium">*collapsed*</span>
+            data-bs-toggle="collapse" data-bs-target="#accordion1-1" +
+            <br />
+            accordion-collapse
+            <span class="fw-medium">*collapse show / collapsed*</span> #accordion1-1
+            data-bs-parent="#accordion1"
+          </p>
+          <div id="accordion1" class="accordion mb-3">
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <button
+                  class="accordion-button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#accordion1-1"
+                >
+                  accordion-button 1
+                </button>
+              </div>
+              <div
+                id="accordion1-1"
+                class="accordion-collapse collapse show"
+                data-bs-parent="#accordion1"
+              >
+                <div class="accordion-body">accordion-body 1</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#accordion1-2"
+                >
+                  accordion-button 2 collapsed
+                </button>
+              </h2>
+              <div
+                id="accordion1-2"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordion1"
+              >
+                <div class="accordion-body">accordion-body 2 collapsed</div>
+              </div>
+            </div>
+          </div>
+
+          <p>accordion-flush</p>
+          <div id="accordion2" class="accordion accordion-flush mb-3">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#accordion2-1"
+                >
+                  accordion-button
+                </button>
+              </h2>
+              <div
+                id="accordion2-1"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordion2"
+              >
+                <div class="accordion-body">accordion-body 1</div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#accordion2-2"
+                >
+                  accordion-button
+                </button>
+              </h2>
+              <div
+                id="accordion2-2"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordion2"
+              >
+                <div class="accordion-body">accordion-body 2</div>
+              </div>
+            </div>
+          </div>
+
+          <p>no data-bs-parent -- expanded same time</p>
+          <div id="accordion3" class="accordion mb-3">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#accordion3-1"
+                >
+                  accordion-button
+                </button>
+              </h2>
+              <div id="accordion3-1" class="accordion-collapse collapse show">
+                <div class="accordion-body">accordion-body 1</div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#accordion3-2"
+                >
+                  accordion-button
+                </button>
+              </h2>
+              <div id="accordion3-2" class="accordion-collapse collapse show">
+                <div class="accordion-body">accordion-body 2</div>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+          <p>
+            <span class="fw-medium">&lt;button / a&gt;</span> > data-bs-toggle="collapse"
+            <span class="fw-medium">data-bs-target="#collapse1" / href="#collapse1"</span>
+          </p>
+          <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapse1">
+            button
+          </button>
+          <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapse1"> a </a>
+
+          <div class="collapse" id="collapse1">
+            <div class="card card-body">collapse id="collapse1" > card card-body</div>
+          </div>
+
+          <div class="mt-3">
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapse2-1"
+              >&lt;a&gt; href="#collapse2-1"</a
+            >
+            <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapse2-2">
+              &lt;button&gt; data-bs-target="#collapse2-2"
+            </button>
+            <button
+              class="btn btn-primary"
+              data-bs-toggle="collapse"
+              data-bs-target=".multi-collapse"
+            >
+              data-bs-target=".multi-collapse"
+            </button>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="collapse2-1">
+                <div class="card card-body">
+                  collapse multi-collapse id="collapse2-1" > card card-body
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="collapse multi-collapse" id="collapse2-2">
+                <div class="card card-body">
+                  collapse multi-collapse id="collapse2-2" > card card-body
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="height: 10vh"></div>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="alert">
+          <h1 class="mb-3">Alerts</h1>
+
+          <div class="alert alert-primary">alert alert-primary</div>
+          <div class="alert alert-success">alert alert-success</div>
+
+          <div class="alert alert-primary">
+            alert alert-primary <a href="#" class="alert-link">&lt;a&gt; alert-link</a>
+          </div>
+
+          <div class="alert alert-success">
+            <h3 class="alert-heading">alert-heading</h3>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+
+          <div class="alert alert-success alert-dismissible fade show mb-3">
+            alert-dismissible fade show > &lt;button&gt; btn-close data-bs-dismiss="alert"
+            <button class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="badge">
+          <h1 class="mb-3">Badges</h1>
+
+          <span class="badge text-bg-primary">badge text-bg-primary</span>
+          <span class="badge text-bg-success">badge text-bg-success</span>
+
+          <span class="badge rounded-pill text-bg-primary">rounded-pill</span>
+          <span class="badge rounded-pill text-bg-success">rounded-pill</span>
+
+          <br />
+
+          <button class="btn btn-primary mt-3">
+            btn btn-primary <span class="badge text-bg-dark">&lt;span&gt; badge text-bg-dark</span>
+          </button>
+
+          <p class="my-3">bg-danger position-absolute top-0 start-100 translate-middle</p>
+          <button class="btn btn-primary position-relative">
+            &lt;span&gt; rounded-pill
+            <span
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >
+              99+
+            </span>
+          </button>
+
+          <div class="mt-3"></div>
+
+          <button class="btn btn-primary position-relative">
+            &lt;span&gt; p-2 border border-light rounded-circle
+            <span
+              class="position-absolute top-0 start-100 translate-middle bg-danger p-2 border border-light rounded-circle"
+            >
+            </span>
+          </button>
+
+          <p class="mt-3 mb-1">badge size inherit parrent font-size</p>
+          <h1>h1<span class="ms-2 badge bg-primary">badge bg-primary</span></h1>
+          <h3>h3<span class="ms-2 badge bg-success">badge bg-success</span></h3>
+          <h5>h5<span class="ms-2 badge bg-info">badge bg-info</span></h5>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="border-shadow">
+          <h1 class="mb-5">Borders & Shadows</h1>
+
+          <div class="p-2 mb-3 border-2 border border-primary">border</div>
+          <div class="p-2 mb-3 border-2 border-top border-primary">border-top</div>
+          <div class="p-2 mb-3 border-2 border-bottom border-primary">border-bottom</div>
+          <div class="p-2 mb-3 border-2 border-start border-primary">border-start</div>
+          <div class="p-2 mb-3 border-2 border-end border-primary">border-end</div>
+
+          <hr />
+
+          <div class="p-2 mb-3 border border-2 border-primary">border-primary</div>
+          <div class="p-2 mb-3 border border-2 border-success">border-success</div>
+
+          <hr />
+
+          <div class="d-flex flex-wrap gap-3">
+            <span class="p-3 border border-primary border-2">border 2 normal</span>
+            <span class="p-3 border border-primary border-opacity-75 border-2"
+              >border-opacity-75</span
+            >
+            <span class="p-3 border border-primary border-opacity-50 border-2"
+              >border-opacity-50</span
+            >
+            <span class="p-3 border border-primary border-opacity-25 border-2"
+              >border-opacity-25</span
+            >
+            <span class="p-3 border border-primary border-opacity-10 border-2"
+              >border-opacity-10</span
+            >
+          </div>
+
+          <hr />
+
+          <div class="d-flex flex-wrap gap-3">
+            <span class="p-3 border border-1">border-1</span>
+            <span class="p-3 border border-2">border-2</span>
+            <span class="p-3 border border-3">border-3</span>
+            <span class="p-3 border border-4">border-4</span>
+            <span class="p-3 border border-5">border-5</span>
+          </div>
+
+          <hr />
+
+          <div class="d-flex flex-wrap gap-3">
+            <span class="p-3 border border-success border-2 rounded">rounded</span>
+            <span class="p-3 border border-success border-2 rounded-top">rounded-top</span>
+            <span class="p-3 border border-success border-2 rounded-end">rounded-end</span>
+            <span class="p-3 border border-success border-2 rounded-bottom"> rounded-bottom</span>
+            <span class="p-3 border border-success border-2 rounded-start"> rounded-start</span>
+            <span class="p-3 border border-success border-2 rounded-circle"> rounded-circle</span>
+            <span class="p-3 border border-success border-2 rounded-pill"> rounded-pill</span>
+            <span class="p-3 border border-success border-2 rounded-bottom-1">
+              rounded-bottom-1</span
+            >
+            <span class="p-3 border border-success border-2 rounded-start-2"> rounded-start-2</span>
+            <span class="p-3 border border-success border-2 rounded-end-circle">
+              rounded-end-circle</span
+            >
+            <span class="p-3 border border-success border-2 rounded-start-pill">
+              rounded-start-pill</span
+            >
+            <span class="p-3 border border-success border-2 rounded-5 rounded-top-0">
+              rounded-5 rounded-top-0</span
+            >
+          </div>
+
+          <hr />
+
+          <div class="py-2 ps-3 mb-3 border border-3 rounded-1">rounded-1</div>
+          <div class="py-2 ps-3 mb-3 border border-3 rounded-2">rounded-2</div>
+          <div class="py-2 ps-3 mb-3 border border-3 rounded-3">rounded-3</div>
+          <div class="py-2 ps-3 mb-3 border border-3 rounded-4">rounded-4</div>
+          <div class="py-2 ps-3 mb-3 border border-3 rounded-5">rounded-5</div>
+
+          <hr />
+
+          <div class="p-3 mb-4 border rounded shadow">shadow</div>
+          <div class="p-3 mb-4 border rounded shadow-sm">shadow-sm</div>
+          <div class="p-3 mb-4 border rounded shadow-lg">shadow-lg</div>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="breadcrumb">
+          <h1 class="mb-3">Breadcrumb</h1>
+
+          <p>
+            &lt;nav&gt; > &lt;ul&gt; breadcrumb > &lt;li&gt; breadcrumb-item
+            <span class="fw-medium">*active*</span> > &lt;a&gt;
+          </p>
+          <nav>
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active"><a href="#">Active</a></li>
+            </ul>
+          </nav>
+
+          <p class="m-0">--bs-breadcrumb-divider: '>';</p>
+          <nav style="--bs-breadcrumb-divider: '>'">
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active"><a href="#">Active</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="breakpoint">
+          <h1 class="my-2">Breakpoints</h1>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Breakpoint (min width)</th>
+                <th>sm</th>
+                <th>md</th>
+                <th>lg</th>
+                <th>xl</th>
+                <th>xxl</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Width</td>
+                <td>576px</td>
+                <td>768px</td>
+                <td>992px</td>
+                <td>1200px</td>
+                <td>1400px</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="d-none text-bg-primary p-2 mb-3 d-sm-block">d-none d-sm-block</div>
+          <div class="d-none text-bg-primary p-2 mb-3 d-md-block">d-none d-md-block</div>
+          <div class="d-none text-bg-primary p-2 mb-3 d-lg-block">d-none d-lg-block</div>
+          <div class="d-none text-bg-primary p-2 mb-3 d-xl-block">d-none d-xl-block</div>
+          <div class="d-none text-bg-primary p-2 mb-3 d-xxl-block">d-none d-xxl-block</div>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="button">
+          <h1 class="mb-3">Buttons</h1>
+
+          <p>&lt;button&gt; btn</p>
+
+          <button class="btn btn-primary">btn-primary</button>
+          <button class="btn btn-success">btn-success</button>
+          <button class="btn btn-link">btn-link</button>
+
+          <hr />
+
+          <button class="btn btn-primary btn-sm">btn-sm</button>
+          <button class="btn btn-primary btn-lg">btn-lg</button>
+
+          <hr />
+
+          <button class="btn btn-primary disabled">disabled</button>
+          <button class="btn btn-primary active">active</button>
+
+          <hr />
+
+          <button class="btn btn-outline-primary">btn-outline-primary</button>
+          <button class="btn btn-outline-success">btn-outline-success</button>
+
+          <div class="mt-3"></div>
+
+          <button class="btn btn-outline-primary disabled">disabled</button>
+          <button class="btn btn-outline-success active">active</button>
+
+          <hr />
+
+          <button class="btn btn-primary" data-bs-toggle="button">
+            btn-primary data-bs-toggle="button"
+          </button>
+          <button class="btn btn-outline-primary" data-bs-toggle="button">
+            btn-outline-primary
+          </button>
+          <button class="btn btn-outline-primary active" data-bs-toggle="button">
+            btn-outline-primary active
+          </button>
+
+          <p class="mt-3 mb-0">btn-close</p>
+          <button class="btn-close"></button>
+
+          <div class="d-grid vstack gap-2 my-3">
+            d-grid vstack gap-2
+            <button class="btn btn-primary">btn-primary</button>
+            <button class="btn btn-danger">btn-danger</button>
+          </div>
+
+          <button class="btn btn-primary d-block w-100 mt-4">d-block w-100</button>
+          <br />
+
+          <div class="btn-group mb-3">
+            <p class="d-inline-block me-3" style="width: 20ch">btn-group</p>
+            <button class="btn btn-primary">btn-primary</button>
+            <button class="btn btn-success">btn-success</button>
+            <button class="btn btn-primary">btn-primary</button>
+          </div>
+
+          <br />
+
+          <div class="btn-group btn-group-sm mb-3">
+            <p class="d-inline-block me-3" style="width: 20ch">btn-group-sm</p>
+            <button class="btn btn-primary">btn-primary</button>
+            <button class="btn btn-success">btn-success</button>
+            <button class="btn btn-primary">btn-primary</button>
+          </div>
+
+          <br />
+
+          <div class="btn-group btn-group-lg mb-3">
+            <p class="d-inline-block me-3" style="width: 20ch">btn-group-lg</p>
+            <button class="btn btn-primary">btn-primary</button>
+            <button class="btn btn-success">btn-success</button>
+            <button class="btn btn-primary">btn-primary</button>
+          </div>
+
+          <br />
+
+          <p class="d-inline-block me-3" style="width: 19ch">
+            btn-group-vertical, not work with split button & dropdown
+          </p>
+          <div class="btn-group-vertical mb-3">
+            <button class="btn btn-primary">btn-primary</button>
+            <button class="btn btn-success">btn-success</button>
+            <button class="btn btn-primary">btn-primary</button>
+          </div>
+
+          <br />
+
+          <div class="btn-group mb-3">
+            <p class="d-inline-block me-3" style="width: 20ch">btn-outline</p>
+            <button class="btn btn-outline-primary">btn-primary</button>
+            <button class="btn btn-outline-success">btn-success</button>
+            <button class="btn btn-outline-primary">btn-primary</button>
+          </div>
+
+          <br />
+
+          <div class="btn-group mb-3">
+            <p class="d-inline-block me-3" style="width: 20ch">checkbox</p>
+            <input type="checkbox" class="btn-check" id="btncheck1" />
+            <label class="btn btn-outline-primary" for="btncheck1">Checkbox 1</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck2" />
+            <label class="btn btn-outline-primary" for="btncheck2">Checkbox 2</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck3" />
+            <label class="btn btn-outline-primary" for="btncheck3">Checkbox 3</label>
+          </div>
+
+          <br />
+
+          <div class="btn-group mb-3">
+            <p class="d-inline-block me-3" style="width: 20ch">radio</p>
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" checked />
+            <label class="btn btn-outline-primary" for="btnradio1">Radio 1 'checked'</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" />
+            <label class="btn btn-outline-primary" for="btnradio2">Radio 2</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" />
+            <label class="btn btn-outline-primary" for="btnradio3">Radio 3</label>
+          </div>
+
+          <div class="btn-toolbar" role="toolbar">
+            <p class="d-inline me-3" style="width: 20ch">btn-toolbar</p>
+            <div class="btn-group me-3">
+              <button class="btn btn-primary">btn-primary</button>
+              <button class="btn btn-success">btn-success</button>
+              <button class="btn btn-primary">btn-primary</button>
+            </div>
+
+            <div class="btn-group">
+              <button class="btn btn-primary">btn-primary</button>
+              <button class="btn btn-success">btn-success</button>
+              <button class="btn btn-primary">btn-primary</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="card">
+          <h1 class="mb-3">Cards</h1>
+
+          <p>
+            card > card-header + &lt;img&gt; card-img-top + card-body + &lt;img&gt; card-img-bottom
+            + card-footer
+          </p>
+
+          <div class="card" style="width: 25rem">
+            <div class="card-header">card-header</div>
+            <img src="https://placehold.co/200x200" class="card-img-top" alt="" />
+            <div class="card-body">
+              <h5 class="card-title">card-title</h5>
+              <h6 class="card-subtitle mb-2">card-subtitle</h6>
+              <p class="card-text">card-text</p>
+              <a href="#" class="btn btn-primary">btn btn-primary</a>
+              <a href="#" class="card-link ms-3">card-link</a>
+            </div>
+            <img src="https://placehold.co/200x200" class="card-img-bottom" alt="card-img-bottom" />
+            <div class="card-footer">card-footer</div>
+          </div>
+
+          <hr />
+
+          <p>text-center border-primary bg-transparent</p>
+          <div class="card text-center border-primary bg-transparent w-50">
+            <div class="card-header">card-header</div>
+            <div class="card-body">
+              <h5 class="card-title">card-title</h5>
+              <p class="card-text">card-text</p>
+              <a href="#" class="btn btn-primary">btn btn-primary</a>
+            </div>
+            <div class="card-footer text-muted">card-footer text-muted</div>
+          </div>
+
+          <hr />
+
+          <p>card text-bg-color</p>
+          <div class="hstack gap-2">
+            <div class="card text-bg-primary w-25">
+              <div class="card-body">
+                <h5 class="card-title">card-title</h5>
+                <p class="card-text">card-text</p>
+              </div>
+            </div>
+            <div class="card text-bg-success w-25">
+              <div class="card-body">
+                <h5 class="card-title">card-title</h5>
+                <p class="card-text">card-text</p>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <p>card-group gap-2 > card * 3</p>
+          <div class="card-group gap-2">
+            <div class="card">
+              <img src="https://placehold.co/200x200" class="card-img-top" alt="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title">card-title</h5>
+                <p class="card-text">card-text</p>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum, harum!
+                </p>
+              </div>
+              <div class="card-footer">card-footer</div>
+            </div>
+            <div class="card">
+              <img src="https://placehold.co/200x200" class="card-img-top" alt="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title">card-title</h5>
+                <p class="card-text">card-text</p>
+              </div>
+              <div class="card-footer">card-footer</div>
+            </div>
+            <div class="card">
+              <img src="https://placehold.co/200x200" class="card-img-top" alt="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title">card-title</h5>
+                <p class="card-text">card-text</p>
+              </div>
+              <div class="card-footer">card-footer</div>
+            </div>
+          </div>
+
+          <hr />
+
+          <p>
+            card text-white > &lt;img&lt; card-img +
+            <br />
+            card-img-overlay bg-dark / --bs-bg-opacity: 0.4; height: 100px
+          </p>
+          <div class="card text-white" style="width: 300px">
+            <img src="https://placehold.co/200x200" class="card-img" alt="" />
+            <div class="card-img-overlay bg-dark" style="--bs-bg-opacity: 0.4; height: 100px">
+              <h5 class="card-title">card-title</h5>
+              <p class="card-text">card-text</p>
+            </div>
+          </div>
+
+          <br />
+
+          <p>card > row > &lt;img&gt; col-4 + col-8</p>
+          <div class="card mb-3 w-50">
+            <div class="row">
+              <div class="col-4">
+                <img src="https://placehold.co/200x200" class="img-fluid rounded-start" />
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <h5 class="card-title">card-title</h5>
+                  <p class="card-text">
+                    <small class="text-body-secondary">&lt;small&gt; text-body-secondary</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="carousel">
+          <h1 class="mb-3">Carousel</h1>
+
+          <p>
+            carousel slide #slider data-bs-ride="carousel" >
+            <br />
+            carousel-indicators > &lt;button&gt;
+            <span class="fw-medium">*active*</span>
+            data-bs-slide-to="0++" data-bs-target="#slider"
+            <br />
+            carousel-inner > carousel-item
+            <span class="fw-medium">*active*</span> data-bs-interval="5000" > &lt;img&gt; +
+            carousel-caption d-none d-lg-block bg-secondary opacity-75
+            <br />
+            &lt;button&gt; carousel-control-<span class="fw-medium">*prev / next*</span>
+            data-bs-slide="<span class="fw-medium">*prev / next*</span>" data-bs-target="#slider" >
+            &lt;span&gt; carousel-control-<span class="fw-medium">*prev / next*</span>-icon
+            bg-secondary
+          </p>
+
+          <div class="carousel slide" id="slider" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button class="active" data-bs-slide-to="0" data-bs-target="#slider"></button>
+              <button data-bs-slide-to="1" data-bs-target="#slider"></button>
+            </div>
+
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="5000">
+                <img src="https://placehold.co/600x300" class="d-block w-100" />
+                <div class="carousel-caption d-none d-lg-block bg-secondary opacity-75">
+                  <h5>h5 carousel title</h5>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, asperiores!</p>
+                </div>
+              </div>
+
+              <div class="carousel-item" data-bs-interval="5000">
+                <img src="https://placehold.co/650x320" class="d-block w-100" />
+                <div class="carousel-caption d-none d-md-block bg-secondary opacity-75">
+                  <h5>Lorem ipsum dolor sit amet.</h5>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#slider">
+              <span class="carousel-control-prev-icon bg-secondary"></span>
+            </button>
+            <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#slider">
+              <span class="carousel-control-next-icon bg-secondary"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="color">
+          <h1 class="mb-3">Colors</h1>
+
+          <div class="p-2 bg-primary text-white">.bg-primary</div>
+          <div class="p-2 bg-primary-subtle text-primary-emphasis">.bg-primary-subtle</div>
+          <div class="p-2 bg-secondary text-white">.bg-secondary</div>
+          <div class="p-2 bg-secondary-subtle text-secondary-emphasis">.bg-secondary-subtle</div>
+          <div class="p-2 bg-success text-white">.bg-success</div>
+          <div class="p-2 bg-success-subtle text-success-emphasis">.bg-success-subtle</div>
+          <div class="p-2 bg-danger text-white">.bg-danger</div>
+          <div class="p-2 bg-danger-subtle text-danger-emphasis">.bg-danger-subtle</div>
+          <div class="p-2 bg-warning text-dark">.bg-warning</div>
+          <div class="p-2 bg-warning-subtle text-warning-emphasis">.bg-warning-subtle</div>
+          <div class="p-2 bg-info text-dark">.bg-info</div>
+          <div class="p-2 bg-info-subtle text-info-emphasis">.bg-info-subtle</div>
+          <div class="p-2 bg-light text-dark">.bg-light</div>
+          <div class="p-2 bg-light-subtle text-light-emphasis">.bg-light-subtle</div>
+          <div class="p-2 bg-dark text-white">.bg-dark</div>
+          <div class="p-2 bg-dark-subtle text-dark-emphasis">.bg-dark-subtle</div>
+          <div class="p-2 bg-body-secondary">.bg-body-secondary</div>
+          <div class="p-2 bg-body-tertiary">.bg-body-tertiary</div>
+          <div class="p-2 bg-body text-body">.bg-body</div>
+          <div class="p-2 bg-black text-white">.bg-black</div>
+          <div class="p-2 bg-white text-dark">.bg-white</div>
+          <div class="p-2 bg-transparent text-body">.bg-transparent</div>
+
+          <hr class="border-5" />
+
+          <div class="p-2 text-bg-primary">text-bg-primary</div>
+          <div class="p-2 text-bg-secondary">text-secondary</div>
+          <div class="p-2 text-bg-success">text-bg-success</div>
+          <div class="p-2 text-bg-danger">text-bg-danger</div>
+          <div class="p-2 text-bg-warning">text-bg-warning</div>
+          <div class="p-2 text-bg-info">text-bg-info</div>
+          <div class="p-2 text-bg-light">text-bg-light</div>
+          <div class="p-2 text-bg-dark">text-bg-dark</div>
+
+          <hr class="border-5" />
+
+          <div class="fs-4 text-primary">text-primary</div>
+          <div class="fs-4 text-secondary">text-secondary</div>
+          <div class="fs-4 text-success">text-success</div>
+          <div class="fs-4 text-danger">text-danger</div>
+          <div class="fs-4 text-warning">text-warning</div>
+          <div class="fs-4 text-info">text-info</div>
+          <div class="fs-4 text-light bg-dark">text-light bg-dark</div>
+          <div class="fs-4 text-dark">text-dark</div>
+          <div class="fs-4 text-muted">text-muted</div>
+
+          <hr class="border-5" />
+
+          <div class="p-2 text-bg-primary bg-gradient">text-bg-primary bg-gradient</div>
+          <div class="p-2 text-bg-secondary bg-gradient">text-bg-secondary bg-gradient</div>
+          <div class="p-2 text-bg-success bg-gradient">text-bg-success bg-gradient</div>
+          <div class="p-2 text-bg-danger bg-gradient">text-bg-danger bg-gradient</div>
+          <div class="p-2 text-bg-warning bg-gradient">text-bg-warning bg-gradient</div>
+          <div class="p-2 text-bg-info bg-gradient">text-bg-info bg-gradient</div>
+          <div class="p-2 text-bg-light bg-gradient">text-bg-light bg-gradient</div>
+          <div class="p-2 text-bg-dark bg-gradient text-white">text-bg-dark bg-gradient</div>
+          <div class="p-2 text-bg-black bg-gradient text-white">text-bg-black bg-gradient</div>
+
+          <hr class="border-5" />
+
+          <div class="p-2 bg-primary bg-opacity-10">bg-primary bg-opacity-10</div>
+          <div class="p-2 bg-primary bg-opacity-25">bg-primary bg-opacity-25</div>
+          <div class="p-2 text-bg-primary bg-opacity-50">text-bg-primary bg-opacity-50</div>
+          <div class="p-2 text-bg-primary bg-opacity-75">text-bg-primary bg-opacity-75</div>
+          <div class="p-2 text-bg-primary">text-bg-primary</div>
+
+          <hr class="border-5" />
+
+          <div class="d-flex flex-wrap gap-3">
+            <span class="p-3 border border-primary">border-primary</span>
+            <span class="p-3 border border-primary-subtle">border-primary-subtle</span>
+            <span class="p-3 border border-secondary">border-secondary</span>
+            <span class="p-3 border border-secondary-subtle">border-secondary-subtle</span>
+            <span class="p-3 border border-success">border-success</span>
+            <span class="p-3 border border-success-subtle">border-success-subtle</span>
+            <span class="p-3 border border-danger">border-danger</span>
+            <span class="p-3 border border-danger-subtle">border-danger-subtle</span>
+            <span class="p-3 border border-warning">border-warning</span>
+            <span class="p-3 border border-warning-subtle">border-warning-subtle</span>
+            <span class="p-3 border border-info">border-info</span>
+            <span class="p-3 border border-info-subtle">border-info-subtle</span>
+            <span class="p-3 border border-light">border-light</span>
+            <span class="p-3 border border-light-subtle">border-light-subtle</span>
+            <span class="p-3 border border-dark">border-dark</span>
+            <span class="p-3 border border-dark-subtle">border-dark-subtle</span>
+            <span class="p-3 border border-black">border-black</span>
+            <span class="p-3 border border-white">border-white</span>
+          </div>
+
+          <hr class="border-5" />
+
+          <p><a href="#" class="fs-4 link-primary">link-primary</a></p>
+          <p><a href="#" class="fs-4 link-secondary">link-secondary</a></p>
+          <p><a href="#" class="fs-4 link-success">link-success</a></p>
+          <p><a href="#" class="fs-4 link-danger">link-danger</a></p>
+          <p><a href="#" class="fs-4 link-warning">link-warning</a></p>
+          <p><a href="#" class="fs-4 link-info">link-info</a></p>
+          <p><a href="#" class="link-light">link-light</a></p>
+          <p><a href="#" class="link-dark">link-dark</a></p>
+          <p><a href="#" class="link-body-emphasis">link-body-emphasis</a></p>
+        </div>
+
+        <div class="tab-pane fade" id="container">
+          <div class="container mb-3 w-75">
+            <h1>Containers</h1>
+            <div>
+              <table class="table table-bordered table-responsive">
+                <thead>
+                  <tr>
+                    <th scope="col">Breakpoints</th>
+                    <th scope="col">&lt;576px</th>
+                    <th scope="col">≥576px</th>
+                    <th scope="col">≥768px</th>
+                    <th scope="col">≥992px</th>
+                    <th scope="col">≥1200px</th>
+                    <th scope="col">≥1400px</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">.container</th>
+                    <td>100%</td>
+                    <td>540px</td>
+                    <td>720px</td>
+                    <td>960px</td>
+                    <td>1140px</td>
+                    <td>1320px</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">.container-sm</th>
+                    <td>100%</td>
+                    <td>540px</td>
+                    <td>720px</td>
+                    <td>960px</td>
+                    <td>1140px</td>
+                    <td>1320px</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">.container-md</th>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>720px</td>
+                    <td>960px</td>
+                    <td>1140px</td>
+                    <td>1320px</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">.container-lg</th>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>960px</td>
+                    <td>1140px</td>
+                    <td>1320px</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">.container-xl</th>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>1140px</td>
+                    <td>1320px</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">.container-xxl</th>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>1320px</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">.container-fluid</th>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="container p-2 mt-2 bg-primary text-white">
+            <h3>container</h3>
+          </div>
+          <div class="container-sm p-2 mt-2 bg-success text-white">
+            <h3>container-sm</h3>
+          </div>
+          <div class="container-md p-2 mt-2 bg-info text-white">
+            <h3>container-md</h3>
+          </div>
+          <div class="container-lg p-2 mt-2 bg-primary text-white">
+            <h3>container-lg</h3>
+          </div>
+          <div class="container-xl p-2 mt-2 bg-success text-white">
+            <h3>container-xl</h3>
+          </div>
+          <div class="container-xxl p-2 mt-2 bg-info text-white">
+            <h3>container-xxl</h3>
+          </div>
+          <div class="container-fluid p-2 my-2 bg-primary text-white">
+            <h3>container-fluid</h3>
+          </div>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="display-position">
+          <h1>Display & Position</h1>
+
+          <div class="border">
+            d-none (hidden)
+            <p class="d-none">d-none</p>
+          </div>
+          <div class="d-inline">d-inline 1</div>
+          <div class="d-inline">d-inline 2</div>
+          <br />
+          <span class="d-block">&lt;span&gt; d-block</span>
+          <span class="d-block">&lt;span&gt; d-block</span>
+          <br />
+          <span class="d-inline-block" style="width: 500px"
+            >&lt;span&gt; d-inline-block / width: 500px</span
+          >
+          <span class="d-inline-block">d-inline-block 2</span>
+          <br />
+          <div class="d-none d-lg-block">d-none d-md-block -- show when > lg</div>
+          <div class="d-block d-lg-none">d-block d-md-none -- show when < lg</div>
+          <br />
+
+          <div class="position-relative border" style="height: 200px">
+            <div class="text-bg-secondary p-2 position-absolute top-0 start-0">top-0 start-0</div>
+            <div class="text-bg-secondary p-2 position-absolute top-0 start-50 translate-middle-x">
+              top-0 start-50
+            </div>
+            <div class="text-bg-secondary p-2 position-absolute top-0 end-0">top-0 end-0</div>
+            <div class="text-bg-secondary p-2 position-absolute top-50 start-0 translate-middle-y">
+              top-50 start-0 translate-middle-y
+            </div>
+            <div class="text-bg-secondary p-2 position-absolute top-50 start-50 translate-middle">
+              top-50 start-50 translate-middle
+            </div>
+            <div class="text-bg-secondary p-2 position-absolute top-50 end-0 translate-middle-y">
+              top-50 end-0 translate-middle-y
+            </div>
+            <div class="text-bg-secondary p-2 position-absolute bottom-0 start-0">
+              bottom-0 start-0
+            </div>
+            <div
+              class="text-bg-secondary p-2 position-absolute bottom-0 start-50 translate-middle-x"
+            >
+              bottom-0 start-50 translate-middle-x
+            </div>
+            <div class="text-bg-secondary p-2 position-absolute bottom-0 end-0">bottom-0 end-0</div>
+          </div>
+
+          <div class="position-relative my-3" style="height: 200px; background: #ccc">
+            position-relative / height: 200px; background: #ccc
+            <p class="position-absolute start-0 bottom-0" style="top: 100px">
+              position-absolute start-0 bottom-0 / top: 100px
+            </p>
+            <p class="position-absolute top-0 end-0">position-absolute top-0 end-0</p>
+            <p class="position-absolute">position-absolute</p>
+          </div>
+
+          <span
+            class="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill"
+          >
+            Marker
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 16 16"
+              class="position-absolute top-100 start-50 translate-middle mt-1"
+              fill="var(--bs-secondary)"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <use href="#mark"></use>
+            </svg>
+          </span>
+
+          <hr />
+
+          <p class="position-fixed">position-fixed</p>
+          <p class="fixed-top">fixed-top</p>
+          <p class="fixed-bottom">fixed-bottom</p>
+
+          <h4>*** remove position:static for sticky ***</h4>
+          <p class="sticky-top" style="position: static">sticky-top</p>
+          <p class="sticky-sm-top" style="position: static">sticky-sm-top</p>
+          <p class="sticky-md-top" style="position: static">sticky-md-top</p>
+          <p class="sticky-lg-top" style="position: static">sticky-lg-top</p>
+          <p class="sticky-xl-top" style="position: static">sticky-xl-top</p>
+          <p class="sticky-xxl-top" style="position: static">sticky-xxl-top</p>
+          <div style="height: 100vh">height: 100vh</div>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="dropdown">
+          <h1 class="mb-3">Dropdown</h1>
+
+          <p>
+            dropdown > &lt;<span class="fw-medium">button / a</span>&gt; data-bs-toggle="dropdown"
+            <br />
+            &lt;ul&gt; dropdown-menu > &lt;li&gt; > &lt;a&gt; dropdown-item
+          </p>
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+              &lt;button&gt;
+            </button>
+            <a
+              class="btn btn-success dropdown-toggle"
+              data-bs-toggle="dropdown"
+              data-bs-auto-close="inside"
+            >
+              &lt;a&gt;
+            </a>
+            <button
+              class="btn btn-primary dropdown-toggle btn-sm"
+              data-bs-toggle="dropdown"
+              data-bs-auto-close="inside"
+            >
+              btn-sm data-bs-auto-close="inside"
+            </button>
+            <button
+              class="btn btn-primary dropdown-toggle btn-lg"
+              data-bs-toggle="dropdown"
+              data-bs-auto-close="false"
+            >
+              btn-lg data-bs-auto-close="false"
+            </button>
+
+            <ul class="dropdown-menu">
+              <li><a href="#" class="dropdown-item"> dropdown-item</a></li>
+              <li><a href="#" class="dropdown-item"> dropdown-item</a></li>
+            </ul>
+          </div>
+
+          <p class="mb-0 mt-2">
+            btn-group > &lt;button&gt; + &lt;button&gt; dropdown-toggle dropdown-toggle-split
+            data-bs-toggle="dropdown"
+            <br />
+            &lt;ul&gt; dropdown-menu > &lt;li&gt;
+          </p>
+          <div class="btn-group">
+            <button class="btn btn-success">btn btn-success</button>
+            <button
+              class="btn btn-success dropdown-toggle dropdown-toggle-split"
+              data-bs-toggle="dropdown"
+            ></button>
+            <ul class="dropdown-menu">
+              <li><h5 class="dropdown-item-text">&lt;h5&gt; dropdown-item-text</h5></li>
+              <li>
+                <button class="dropdown-item">&lt;li&gt; &lt;button&gt; dropdown-item</button>
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <button class="dropdown-item active">&lt;button&gt; dropdown-item active</button>
+              </li>
+              <li>
+                <button class="dropdown-item disabled">
+                  &lt;button&gt; dropdown-item disabled
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <p class="mt-3 mb-0">dropup</p>
+          <div class="dropup mb-3">
+            <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+              dropdown-toggle
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="dropdown-item">dropdown-item Lorem, ipsum.</a></li>
+              <li><a href="#" class="dropdown-item">dropdown-item Lorem, ipsum.</a></li>
+            </ul>
+          </div>
+
+          <p class="m-0">dropup-center</p>
+          <div class="dropup-center mb-3">
+            <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+              dropdown-toggle
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="dropdown-item">dropdown-item Lorem, ipsum.</a></li>
+              <li><a href="#" class="dropdown-item">dropdown-item Lorem, ipsum.</a></li>
+            </ul>
+          </div>
+
+          <p class="m-0">dropend</p>
+          <div class="dropend mb-3">
+            <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+              dropdown-toggle
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="dropdown-item">dropdown-item Lorem, ipsum.</a></li>
+              <li><a href="#" class="dropdown-item">dropdown-item Lorem, ipsum.</a></li>
+            </ul>
+          </div>
+
+          <p class="m-0">dropstart</p>
+          <div class="dropstart mb-3">
+            <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+              dropdown-toggle
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="dropdown-item">dropdown-item</a></li>
+              <li><a href="#" class="dropdown-item">dropdown-item</a></li>
+            </ul>
+          </div>
+          <div style="height: 30vh"></div>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="flexbox">
+          <h1 class="mb-3">Flexbox</h1>
+
+          <div class="d-flex">
+            <div class="text-bg-primary p-2 border">d-flex</div>
+            <div class="text-bg-primary p-2 border">d-flex</div>
+            <div class="text-bg-primary p-2 border">d-flex</div>
+          </div>
+
+          <br />
+
+          <div class="d-flex flex-column">
+            <div class="text-bg-success p-2 border">flex-column</div>
+            <div class="text-bg-success p-2 border">flex-column</div>
+            <div class="text-bg-success p-2 border">flex-column</div>
+          </div>
+
+          <br />
+
+          <div class="d-flex flex-column flex-lg-row">
+            <div class="text-bg-primary p-2 border">flex-column flex-lg-row</div>
+            <div class="text-bg-primary p-2 border">flex-column flex-lg-row</div>
+            <div class="text-bg-primary p-2 border">flex-column flex-lg-row</div>
+          </div>
+
+          <br />
+
+          <div class="d-flex flex-wrap">
+            <div class="text-bg-success p-2 border">flex-wrap</div>
+            <div class="text-bg-success p-2 border">flex-wrap</div>
+            <div class="text-bg-success p-2 border">flex-wrap</div>
+            <div class="text-bg-success p-2 border">flex-wrap</div>
+            <div class="text-bg-success p-2 border">flex-wrap</div>
+            <div class="text-bg-success p-2 border">flex-wrap</div>
+            <div class="text-bg-success p-2 border">flex-wrap</div>
+            <div class="text-bg-success p-2 border">flex-wrap</div>
+            <div class="text-bg-success p-2 border">flex-wrap</div>
+            <div class="text-bg-success p-2 border">flex-wrap</div>
+            <div class="text-bg-success p-2 border">flex-wrap</div>
+            <div class="text-bg-success p-2 border">flex-wrap</div>
+          </div>
+
+          <hr />
+
+          <div class="d-flex justify-content-end mb-3">
+            <div class="text-bg-primary p-2 border">justify-content-end</div>
+            <div class="text-bg-primary p-2 border">justify-content-end</div>
+            <div class="text-bg-primary p-2 border">justify-content-end</div>
+          </div>
+
+          <div class="d-flex justify-content-around mb-3">
+            <div class="text-bg-primary p-2 border">justify-content-around</div>
+            <div class="text-bg-primary p-2 border">justify-content-around</div>
+            <div class="text-bg-primary p-2 border">justify-content-around</div>
+          </div>
+
+          <div class="d-flex justify-content-between mb-3">
+            <div class="text-bg-primary p-2 border">justify-content-between</div>
+            <div class="text-bg-primary p-2 border">justify-content-between</div>
+            <div class="text-bg-primary p-2 border">justify-content-between</div>
+          </div>
+
+          <div class="d-flex flex-column align-items-end mb-3">
+            <div class="text-bg-primary p-2 border">flex-column align-items-end</div>
+            <div class="text-bg-primary p-2 border">flex-column align-items-end</div>
+            <div class="text-bg-primary p-2 border">flex-column align-items-end</div>
+          </div>
+
+          <div class="d-flex flex-column align-items-center mb-3">
+            <div class="text-bg-primary p-2 border">flex-column align-items-center</div>
+            <div class="text-bg-primary p-2 border">flex-column align-items-center</div>
+            <div class="text-bg-primary p-2 border">flex-column align-items-center</div>
+          </div>
+
+          <div class="d-flex flex-column mb-3">
+            <div class="text-bg-primary p-2 align-self-center">align-self-center</div>
+            <div class="text-bg-primary p-2 align-self-end">align-self-end</div>
+            <div class="text-bg-primary p-2 border align-self-start">align-self-start</div>
+          </div>
+
+          <div class="d-flex mb-3">
+            <div class="text-bg-primary border p-2 flex-fill">
+              flex-fill item with a lot of content
+            </div>
+            <div class="text-bg-primary border p-2 flex-fill">flex-fill</div>
+            <div class="text-bg-primary border p-2 flex-fill">flex-fill</div>
+          </div>
+
+          <div class="d-flex mb-3">
+            <div class="text-bg-primary border p-2 flex-grow-1">flex-grow-1</div>
+            <div class="text-bg-primary border p-2">flex item</div>
+            <div class="text-bg-primary border p-2">flex item</div>
+          </div>
+
+          <div class="d-flex mb-3">
+            <div class="text-bg-primary border p-2 w-100">w-100</div>
+            <div class="text-bg-primary border p-2 flex-shrink-1">flex-shrink-1</div>
+          </div>
+
+          <div class="d-flex flex-wrap container text-center my-3" style="row-gap: 1rem">
+            <div
+              class="d-flex align-content-start flex-wrap border border-2 w-50"
+              style="height: 100px"
+            >
+              <span class="text-bg-primary p-2 border">align-content-start</span>
+              <span class="text-bg-primary p-2 border">align-content-start</span>
+              <span class="text-bg-primary p-2 border">align-content-start</span>
+            </div>
+            <div
+              class="d-flex align-content-end flex-wrap border border-2 w-50"
+              style="height: 100px"
+            >
+              <span class="text-bg-primary p-2 border">align-content-end</span>
+              <span class="text-bg-primary p-2 border">align-content-end</span>
+              <span class="text-bg-primary p-2 border">align-content-end</span>
+            </div>
+            <div
+              class="d-flex align-content-center flex-wrap border border-2 w-50"
+              style="height: 100px"
+            >
+              <span class="text-bg-primary p-2 border">align-content-center </span>
+              <span class="text-bg-primary p-2 border">align-content-center </span>
+              <span class="text-bg-primary p-2 border">align-content-center </span>
+            </div>
+            <div
+              class="d-flex align-content-stretch flex-wrap border border-2 w-50"
+              style="height: 100px"
+            >
+              <span class="text-bg-primary p-2 border">align-content-stretch </span>
+              <span class="text-bg-primary p-2 border">align-content-stretch </span>
+              <span class="text-bg-primary p-2 border">align-content-stretch </span>
+            </div>
+            <div
+              class="d-flex align-content-between flex-wrap border border-2 w-50"
+              style="height: 150px"
+            >
+              <span class="text-bg-primary p-2 border">align-content-between </span>
+              <span class="text-bg-primary p-2 border">align-content-between </span>
+              <span class="text-bg-primary p-2 border">align-content-between </span>
+              <span class="text-bg-primary p-2 border">align-content-between </span>
+              <span class="text-bg-primary p-2 border">align-content-between </span>
+            </div>
+            <div
+              class="d-flex align-content-around flex-wrap border border-2 w-50"
+              style="height: 150px"
+            >
+              <span class="text-bg-primary p-2 border">align-content-around </span>
+              <span class="text-bg-primary p-2 border">align-content-around </span>
+              <span class="text-bg-primary p-2 border">align-content-around </span>
+              <span class="text-bg-primary p-2 border">align-content-around </span>
+              <span class="text-bg-primary p-2 border">align-content-around </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="forms">
+          <h1 class="mb-3">Forms & Input</h1>
+
+          <p>
+            &lt;form&gt; > &lt;label&gt; form-label for="input1" +
+            <br />
+            &lt;input&gt; form-control id="input1" name="input1" + form-text
+          </p>
+          <form>
+            <div class="mb-3">
+              <label for="input1" class="form-label">form-label + form-control</label>
+              <input type="email" class="form-control" id="input1" required />
+              <div class="form-text">form-text</div>
+            </div>
+            <div class="mb-3">
+              <label for="input2" class="form-label">form-control form-control-sm</label>
+              <input type="email" class="form-control form-control-sm" id="input2" />
+            </div>
+            <div class="mb-3">
+              <label for="input3" class="form-label">form-control form-control-lg</label>
+              <input type="email" class="form-control form-control-lg" id="input3" />
+            </div>
+
+            <p class="mb-0">form-floating > &lt;input&gt; + &lt;label&gt;</p>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="input4" placeholder="" />
+              <label for="input4">form-floating</label>
+            </div>
+
+            <p class="mb-0">form-floating > &lt;textarea&gt; / height: 100px</p>
+            <div class="form-floating mb-3">
+              <textarea
+                class="form-control"
+                placeholder="Leave a comment here"
+                id="input5"
+                style="height: 100px"
+              ></textarea
+              ><label for="input5">form-floating</label>
+            </div>
+
+            <p class="mb-0">form-floating > &lt;select&gt;</p>
+            <div class="form-floating">
+              <select class="form-select" id="input6">
+                <option selected>selected</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+              </select>
+              <label for="input6">form-floating > &lt;select&gt; </label>
+            </div>
+
+            <input class="form-control my-3" placeholder="Disabled input" disabled />
+            <input class="form-control" placeholder="Readonly input" readonly />
+
+            <div class="mt-3 row">
+              <label for="input7" class="col-md-4 col-form-label">
+                &lt;input&gt; form-control-plaintext
+              </label>
+              <div class="col-md-8">
+                <input
+                  type="text"
+                  class="form-control-plaintext"
+                  id="input7"
+                  value="email@example.com"
+                />
+              </div>
+            </div>
+
+            <p class="mt-3 mb-0">row > col-auto</p>
+            <div class="row">
+              <div class="col-auto">
+                <label for="password" class="col-form-label">col-form-label</label>
+              </div>
+              <div class="col-auto">
+                <input type="password" id="password" class="form-control" />
+              </div>
+              <div class="col-auto"><span class="form-text"> form-text </span></div>
+            </div>
+
+            <div class="my-3">
+              <label for="input8" class="form-label"> &lt;input&gt; type="file"</label>
+              <input class="form-control" type="file" id="input8" multiple />
+            </div>
+
+            <div class="mb-3">
+              <label for="input9" class="form-label">
+                &lt;input&gt; form-control-color type="color"
+              </label>
+              <input
+                type="color"
+                class="form-control form-control-color"
+                id="input9"
+                value="#563d7c"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="input10" class="form-label">
+                &lt;input&gt; list="datalistOptions" + &lt;datalist&gt; #datalistOptions
+              </label>
+              <input
+                class="form-control"
+                list="datalistOptions"
+                id="input10"
+                placeholder="Type to search..."
+              />
+              <datalist id="datalistOptions">
+                <option value="San Francisco"></option>
+                <option value="Los Angeles"></option>
+                <option value="Chicago"></option>
+              </datalist>
+            </div>
+
+            <div class="mb-3">
+              <textarea class="form-control" placeholder="Message">value</textarea>
+            </div>
+
+            <div class="mb-3">
+              <input type="checkbox" class="form-check-input" id="input11" />
+              <label for="input11" class="form-check-label">
+                &lt;input&gt; form-check-input + &lt;label&gt;
+              </label>
+            </div>
+
+            <div class="form-check form-switch">
+              <input
+                type="checkbox"
+                id="input12"
+                class="form-check-input me-2"
+                style="width: 40px; height: 20px"
+              />
+              <label for="input12" class="form-check-label">
+                form-check form-switch > &lt;input&gt; / width: 40px; height: 15px; + &lt;label&gt;
+              </label>
+            </div>
+            <br />
+
+            <div class="row mb-3">
+              <label for="input13" class="col-2 col-form-label col-form-label-sm">
+                col-form-label-sm
+              </label>
+              <div class="col-10">
+                <input type="email" class="form-control form-control-sm" id="input13" />
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="input14" class="col-sm-2 col-form-label col-form-label-lg">
+                col-form-label-lg
+              </label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control form-control-lg" id="input14" />
+              </div>
+            </div>
+
+            <p class="mb-0">&lt;select&gt; form-select > &lt;option&gt;</p>
+            <select class="form-select mb-3">
+              <option>default option</option>
+              <option value="value">value</option>
+            </select>
+
+            <select class="form-select form-select-sm mb-3">
+              <option>form-select-sm</option>
+              <option value="value">value</option>
+            </select>
+
+            <select class="form-select form-select-lg mb-3">
+              <option>form-select-lg</option>
+              <option value="value">value</option>
+            </select>
+            <br />
+
+            <p>form-check form-check-inline > &lt;input&gt; + &lt;label&gt;</p>
+            <div class="form-check form-check-inline">
+              <input type="checkbox" class="form-check-input" id="input15" />
+              <label for="input15" class="form-check-label">form-check-label 1</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input type="checkbox" class="form-check-input" id="input16" />
+              <label for="input16" class="form-check-label">form-check-label 2</label>
+            </div>
+
+            <div class="my-3">
+              <input type="checkbox" class="btn-check" id="input17" />
+              <label class="btn btn-outline-primary" for="input17">
+                &lt;input&gt; btn-check type="checkbox"
+              </label>
+            </div>
+
+            <div class="mb-2">
+              <label for="input18" class="form-label">&lt;input&gt; form-range type="range" </label>
+              <input type="range" class="form-range" id="input18" />
+            </div>
+            <div class="mb-2">
+              <label for="input19" class="form-label"
+                >&lt;input&gt; min="0" max="5" step="0.5"</label
+              >
+              <input type="range" class="form-range" id="input19" min="0" max="5" step="0.5" />
+            </div>
+          </form>
+
+          <div>input-group</div>
+          <form>
+            <div class="input-group mb-3">
+              <span class="input-group-text">input-group-text</span>
+              <input type="email" class="form-control" placeholder="form-control" />
+              <span class="input-group-text">input-group-text</span>
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text">input-group-text</span>
+              <textarea class="form-control" placeholder="form-control"></textarea>
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text">input-group-sm</span>
+              <input type="email" class="form-control" placeholder="form-control" />
+              <span class="input-group-text">input-group-sm</span>
+            </div>
+
+            <div class="input-group input-group-lg mb-3">
+              <span class="input-group-text">input-group-lg</span>
+              <input type="email" class="form-control" placeholder="form-control" />
+              <span class="input-group-text">input-group-lg</span>
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-text">
+                <input class="form-check-input mt-0" type="checkbox" />
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                value="input-group-text > &lt;input&gt; form-check-input type=&OpenCurlyDoubleQuote;checkbox&CloseCurlyDoubleQuote;"
+              />
+            </div>
+
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" />
+              <button class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                &lt;button&gt; dropdown-toggle data-bs-toggle="dropdown" +<br />
+                &lt;ul&gt; dropdown-menu dropdown-menu-end > &lt;li&gt; > &lt;a&gt;
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">dropdown-item</a></li>
+                <li><a class="dropdown-item" href="#">dropdown-item</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">dropdown-item</a></li>
+              </ul>
+            </div>
+
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="input20">&lt;label&gt;</label>
+              <select class="form-select" id="input20">
+                <option selected>Default value.</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+              </select>
+            </div>
+          </form>
+
+          <p class="mb-0">
+            &lt;form&gt; form-validation 'novalidate'
+            <br />
+            *** copy script***
+          </p>
+          <form class="form-validation" novalidate>
+            <div class="mb-3">
+              <label for="input21" class="form-label">form-label</label>
+              <input type="text" class="form-control" id="input21" name="username" required />
+              <div class="invalid-feedback">invalid-feedback</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required />
+              <div class="valid-feedback">valid-feedback</div>
+              <div class="invalid-feedback">invalid-feedback</div>
+            </div>
+
+            <div class="mb-3">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="checkbox" required />
+                <label class="form-check-label" for="checkbox">
+                  Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">invalid-feedback</div>
+              </div>
+            </div>
+
+            <input type="submit" class="btn btn-primary" value="Submit" />
+          </form>
+        </div>
+
+        <div class="container mb-3 w-75 border tab-pane fade" id="grid-column">
+          <h1 class="mb-3">Grid Columns</h1>
+
+          <p class="mb-0">row</p>
+          <div class="container">
+            <div class="row">
+              <div class="col text-bg-primary p-2 border">col</div>
+              <div class="col text-bg-primary p-2 border">col</div>
+            </div>
+            <div class="row">
+              <div class="col text-bg-primary p-2 border">col</div>
+              <div class="col text-bg-primary p-2 border">col</div>
+              <div class="col text-bg-primary p-2 border">col</div>
+            </div>
+            <div class="row">
+              <div class="col-6 text-bg-primary p-2 border">col-6</div>
+              <div class="col-6 text-bg-primary p-2 border">col-6</div>
+            </div>
+            <div class="row">
+              <div class="col-4 text-bg-primary p-2 border">col-4</div>
+              <div class="col-8 text-bg-primary p-2 border">col-8</div>
+            </div>
+
+            <div class="text-center my-3">
+              <div class="row justify-content-start">
+                <div class="col-4 text-bg-primary p-2 border">justify-content-start</div>
+                <div class="col-4 text-bg-primary p-2 border">justify-content-start</div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-4 text-bg-primary p-2 border">justify-content-center</div>
+                <div class="col-4 text-bg-primary p-2 border">justify-content-center</div>
+              </div>
+              <div class="row justify-content-end">
+                <div class="col-4 text-bg-primary p-2 border">justify-content-end</div>
+                <div class="col-4 text-bg-primary p-2 border">justify-content-end</div>
+              </div>
+              <div class="row justify-content-around">
+                <div class="col-4 text-bg-primary p-2 border">justify-content-around</div>
+                <div class="col-4 text-bg-primary p-2 border">justify-content-around</div>
+              </div>
+              <div class="row justify-content-between">
+                <div class="col-4 text-bg-primary p-2 border">justify-content-between</div>
+                <div class="col-4 text-bg-primary p-2 border">justify-content-between</div>
+              </div>
+              <div class="row justify-content-evenly">
+                <div class="col-4 text-bg-primary p-2 border">justify-content-evenly</div>
+                <div class="col-4 text-bg-primary p-2 border">justify-content-evenly</div>
+              </div>
+              <div class="row justify-content-lg-between">
+                <div class="col-4 text-bg-primary p-2 border">justify-content-lg-between</div>
+                <div class="col-4 text-bg-primary p-2 border">justify-content-lg-between</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap text-center mb-3" style="row-gap: 1rem">
+            <div class="d-flex align-items-start border" style="height: 100px">
+              <div class="text-bg-primary p-2 border">align-items-start</div>
+              <div class="text-bg-primary p-2 border">align-items-start</div>
+            </div>
+            <div class="d-flex align-items-end border" style="height: 100px">
+              <div class="text-bg-primary p-2 border">align-items-end</div>
+              <div class="text-bg-primary p-2 border">align-items-end</div>
+            </div>
+            <div class="d-flex align-items-center border" style="height: 100px">
+              <div class="text-bg-primary p-2 border">align-items-center</div>
+              <div class="text-bg-primary p-2 border">align-items-center</div>
+            </div>
+            <div class="d-flex align-items-baseline border" style="height: 100px">
+              <div class="text-bg-primary p-2 border">align-items-baseline</div>
+              <div class="text-bg-primary p-2 border">align-items-baseline</div>
+            </div>
+            <div class="d-flex align-items-stretch border" style="height: 100px">
+              <div class="text-bg-primary p-2 border">align-items-stretch</div>
+              <div class="text-bg-primary p-2 border">align-items-stretch</div>
+            </div>
+            <div class="d-flex align-items-lg-center border" style="height: 100px">
+              <div class="text-bg-primary p-2 border">align-items-lg-center</div>
+              <div class="text-bg-primary p-2 border">align-items-lg-center</div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="text-center mb-3">
+              <div class="row">
+                <div class="col-4 text-bg-primary p-2 border">col-4</div>
+                <div class="col-4 text-bg-primary p-2 border">col-4</div>
+
+                <div class="w-100">w-100 -- break row</div>
+
+                <div class="col-4 text-bg-primary p-2 border">col-4</div>
+                <div class="col-4 text-bg-primary p-2 border">col-4</div>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <div class="col-lg-4 offset-lg-4 p-0 border">
+                <div class="p-2 text-bg-primary">col-lg-4 offset-lg-4</div>
+              </div>
+              <div class="col-lg-4 p-0 border">
+                <div class="p-2 text-bg-primary">col-lg-4</div>
+              </div>
+            </div>
+
+            <div class="text-center mb-3">
+              <div class="row">
+                <div class="col-4 text-bg-primary p-2 border">col-4</div>
+                <div class="col-4 ms-auto text-bg-primary p-2 border">col-4 ms-auto</div>
+              </div>
+              <div class="row">
+                <div class="col-3 ms-auto text-bg-primary p-2 border">col-3 ms-auto</div>
+                <div class="col-3 ms-auto text-bg-primary p-2 border">col-3 ms-auto</div>
+              </div>
+              <div class="row">
+                <div class="col-auto text-bg-primary p-2 border me-auto">col-auto me-auto</div>
+                <div class="col-auto text-bg-primary p-2 border">col-auto</div>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-lg-6 text-bg-primary p-2 border">col-lg-6</div>
+              <div class="col-lg-6 text-bg-primary p-2 border">col-lg-6</div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-sm-6 col-lg-3 text-bg-primary p-2 border">col-sm-6 col-lg-3</div>
+              <div class="col-sm-6 col-lg-3 text-bg-primary p-2 border">col-sm-6 col-lg-3</div>
+              <div class="col-sm-6 col-lg-3 text-bg-primary p-2 border">col-sm-6 col-lg-3</div>
+              <div class="col-sm-6 col-lg-3 text-bg-primary p-2 border">col-sm-6 col-lg-3</div>
+            </div>
+
+            <p class="mb-0">row row-cols-1 row-cols-md-2 row-cols-lg-3</p>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 mb-3">
+              <div class="col text-bg-primary p-2 border">col</div>
+              <div class="col text-bg-primary p-2 border">col</div>
+              <div class="col text-bg-primary p-2 border">col</div>
+              <div class="col text-bg-primary p-2 border">col</div>
+            </div>
+
+            <p class="mb-0">nesting, row in 3rd column me-0</p>
+            <div class="row mb-3">
+              <div class="col text-bg-primary p-2 border">col</div>
+              <div class="col text-bg-primary p-2 border">col</div>
+              <div class="col text-bg-primary border p-0">
+                <div class="row me-0">
+                  <div class="col text-bg-success p-2">col</div>
+                  <div class="col text-bg-success p-2">col</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h4>row gx-5</h4>
+          <div class="row gx-5 mb-3">
+            <div class="col-lg-4">
+              <div class="p-3 text-bg-primary">col-lg-4</div>
+            </div>
+            <div class="col-lg-4">
+              <div class="p-3 text-bg-primary">col-lg-4</div>
+            </div>
+            <div class="col-lg-4">
+              <div class="p-3 text-bg-primary">col-lg-4</div>
+            </div>
+          </div>
+
+          <h4>order</h4>
+          <div class="row container mb-3 mx-0 px-0">
+            <div class="col text-bg-primary p-2 border order-2">html 1 order-2</div>
+            <div class="col text-bg-primary p-2 border order-4">html 2 order-4</div>
+            <div class="col text-bg-primary p-2 border order-1">html 3 order-1</div>
+            <div class="col text-bg-primary p-2 border order-3">html 4 order-3</div>
+          </div>
+        </div>
+
+        <div class="container mb-3 w-50 tab-pane fade" id="image">
+          <h1 class="mb-3">Image</h1>
+
+          <p class="mb-0">img-fluid w-100</p>
+          <img src="https://placehold.co/900x300" class="img-fluid w-100 mb-3" alt="" />
+          <p class="mb-0">img-thumbnail</p>
+          <img src="https://placehold.co/300x300" class="img-thumbnail mb-3" alt="" />
+
+          <p class="mb-0">
+            &lt;figure&gt; figure > &lt;img&gt; figure-img img-fluid +
+            <br />
+            &lt;figcaption&gt; figure-caption
+          </p>
+          <figure class="figure">
+            <img src="https://placehold.co/300x300." class="figure-img img-fluid" alt="" />
+            <figcaption class="figure-caption">&lt;figcaption&gt; figure-caption</figcaption>
+          </figure>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="list-group">
+          <h1 class="mb-3">List Groups</h1>
+
+          <p class="mb-0">&lt;ul&gt; list-group > &lt;li&gt; list-group-item</p>
+          <ul class="list-group w-sm-50 mb-3">
+            <li class="list-group-item">list-group-item</li>
+            <li class="list-group-item list-group-item-primary">list-group-item-primary</li>
+            <li class="list-group-item list-group-item-primary list-group-item-action">
+              list-group-item-action
+            </li>
+            <li class="list-group-item active">list-group-item active</li>
+            <li class="list-group-item disabled">list-group-item disabled</li>
+          </ul>
+
+          <p class="mb-0 mt-3">list-group list-group-flush</p>
+          <div class="list-group list-group-flush mb-3">
+            <a href="#" class="list-group-item">&lt;a&gt; </a>
+            <button class="list-group-item">&lt;button&gt;</button>
+            <button class="list-group-item" disabled>&lt;button&gt; 'disabled'</button>
+          </div>
+
+          <p>
+            &lt;input&gt; form-check-input type="<span class="fw-medium">checkbox / radio</span>" +
+            &lt;label&gt; form-check-label
+          </p>
+          <ul class="list-group mb-3">
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" id="listgroup1-1" />
+              <label class="form-check-label" for="listgroup1-1">checkbox</label>
+            </li>
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" id="listgroup1-2" />
+              <label class="form-check-label" for="listgroup1-2">checkbox</label>
+            </li>
+          </ul>
+
+          <ul class="list-group">
+            <li class="list-group-item">
+              <input
+                class="form-check-input me-1"
+                type="radio"
+                name="radio"
+                id="listgroup2-1"
+                checked
+              />
+              <label class="form-check-label" for="listgroup2-1">radio</label>
+            </li>
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="radio" name="radio" id="listgroup2-2" />
+              <label class="form-check-label" for="listgroup2-2"> radio</label>
+            </li>
+          </ul>
+
+          <p class="m-0 mt-3">list-group list-group-numbered with &lt;ol&gt;</p>
+          <ol class="list-group list-group-numbered mb-3">
+            <li class="list-group-item">list-group-item</li>
+            <li class="list-group-item active">list-group-item active</li>
+          </ol>
+          <hr />
+
+          <p class="m-0">list-group-horizontal</p>
+          <ul class="list-group list-group-horizontal mb-3">
+            <li class="list-group-item">list-group-item</li>
+            <li class="list-group-item">list-group-item</li>
+          </ul>
+
+          <p class="m-0">list-group-horizontal-xl</p>
+          <ul class="list-group list-group-horizontal-xl">
+            <li class="list-group-item">list-group-item</li>
+            <li class="list-group-item">list-group-item</li>
+          </ul>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="modal">
+          <h1 class="mb-3">Modal</h1>
+
+          <p class="mb-1">
+            &lt;button&gt data-bs-toggle="modal" / data-bs-dismiss="modal1" +
+            <br />
+            modal fade #modal1 > modal-dialog > modal-content >
+            <br />
+            modal-header > &lt;h4&gt; modal-title + &lt;button&gt; btn-close data-bs-dismiss="modal"
+            +
+            <br />
+            modal-body +
+            <br />
+            modal-footer > &lt;button&gt; data-bs-dismiss="modal" + &lt;button&gt;
+          </p>
+          <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal1">
+            data-bs-toggle="modal" data-bs-target="#modal1"
+          </button>
+
+          <div class="modal fade" id="modal1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">modal-title</h4>
+                  <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">modal-body</div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button class="btn btn-primary">Action</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="mb-0">data-bs-backdrop="static" -- no close by click outside</p>
+          <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal2">
+            data-bs-backdrop="static"
+          </button>
+          <div class="modal fade" id="modal2" data-bs-backdrop="static">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">modal-title</h4>
+                  <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">modal-body</div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="mb-0">modal-dialog modal-dialog-centered</p>
+          <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal3">
+            modal-dialog-centered
+          </button>
+          <div class="modal fade" id="modal3" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">modal-title</h4>
+                  <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">modal-body</div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="mb-0">modal-dialog modal-dialog-scrollable -- scroll inside body</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal4">
+            modal-dialog-scrollable
+          </button>
+
+          <div class="modal fade" id="modal4">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">modal-title</h4>
+                  <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  modal-body > height: 120vh
+                  <div style="height: 120vh"></div>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button class="btn btn-primary">Action</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br />
+
+          <p class="mb-0 mt-3">
+            popover and tooltip in modal
+            <br />
+            &lt;button&gt; data-bs-toggle="popover" title="title" data-bs-content="data-bs-content"
+            data-bs-container="body"
+            <br />
+            &lt;a&gt; data-bs-toggle="tooltip" title="title" data-bs-container="body"
+          </p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal5">
+            Open modal
+          </button>
+          <div class="modal fade" id="modal5">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">modal-title</h4>
+                  <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <h5>data-bs-container="body" ***impotant***</h5>
+                  <button
+                    class="btn btn-secondary"
+                    data-bs-toggle="popover"
+                    data-bs-content="data-bs-content"
+                    data-bs-container="body"
+                    title="title"
+                  >
+                    Popover
+                  </button>
+
+                  <hr />
+
+                  <a href="#" data-bs-toggle="tooltip" data-bs-container="body" title="title">
+                    Tooltip
+                  </a>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button class="btn btn-primary">Action</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="mt-3 mb-0">Additional modal + no .fade -- flashing</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal6-1">
+            Open modal
+          </button>
+          <div class="modal" id="modal6-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">modal-title 1</h4>
+                  <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">Open Modal 2</div>
+                <div class="modal-footer">
+                  <button class="btn btn-primary" data-bs-target="#modal6-2" data-bs-toggle="modal">
+                    Open Modal 2
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal" id="modal6-2">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">modal-title 2</h4>
+                  <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">Close and open Modal 1</div>
+                <div class="modal-footer">
+                  <button class="btn btn-primary" data-bs-target="#modal6-1" data-bs-toggle="modal">
+                    Back to first
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-3">Size</div>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal7-1">
+            normal
+          </button>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal7-2">
+            modal-sm
+          </button>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal7-3">
+            modal-lg
+          </button>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal7-4">
+            modal-xl
+          </button>
+
+          <div class="modal" id="modal7-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">normal max-width: 500px</h4>
+                  <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal" id="modal7-2">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">modal-sm max-width: 300px</h4>
+                  <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal" id="modal7-3">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">modal-lg max-width: 800px</h4>
+                  <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal" id="modal7-4">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">modal-xl max-width: 1140px</h4>
+                  <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="mt-3 mb-0">modal-fullscreen</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal8">
+            modal-fullscreen
+          </button>
+
+          <div class="modal" id="modal8">
+            <div class="modal-dialog modal-fullscreen">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">modal-fullscreen</h4>
+                  <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">modal-body</div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="mt-3 mb-0">modal-fullscreen-lg-down -- below lg open fullscreen modal</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal9">
+            modal-fullscreen-lg-down
+          </button>
+
+          <div class="modal" id="modal9">
+            <div class="modal-dialog modal-fullscreen-lg-down">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">modal-fullscreen</h4>
+                  <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">modal-body</div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="nav-tab">
+          <h1 class="mb-3">Nav & Tab</h1>
+
+          <p class="mb-0">&lt;ul&gt; nav > &lt;li&gt; nav-item > &lt;a&gt;</p>
+          <ul class="nav border">
+            <li class="nav-item">
+              <a class="nav-link active" href="#"> nav-link active</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">nav-link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">nav-link disabled</a>
+            </li>
+          </ul>
+
+          <p class="mb-0 mt-3">&lt;nav&gt; nav > &lt;a&gt; nav-link</p>
+          <nav class="nav border mb-3">
+            <a class="nav-link active" href="#">active</a>
+            <a class="nav-link" href="#">nav-link</a>
+            <a class="nav-link disabled" href="#">disabled</a>
+          </nav>
+
+          <p class="mb-0">justify-content-center</p>
+          <nav class="nav justify-content-center border mb-3">
+            <a class="nav-link active" href="#">active</a>
+            <a class="nav-link" href="#">nav-link</a>
+            <a class="nav-link disabled" href="#">disabled</a>
+          </nav>
+
+          <p class="mb-0">justify-content-end</p>
+          <nav class="nav justify-content-end border mb-3">
+            <a class="nav-link active" href="#">active</a>
+            <a class="nav-link" href="#">nav-link</a>
+            <a class="nav-link disabled" href="#">disabled</a>
+          </nav>
+
+          <p class="mb-0">nav flex-column</p>
+          <nav class="nav flex-column border mb-3">
+            <a class="nav-link active" href="#">active</a>
+            <a class="nav-link" href="#">nav-link</a>
+            <a class="nav-link disabled" href="#">disabled</a>
+          </nav>
+
+          <p class="mb-0">nav-tabs</p>
+          <ul class="nav nav-tabs border mb-3">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">active</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">nav-link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">disabled</a>
+            </li>
+          </ul>
+
+          <p class="mb-0">nav-pills</p>
+          <ul class="nav nav-pills border mb-3">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">active</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">nav-link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">disabled</a>
+            </li>
+          </ul>
+
+          <p class="mb-0">nav-pills nav-fill</p>
+          <ul class="nav nav-pills nav-fill border mb-3">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">active</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Longer nav link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">nav-link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">disabled</a>
+            </li>
+          </ul>
+
+          <p class="mb-0">nav-pills nav-justified</p>
+          <nav class="nav nav-pills nav-justified border mb-3">
+            <a class="nav-link active" href="#">active</a>
+            <a class="nav-link" href="#">Longer nav link</a>
+            <a class="nav-link" href="#">nav-link</a>
+            <a class="nav-link disabled" href="#">disabled</a>
+          </nav>
+
+          <p class="mb-0">nav-pills flex-column flex-md-row</p>
+          <nav class="nav nav-pills flex-column flex-md-row border mb-3">
+            <a class="flex-sm-fill text-sm-center nav-link active" href="#">active</a>
+            <a class="flex-sm-fill text-sm-center nav-link" href="#">nav-link</a>
+            <a class="flex-sm-fill text-sm-center nav-link" href="#">nav-link</a>
+            <a class="flex-sm-fill text-sm-center nav-link disabled" href="#">disabled</a>
+          </nav>
+
+          <p class="mb-0">
+            &lt;li&gt; nav-item dropdown > &lt;a&gt; nav-link dropdown-toggle
+            data-bs-toggle="dropdown" > dropdown-menu > dropdown-item
+          </p>
+          <ul class="nav nav-tabs border mb-3">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">active</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                >dropdown-toggle</a
+              >
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">dropdown-item</a>
+                <a class="dropdown-item" href="#">dropdown-item</a>
+                <div class="dropdown-divider"></div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">nav-link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">disabled</a>
+            </li>
+          </ul>
+
+          <p class="mb-0">nav-pills</p>
+          <ul class="nav nav-pills border mb-3">
+            <li class="nav-item">
+              <a class="nav-link" href="#">nav-link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown"
+                >dropdown-toggle</a
+              >
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">dropdown-item</a>
+                <a class="dropdown-item" href="#">dropdown-item</a>
+                <div class="dropdown-divider"></div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">nav-link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">disabled</a>
+            </li>
+          </ul>
+
+          <p class="mb-0 mt-3">data-bs-toggle="tab" href="#nav-home"</p>
+          <nav class="nav nav-tabs border">
+            <a class="nav-item nav-link active" data-bs-toggle="tab" href="#nav-home">Home</a>
+            <a class="nav-item nav-link" data-bs-toggle="tab" href="#nav-profile">Profile</a>
+            <a class="nav-item nav-link" data-bs-toggle="tab" href="#nav-contact">Contact</a>
+          </nav>
+          <div class="tab-content p-3 my-3 border">
+            <div class="tab-pane fade show active" id="nav-home">
+              tab-pane fade show active id="nav-home"
+            </div>
+            <div class="tab-pane fade" id="nav-profile">tab-pane fade id="nav-profile"</div>
+            <div class="tab-pane fade" id="nav-contact">tab-pane fade id="nav-contact"</div>
+          </div>
+
+          <p class="mb-0 mt-3">data-bs-toggle="pill"</p>
+          <nav class="nav nav-tabs nav-pills border">
+            <a class="nav-item nav-link active" data-bs-toggle="pill" href="#pills-home">Home</a>
+            <a class="nav-item nav-link" data-bs-toggle="pill" href="#pills-profile">Profile</a>
+            <a class="nav-item nav-link" data-bs-toggle="pill" href="#pills-contact">Contact</a>
+          </nav>
+
+          <div class="tab-content p-3 my-3 border">
+            <div class="tab-pane fade show active" id="pills-home">id="pills-home"</div>
+            <div class="tab-pane fade" id="pills-profile">id="pills-profile"</div>
+            <div class="tab-pane fade" id="pills-contact">id="pills-contact"</div>
+          </div>
+
+          <div
+            class="nav flex-column nav-pills border"
+            id="v-pills-tab"
+            aria-orientation="vertical"
+          >
+            <a class="nav-link active" data-bs-toggle="pill" href="#col-home">nav-link active</a>
+            <a class="nav-link" data-bs-toggle="pill" href="#col-profile">Profile</a>
+            <a class="nav-link" data-bs-toggle="pill" href="#col-messages">Messages</a>
+            <a class="nav-link" data-bs-toggle="pill" href="#col-settings">Settings</a>
+          </div>
+          <div class="tab-content p-3 my-3 border">
+            <div class="tab-pane fade show active" id="col-home">id="col-home"</div>
+            <div class="tab-pane fade" id="col-profile">id="col-profile"</div>
+            <div class="tab-pane fade" id="col-messages">id="col-messages"</div>
+            <div class="tab-pane fade" id="col-settings">id="col-settings"</div>
+          </div>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="navbar">
+          <h1 class="mb-3">Navbar</h1>
+
+          <p class="mt-3 mb-0">&lt;nav&gt; navbar navbar-light bg-light > &lt;a&gt; navbar-brand</p>
+          <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">navbar-brand</a>
+          </nav>
+
+          <p class="mt-3 mb-0">navbar-dark bg-dark</p>
+          <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">navbar-brand</a>
+          </nav>
+
+          <p class="mt-3 mb-0">navbar-dark bg-primary</p>
+          <nav class="navbar navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">navbar-brand</a>
+          </nav>
+
+          <p class="mt-3 mb-0">image & text</p>
+          <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+              <img src="https://placehold.co/50x50" width="50" height="50" class="d-inline-block" />
+              &lt;img&gt; d-inline-block width="50" height="50"
+            </a>
+          </nav>
+
+          <p class="mt-3 mb-1">
+            navbar-expand-lg >
+            <br />
+            &lt;button&gt; navbar-toggler data-bs-toggle="collapse" data-bs-target="#navbar1" >
+            &lt;span&gt; navbar-toggler-icon +
+            <br />
+            collapse navbar-collapse #navbar1 > &lt;ul&gt; navbar-nav > &lt;li&gt; nav-item >
+            &lt;a&gt; nav-link
+          </p>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+            <a class="navbar-brand" href="#">navbar-expand-lg</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar1">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar1">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">nav-link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">nav-link disabled</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+          <p>
+            &lt;form&gt; form d-flex > &lt;input&gt; form-control type="search" + &lt;button&gt;
+            type="submit"
+          </p>
+          <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand">form</a>
+            <form class="form d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" />
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </nav>
+
+          <p class="m-0 mt-3">Placement ***remove position: static ***</p>
+          <nav class="navbar fixed-top navbar-light bg-light mb-3" style="position: static">
+            <a class="navbar-brand" href="#">fixed-top</a>
+          </nav>
+
+          <nav class="navbar fixed-bottom navbar-dark bg-primary mb-3" style="position: static">
+            <a class="navbar-brand" href="#">fixed-bottom</a>
+          </nav>
+
+          <nav class="navbar sticky-top navbar-light bg-light mb-3" style="position: static">
+            <a class="navbar-brand" href="#">sticky-top</a>
+          </nav>
+
+          <p class="mt-3 mb-0">
+            navbar navbar-expand-lg navbar-light bg-light >
+            <br />
+            &lt;button&gt; navbar-toggler data-bs-toggle="collapse" data-bs-target="#navbar2" >
+            &lt;span&gt; navbar-toggler-icon +
+            <br />
+            collapse navbar-collapse #navbar2 > navbar-brand + navbar-nav + form
+          </p>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar2">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar2">
+              <a class="navbar-brand" href="#">collapse all lg</a>
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">nav-link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">disabled</a>
+                </li>
+              </ul>
+              <form class="form d-lg-flex">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" />
+                <button class="btn btn-outline-success mx-lg-2 my-md-2 my-lg-0" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
+          </nav>
+
+          <p class="mt-3 mb-0">
+            navbar-brand <span class="fw-medium">*before / after*</span> button -> navbar-brand
+            <span class="fw-medium">*start / end*</span> of navbar
+          </p>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3">
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar3">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">navbar-brand collapse right in lg</a>
+            <div class="collapse navbar-collapse" id="navbar3">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">nav-link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">disabled</a>
+                </li>
+              </ul>
+              <form class="form d-lg-flex">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" />
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="offcanvas">
+          <h1 class="mb-3">Offcanvas</h1>
+
+          <p class="mb-3">
+            &lt;button&gt; data-bs-toggle="offcanvas" data-bs-target="#offcanvas1"
+
+            <br />
+            offcanvas offcanvas-start #offcanvas1 > offcanvas-header > &lt;h5&gt; offcanvas-title +
+            &lt;button&gt; btn-close data-bs-dismiss="offcanvas" +
+            <br />
+            offcanvas-body
+          </p>
+          <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvas1">
+            data-bs-target="#offcanvas1"
+          </button>
+          <div class="offcanvas offcanvas-start" id="offcanvas1">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title">offcanvas-title</h5>
+              <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">offcanvas-body</div>
+          </div>
+
+          <div class="mt-3"></div>
+          <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvas2">
+            data-bs-scroll="true"
+          </button>
+          <div class="offcanvas offcanvas-start" id="offcanvas2" data-bs-scroll="true">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title">offcanvas-title</h5>
+              <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">offcanvas-body</div>
+          </div>
+
+          <div class="mt-3"></div>
+          <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvas3">
+            data-bs-scroll="true" data-bs-backdrop="false"
+          </button>
+          <div
+            class="offcanvas offcanvas-start"
+            id="offcanvas3"
+            data-bs-scroll="true"
+            data-bs-backdrop="false"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title">offcanvas-title</h5>
+              <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">offcanvas-body</div>
+          </div>
+
+          <div class="mt-3"></div>
+          <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvas4">
+            data-bs-backdrop="static"
+          </button>
+          <div class="offcanvas offcanvas-start" id="offcanvas4" data-bs-backdrop="static">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title">offcanvas-title</h5>
+              <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">offcanvas-body</div>
+          </div>
+
+          <div class="mt-3"></div>
+          <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvas5">
+            offcanvas-top
+          </button>
+          <div class="offcanvas offcanvas-top" id="offcanvas5">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title">offcanvas-title</h5>
+              <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">offcanvas-body</div>
+          </div>
+
+          <div class="mt-3"></div>
+          <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvas6">
+            offcanvas-end
+          </button>
+          <div class="offcanvas offcanvas-end" id="offcanvas6">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title">offcanvas-title</h5>
+              <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">offcanvas-body</div>
+          </div>
+
+          <div class="mt-3"></div>
+          <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvas7">
+            offcanvas-bottom
+          </button>
+          <div class="offcanvas offcanvas-bottom" id="offcanvas7">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title">offcanvas-title</h5>
+              <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">offcanvas-body</div>
+          </div>
+
+          <div class="mt-3"></div>
+
+          <button
+            class="btn btn-primary d-lg-none"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvas8"
+          >
+            Toggle offcanvas
+          </button>
+
+          <div class="alert alert-info d-none d-lg-block">
+            Resize < lg for display button
+            <br />
+            Show offcanvas-body when > lg, if trigger button when > lg add backdrop only.
+            <br />
+            Hide when &lt; lg, trigger button show normal offcanvas
+          </div>
+
+          <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="offcanvas8">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title">offcanvas-header</h5>
+              <button
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                data-bs-target="#offcanvas8"
+              ></button>
+            </div>
+            <div class="offcanvas-body">offcanvas-body</div>
+          </div>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="pagination">
+          <h1 class="mb-3">Pagination</h1>
+
+          <p class="m-0">
+            &lt;nav&gt; > &lt;ul&gt; pagination > &lt;li&gt; page-item > &lt;a&gt; page-link
+          </p>
+          <nav>
+            <ul class="pagination">
+              <li class="page-item"><a href="#" class="page-link"> page-link</a></li>
+              <li class="page-item"><a href="#" class="page-link">1</a></li>
+              <li class="page-item"><a href="#" class="page-link">2</a></li>
+              <li class="page-item"><a href="#" class="page-link">&raquo;</a></li>
+            </ul>
+          </nav>
+
+          <nav>
+            <ul class="pagination">
+              <li class="page-item disabled">
+                <a href="#" class="page-link">&lt;li&gt; page-item disabled</a>
+              </li>
+              <li class="page-item active">
+                <a href="#" class="page-link">&lt;li&gt; page-item active</a>
+              </li>
+              <li class="page-item"><a href="#" class="page-link">2</a></li>
+              <li class="page-item"><a href="#" class="page-link">3</a></li>
+              <li class="page-item"><a href="#" class="page-link">&raquo;</a></li>
+            </ul>
+          </nav>
+
+          <p class="mb-1">pagination pagination-sm</p>
+          <nav>
+            <ul class="pagination pagination-sm">
+              <li class="page-item"><a href="#" class="page-link">&laquo;</a></li>
+              <li class="page-item"><a href="#" class="page-link">1</a></li>
+              <li class="page-item active"><a href="#" class="page-link">2</a></li>
+              <li class="page-item"><a href="#" class="page-link">&raquo;</a></li>
+            </ul>
+          </nav>
+
+          <p class="mb-0">pagination pagination-lg</p>
+          <nav>
+            <ul class="pagination pagination-lg">
+              <li class="page-item"><a href="#" class="page-link">Previous</a></li>
+              <li class="page-item"><a href="#" class="page-link">1</a></li>
+              <li class="page-item active"><a href="#" class="page-link">2</a></li>
+              <li class="page-item"><a href="#" class="page-link">Next</a></li>
+            </ul>
+          </nav>
+
+          <p>pagination justify-content-end</p>
+          <nav>
+            <ul class="pagination justify-content-end">
+              <li class="page-item"><a href="#" class="page-link">&lt</a></li>
+              <li class="page-item"><a href="#" class="page-link">1</a></li>
+              <li class="page-item active"><a href="#" class="page-link">2</a></li>
+              <li class="page-item"><a href="#" class="page-link">&gt;</a></li>
+            </ul>
+          </nav>
+
+          <p>pagination justify-content-center</p>
+          <nav>
+            <ul class="pagination justify-content-center">
+              <li class="page-item"><a href="#" class="page-link">&laquo;</a></li>
+              <li class="page-item"><a href="#" class="page-link">1</a></li>
+              <li class="page-item active"><a href="#" class="page-link">2</a></li>
+              <li class="page-item"><a href="#" class="page-link">&raquo;</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="placeholder">
+          <h1 class="mb-3">Placeholder</h1>
+
+          <p>&lt;span&gt; placeholder</p>
+          <p class="m-0">col-6</p>
+          <span class="placeholder col-6"></span>
+
+          <p class="mt-3 mb-0">&lt;a&gt; btn btn-primary disabled placeholder col-4</p>
+          <a class="btn btn-primary disabled placeholder col-4"></a>
+
+          <p class="mt-3 mb-0">w-75</p>
+          <span class="placeholder w-75"></span>
+
+          <p class="mt-3 mb-0">bg-primary</p>
+          <span class="placeholder bg-primary w-100"></span>
+
+          <p class="mb-0">bg-secondary</p>
+          <span class="placeholder bg-secondary w-100"></span>
+
+          <p class="mb-0">placeholder-sm</p>
+          <span class="placeholder placeholder-sm w-100"></span>
+
+          <p class="mb-0">placeholder-lg</p>
+          <span class="placeholder placeholder-lg w-100"></span>
+
+          <p class="mb-0">placeholder-xs</p>
+          <span class="placeholder placeholder-xs w-100"></span>
+
+          <p class="mb-0">placeholder-glow > &lt;span&gt; placeholder</p>
+          <div class="placeholder-glow"><span class="placeholder placeholder-lg w-100"></span></div>
+
+          <p class="mb-0">placeholder-wave > &lt;span&gt; placeholder</p>
+          <div class="placeholder-wave"><span class="placeholder placeholder-lg w-100"></span></div>
+
+          <hr />
+          <div class="card w-50 mt-3">
+            <img src="https://placehold.co/200x200" class="card-img-top" alt="" />
+            <div class="card-body">
+              <h5 class="card-title placeholder-glow">
+                <span class="placeholder col-6"></span>
+              </h5>
+              <p class="card-text placeholder-glow">
+                <span class="placeholder col-7"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-6"></span>
+                <span class="placeholder col-8"></span>
+              </p>
+              <a class="btn btn-primary disabled placeholder col-6"></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="popover-tooltip">
+          <h1 class="mb-3">Popovers & Tooltips</h1>
+
+          <p class="m-0">data-bs-toggle="popover" data-bs-content="popover"</p>
+          <p class="mb-3">
+            data-bs-placement= <span class="fw-medium">"top" / "right" / "bottom" / "left"</span>
+          </p>
+          <button
+            class="btn btn-secondary"
+            data-bs-toggle="popover"
+            data-bs-placement="top"
+            data-bs-content="popover"
+          >
+            data-bs-placement="top"
+          </button>
+
+          <button
+            class="btn btn-secondary"
+            data-bs-toggle="popover"
+            data-bs-placement="right"
+            data-bs-content="popover"
+            data-bs-trigger="hover"
+          >
+            data-bs-trigger="hover"
+          </button>
+
+          <button
+            class="btn btn-secondary"
+            data-bs-toggle="popover"
+            data-bs-placement="left"
+            data-bs-content="popover"
+            data-bs-trigger="focus"
+          >
+            data-bs-trigger="focus"
+          </button>
+
+          <button
+            class="btn btn-secondary"
+            data-bs-toggle="popover"
+            data-bs-placement="bottom"
+            data-bs-content="popover"
+            data-bs-trigger="hover focus"
+          >
+            data-bs-trigger="hover focus"
+          </button>
+
+          <hr />
+
+          <p class="mb-1">data-bs-toggle="tooltip"</p>
+          <button
+            class="btn btn-secondary"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            title="Tooltip on top"
+          >
+            data-bs-placement="top"
+          </button>
+          <button
+            class="btn btn-secondary"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            title="Tooltip on right"
+          >
+            data-bs-placement="right"
+          </button>
+          <button
+            class="btn btn-secondary"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            title="Tooltip on bottom"
+          >
+            data-bs-placement="bottom"
+          </button>
+          <button
+            class="btn btn-secondary"
+            data-bs-toggle="tooltip"
+            data-bs-placement="left"
+            title="Tooltip on left"
+          >
+            data-bs-placement="left"
+          </button>
+
+          <button
+            class="btn btn-secondary"
+            data-bs-toggle="tooltip"
+            data-bs-html="true"
+            title="<i>Tooltip</i> <b>HTML</b>"
+          >
+            title="&lt;i&gt;Tooltip&lt;/i&gt; &lt;b&gt;HTML&lt;b&gt;"
+          </button>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="progress-bar">
+          <h1 class="mb-3">Progress Bars</h1>
+
+          <p>progress > progress-bar</p>
+          <div class="progress mb-3">
+            <div class="progress-bar" style="width: 50%">width: 50%</div>
+          </div>
+
+          <div class="progress mb-3">
+            <div class="progress-bar" style="width: 100%">width: 100%</div>
+          </div>
+
+          <div class="progress mb-3">
+            <div class="progress-bar bg-success" style="width: 25%">progress-bar bg-success</div>
+          </div>
+
+          <div class="progress mb-3" style="height: 30px">
+            <div class="progress-bar" style="width: 25%">height: 30px</div>
+          </div>
+
+          <div class="progress mb-3" style="height: 24px">
+            <div class="progress-bar progress-bar-striped bg-success" style="width: 25%">
+              progress-bar-striped bg-success
+            </div>
+          </div>
+
+          <div class="progress mb-3" style="height: 24px">
+            <div class="progress-bar progress-bar-striped bg-info" style="width: 50%">
+              progress-bar-striped bg-info
+            </div>
+          </div>
+
+          <div class="progress mb-3" style="height: 24px">
+            <div class="progress-bar" style="width: 20%">progress-bar / width: 20%</div>
+            <div class="progress-bar bg-success" style="width: 30%">progress-bar / width: 30%</div>
+          </div>
+
+          <div class="progress">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated"
+              style="width: 70%"
+            ></div>
+          </div>
+
+          <hr />
+
+          <p>
+            progress > progress-bar w-50 +
+            <br />
+            &lt;button&gt; position-absolute top-0 start-0 p-1 translate-middle btn btn-sm
+            btn-primary rounded-pill +
+            <br />
+            &lt;button&gt; position-absolute top-0 start-50 p-1 translate-middle btn btn-sm
+            btn-primary rounded-pill +
+            <br />
+            &lt;button&gt; position-absolute top-0 start-100 p-1 translate-middle btn btn-sm
+            btn-primary rounded-pill / <span class="fw-medium">white-space: nowrap</span>
+            <br />
+          </p>
+          <div class="position-relative w-50 m-5">
+            <div class="progress" style="height: 1px">
+              <div class="progress-bar w-50"></div>
+            </div>
+
+            <button
+              class="position-absolute top-0 start-0 p-1 translate-middle btn btn-sm btn-primary rounded-pill"
+            >
+              Lorem ipsum
+            </button>
+            <button
+              class="position-absolute top-0 start-50 p-1 translate-middle btn btn-sm btn-primary rounded-pill"
+            >
+              Lorem ipsum
+            </button>
+            <button
+              class="position-absolute top-0 start-100 p-1 translate-middle btn btn-sm btn-secondary rounded-pill"
+              style="white-space: nowrap"
+            >
+              white-space: nowrap
+            </button>
+          </div>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="scrollspy">
+          <h1 class="mb-3">Scrollspy</h1>
+
+          <p class="m-0">
+            &lt;nav&gt; navbar id="scrollspy1" > &lt;ul&gt; nav nav-pills >
+            <br />
+            &lt;li&gt; nav-item > &lt;a&gt; nav-link href="nav1-1" +
+            <br />
+            &lt;li&gt; nav-item-dropdown > &lt;a&gt; nav-link dropdown-toggle
+            data-bs-toggle="dropdown" href="#" > dropdown-menu > &lt;a&gt; dropdown-nav2-href
+          </p>
+          <hr class="m-1" />
+          <p class="mb-0">
+            overflow-auto data-bs-spy="scroll" data-bs-target="#scrollspy1" / height: 200px;
+          </p>
+
+          <nav id="scrollspy1" class="navbar">
+            <ul class="nav nav-pills">
+              <li class="nav-item"><a class="nav-link" href="#nav1-1">#nav1-1</a></li>
+              <li class="nav-item"><a class="nav-link" href="#nav1-2">#nav1-2</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Dropdown</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#nav1-3">#nav1-3</a>
+                  <a class="dropdown-item" href="#nav1-4">#nav1-4</a>
+                  <a class="dropdown-item" href="#nav1-5">#nav1-5</a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+
+          <div
+            class="overflow-auto"
+            data-bs-spy="scroll"
+            data-bs-target="#scrollspy1"
+            style="height: 200px; margin-top: 0.5rem"
+          >
+            <div class="boxHeight" id="nav1-1"><h4>#nav1-1</h4></div>
+            <div class="boxHeight" id="nav1-2"><h4>#nav1-2</h4></div>
+            <div class="boxHeight" id="nav1-3"><h4>#nav1-3</h4></div>
+            <div class="boxHeight" id="nav1-4"><h4>#nav1-4</h4></div>
+            <div class="boxHeight" id="nav1-5"><h4>#nav1-5</h4></div>
+          </div>
+
+          <hr />
+
+          <p class="m-0">
+            nested nav <br />
+            &lt;nav&gt; nav nav-pills flex-column >
+
+            <br />
+            &lt;a&gt; nav-link href="nav2-1" +
+            <br />
+            &lt;nav&gt; nav nav-pills flex-column > &lt;a&gt; nav-link nav-link ms-3 my-1
+            href="nav2-1-1"
+          </p>
+          <div class="row">
+            <div class="col-3">
+              <nav id="scrollspy2" class="navbar navbar-light bg-light">
+                <nav class="nav nav-pills flex-column">
+                  <a class="nav-link" href="#nav2-1">nav2-1</a>
+                  <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ms-3 my-1" href="#nav2-1-1">nav2-1-1</a>
+                    <a class="nav-link ms-3 my-1" href="#nav2-1-2">nav2-1-2</a>
+                  </nav>
+                  <a class="nav-link" href="#nav2-2">nav2-2</a>
+                  <a class="nav-link" href="#nav2-3">nav2-3</a>
+                  <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ms-3 my-1" href="#nav2-3-1">nav2-3-1</a>
+                    <a class="nav-link ms-3 my-1" href="#nav2-3-2">nav2-3-2</a>
+                  </nav>
+                </nav>
+              </nav>
+            </div>
+            <div class="col-8">
+              <div
+                class="overflow-auto"
+                data-bs-spy="scroll"
+                data-bs-target="#scrollspy2"
+                style="position: relative; height: 400px; margin-top: 0.5rem"
+              >
+                <div class="boxHeight" id="nav2-1"><h4>#nav2-1</h4></div>
+                <div class="boxHeight" id="nav2-1-1"><h4>#nav2-1-1</h4></div>
+                <div class="boxHeight" id="nav2-1-2"><h4>#nav2-1-2</h4></div>
+                <div class="boxHeight" id="nav2-2"><h4>#nav2-2</h4></div>
+                <div class="boxHeight" id="nav2-3"><h4>#nav2-3</h4></div>
+                <div class="boxHeight" id="nav2-3-1"><h4>#nav2-3-1</h4></div>
+                <div class="boxHeight" id="nav2-3-2"><h4>#nav2-3-2</h4></div>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            list-group > &lt;a&gt; list-group-item list-group-item action
+            <span class="fw-medium">*active*</span>
+            <br />
+          </p>
+          <div class="row">
+            <div class="col-4">
+              <div id="scrollspy3" class="list-group">
+                <a class="list-group-item list-group-item action active" href="#list-group3-1">
+                  list-group3-1
+                </a>
+                <a class="list-group-item list-group-item action" href="#list-group3-2">
+                  list-group3-2
+                </a>
+                <a class="list-group-item list-group-item action" href="#list-group3-3">
+                  list-group3-3
+                </a>
+                <a class="list-group-item list-group-item action" href="#list-group3-4">
+                  list-group3-4
+                </a>
+              </div>
+            </div>
+            <div class="col-8">
+              <div
+                class="overflow-auto"
+                data-bs-spy="scroll"
+                data-bs-target="#scrollspy3"
+                style="position: relative; height: 200px; margin-top: 0.5rem"
+              >
+                <div class="boxHeight" id="list-group3-1"><h4>#list-group3-1</h4></div>
+                <div class="boxHeight" id="list-group3-2"><h4>#list-group3-2</h4></div>
+                <div class="boxHeight" id="list-group3-3"><h4>#list-group3-3</h4></div>
+                <div class="boxHeight" id="list-group3-4"><h4>#list-group3-4</h4></div>
+              </div>
+            </div>
+            <div style="height: 25vh"></div>
+          </div>
+        </div>
+
+        <div class="container mb-3 border w-75 tab-pane fade" id="size-spacing">
+          <h1 class="mb-3">Size & Spacing</h1>
+
+          <div class="bg-success text-white p-3 w-25">w-25</div>
+          <div class="bg-success text-white p-3 w-50">w-50</div>
+          <div class="bg-success text-white p-3 w-75">w-75</div>
+          <div class="bg-success text-white p-3 w-100">w-100</div>
+          <div class="bg-success text-white p-3 w-auto">w-auto</div>
+
+          <br />
+
+          <div class="border" style="height: 300px">
+            <div class="p-2 bg-primary text-white d-inline-block h-25">h-25</div>
+            <div class="p-2 bg-primary text-white d-inline-block h-50">h-50</div>
+            <div class="p-2 bg-primary text-white d-inline-block h-75">h-75</div>
+            <div class="p-2 bg-primary text-white d-inline-block h-100">h-100</div>
+            <div class="p-2 bg-primary text-white d-inline-block h-auto">h-auto</div>
+          </div>
+
+          <br />
+
+          <div class="p-2 text-bg-primary m-1">m-1</div>
+          <div class="p-2 text-bg-primary m-2">m-2</div>
+          <div class="p-2 text-bg-primary m-3">m-3</div>
+          <div class="p-2 text-bg-primary m-4">m-4</div>
+          <div class="p-2 text-bg-primary m-5">m-5</div>
+
+          <br />
+
+          <div class="p-2 text-bg-success my-1">my-1</div>
+          <div class="p-2 text-bg-success my-2">my-2</div>
+          <div class="p-2 text-bg-success my-3">my-3</div>
+          <div class="p-2 text-bg-success my-4">my-4</div>
+          <div class="p-2 text-bg-success my-5">my-5</div>
+
+          <br />
+
+          <div class="p-2 text-bg-primary mx-1">mx-1</div>
+          <div class="p-2 text-bg-primary mx-2">mx-2</div>
+          <div class="p-2 text-bg-primary mx-3">mx-3</div>
+          <div class="p-2 text-bg-primary mx-4">mx-4</div>
+          <div class="p-2 text-bg-primary mx-5">mx-5</div>
+
+          <br />
+
+          <div class="p-2 text-bg-success mt-1">mt-1</div>
+          <div class="p-2 text-bg-success mt-2">mt-2</div>
+          <div class="p-2 text-bg-success mt-3">mt-3</div>
+          <div class="p-2 text-bg-success mt-4">mt-4</div>
+          <div class="p-2 text-bg-success mt-5">mt-5</div>
+
+          <br />
+
+          <div class="p-2 text-bg-primary mb-1">mb-1</div>
+          <div class="p-2 text-bg-primary mb-2">mb-2</div>
+          <div class="p-2 text-bg-primary mb-3">mb-3</div>
+          <div class="p-2 text-bg-primary mb-4">mb-4</div>
+          <div class="p-2 text-bg-primary mb-5">mb-5</div>
+
+          <br />
+
+          <div class="p-2 text-bg-success ms-1">ms-1</div>
+          <div class="p-2 text-bg-success ms-2">ms-2</div>
+          <div class="p-2 text-bg-success ms-3">ms-3</div>
+          <div class="p-2 text-bg-success ms-4">ms-4</div>
+          <div class="p-2 text-bg-success ms-5">ms-5</div>
+
+          <br />
+
+          <div class="p-2 text-bg-primary me-1">me-1</div>
+          <div class="p-2 text-bg-primary me-2">me-2</div>
+          <div class="p-2 text-bg-primary me-3">me-3</div>
+          <div class="p-2 text-bg-primary me-4">me-4</div>
+          <div class="p-2 text-bg-primary me-5">me-5</div>
+
+          <br />
+
+          <div class="p-2 text-bg-success w-50 m-auto">w-50 m-auto</div>
+          <div class="p-2 text-bg-success w-50 mx-auto">w-50 mx-auto</div>
+          <div class="p-2 text-bg-success w-50 ms-auto">w-50 ms-auto</div>
+          <div class="p-2 text-bg-success w-50 me-auto">w-50 me-auto</div>
+          <div class="border border-2 d-flex" style="height: 100px">
+            <div class="p-2 text-bg-success w-50 my-auto">w-50 my-auto</div>
+          </div>
+
+          <br />
+
+          <div class="p-2 text-bg-primary my-2 p-1">p-1</div>
+          <div class="p-2 text-bg-primary my-2 p-2">p-2</div>
+          <div class="p-2 text-bg-primary my-2 p-3">p-3</div>
+          <div class="p-2 text-bg-primary my-2 p-4">p-4</div>
+          <div class="p-2 text-bg-primary my-2 p-5">p-5</div>
+
+          <br />
+
+          <div class="p-2 text-bg-success my-2 py-1">py-1</div>
+          <div class="p-2 text-bg-success my-2 py-2">py-2</div>
+          <div class="p-2 text-bg-success my-2 py-3">py-3</div>
+          <div class="p-2 text-bg-success my-2 py-4">py-4</div>
+          <div class="p-2 text-bg-success my-2 py-5">py-5</div>
+
+          <br />
+
+          <div class="p-2 text-bg-primary my-2 px-1">px-1</div>
+          <div class="p-2 text-bg-primary my-2 px-2">px-2</div>
+          <div class="p-2 text-bg-primary my-2 px-3">px-3</div>
+          <div class="p-2 text-bg-primary my-2 px-4">px-4</div>
+          <div class="p-2 text-bg-primary my-2 px-5">px-5</div>
+
+          <br />
+
+          <div class="p-2 text-bg-success my-2 pt-1">pt-1</div>
+          <div class="p-2 text-bg-success my-2 pt-2">pt-2</div>
+          <div class="p-2 text-bg-success my-2 pt-3">pt-3</div>
+          <div class="p-2 text-bg-success my-2 pt-4">pt-4</div>
+          <div class="p-2 text-bg-success my-2 pt-5">pt-5</div>
+
+          <br />
+
+          <div class="p-2 text-bg-primary my-2 pb-1">pb-1</div>
+          <div class="p-2 text-bg-primary my-2 pb-2">pb-2</div>
+          <div class="p-2 text-bg-primary my-2 pb-3">pb-3</div>
+          <div class="p-2 text-bg-primary my-2 pb-4">pb-4</div>
+          <div class="p-2 text-bg-primary my-2 pb-5">pb-5</div>
+
+          <br />
+
+          <div class="p-2 text-bg-success my-2 ps-1">ps-1</div>
+          <div class="p-2 text-bg-success my-2 ps-2">ps-2</div>
+          <div class="p-2 text-bg-success my-2 ps-3">ps-3</div>
+          <div class="p-2 text-bg-success my-2 ps-4">ps-4</div>
+          <div class="p-2 text-bg-success my-2 ps-5">ps-5</div>
+
+          <br />
+
+          <div class="p-2 text-bg-primary my-2 pe-1 text-end">pe-1</div>
+          <div class="p-2 text-bg-primary my-2 pe-2 text-end">pe-2</div>
+          <div class="p-2 text-bg-primary my-2 pe-3 text-end">pe-3</div>
+          <div class="p-2 text-bg-primary my-2 pe-4 text-end">pe-4</div>
+          <div class="p-2 text-bg-primary my-2 pe-5 text-end">pe-5</div>
+
+          <br />
+
+          <div class="row gx-5">
+            <div class="col"><div class="p-3 text-bg-primary">gx-5</div></div>
+            <div class="col"><div class="p-3 text-bg-primary">gx-5</div></div>
+          </div>
+          <div class="row gx-4">
+            <div class="col"><div class="p-3 text-bg-primary">gx-4</div></div>
+            <div class="col"><div class="p-3 text-bg-primary">gx-4</div></div>
+          </div>
+          <div class="row gx-3">
+            <div class="col"><div class="p-3 text-bg-primary">gx-3</div></div>
+            <div class="col"><div class="p-3 text-bg-primary">gx-3</div></div>
+          </div>
+          <div class="row gx-2">
+            <div class="col"><div class="p-3 text-bg-primary">gx-2</div></div>
+            <div class="col"><div class="p-3 text-bg-primary">gx-2</div></div>
+          </div>
+          <div class="row gx-1">
+            <div class="col"><div class="p-3 text-bg-primary">gx-1</div></div>
+            <div class="col"><div class="p-3 text-bg-primary">gx-1</div></div>
+          </div>
+
+          <br />
+          <div class="row gy-1">
+            <div class="col-12"><div class="p-3 text-bg-primary">gy-1</div></div>
+            <div class="col-12"><div class="p-3 text-bg-primary">gy-1</div></div>
+          </div>
+          <br />
+          <div class="row gy-2">
+            <div class="col-12"><div class="p-3 text-bg-primary">gy-2</div></div>
+            <div class="col-12"><div class="p-3 text-bg-primary">gy-2</div></div>
+          </div>
+          <br />
+          <div class="row gy-3">
+            <div class="col-12"><div class="p-3 text-bg-primary">gy-3</div></div>
+            <div class="col-12"><div class="p-3 text-bg-primary">gy-3</div></div>
+          </div>
+          <br />
+          <div class="row gy-4">
+            <div class="col-12"><div class="p-3 text-bg-primary">gy-4</div></div>
+            <div class="col-12"><div class="p-3 text-bg-primary">gy-4</div></div>
+          </div>
+          <br />
+          <div class="row gy-5">
+            <div class="col-12"><div class="p-3 text-bg-primary">gy-5</div></div>
+            <div class="col-12"><div class="p-3 text-bg-primary">gy-5</div></div>
+          </div>
+          <br />
+
+          <p class="mb-0 mt-2">vstack gap-1</p>
+          <div class="vstack gap-1 mb-0">
+            <div class="p-2 text-bg-success">gap-1</div>
+            <div class="p-2 text-bg-success">gap-1</div>
+          </div>
+
+          <p class="mb-0 mt-2">vstack gap-2</p>
+          <div class="vstack gap-2">
+            <div class="p-2 text-bg-success">gap-2</div>
+            <div class="p-2 text-bg-success">gap-2</div>
+          </div>
+
+          <p class="mb-0 mt-2">vstack gap-3</p>
+          <div class="vstack gap-3">
+            <div class="p-2 text-bg-success">gap-3</div>
+            <div class="p-2 text-bg-success">gap-3</div>
+          </div>
+
+          <p class="mb-0 mt-2">vstack gap-4</p>
+          <div class="vstack gap-4">
+            <div class="p-2 text-bg-success">gap-4</div>
+            <div class="p-2 text-bg-success">gap-4</div>
+          </div>
+
+          <p class="mb-0 mt-2">vstack gap-5</p>
+          <div class="vstack gap-5">
+            <div class="p-2 text-bg-success">gap-5</div>
+            <div class="p-2 text-bg-success">gap-5</div>
+          </div>
+
+          <br />
+
+          <div class="d-flex align-items-center">
+            <p class="mb-0 me-3">hstack gap-1</p>
+            <div class="hstack gap-1">
+              <div class="p-2 text-bg-primary">gap-1</div>
+              <div class="p-2 text-bg-primary">gap-1</div>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center">
+            <p class="mb-0 me-3">hstack gap-2</p>
+            <div class="hstack gap-2">
+              <div class="p-2 text-bg-primary">gap-2</div>
+              <div class="p-2 text-bg-primary">gap-2</div>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center">
+            <p class="mb-0 me-3">hstack gap-3</p>
+            <div class="hstack gap-3">
+              <div class="p-2 text-bg-primary">gap-3</div>
+              <div class="p-2 text-bg-primary">gap-3</div>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center">
+            <p class="mb-0 me-3">hstack gap-4</p>
+            <div class="hstack gap-4">
+              <div class="p-2 text-bg-primary">gap-4</div>
+              <div class="p-2 text-bg-primary">gap-4</div>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center">
+            <p class="mb-0 me-3">hstack gap-5</p>
+            <div class="hstack gap-5">
+              <div class="p-2 text-bg-primary">gap-5</div>
+              <div class="p-2 text-bg-primary">gap-5</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="spinner">
+          <h1 class="mb-3">Spinners</h1>
+
+          <p class="mb-0">spinner-border</p>
+          <div class="spinner-border"></div>
+
+          <p class="mb-0 mt-3">spinner-border text-color</p>
+          <div class="spinner-border text-primary"></div>
+          <div class="spinner-border text-success"></div>
+
+          <p class="mb-0 mt-3">spinner-grow</p>
+          <div class="spinner-grow"></div>
+          <div class="spinner-grow text-primary"></div>
+          <div class="spinner-grow text-success"></div>
+
+          <p class="mb-0 mt-3">spinner-border-sm</p>
+          <div class="spinner-border spinner-border-sm mb-3"></div>
+
+          <p class="mb-0 mt-3">spinner-border / height: 60px; width: 60px</p>
+          <div class="spinner-border" style="height: 60px; width: 60px"></div>
+
+          <br />
+
+          <p class="mb-0 mt-3">
+            &lt;button&gt; > &lt;span&gt; spinner-border spinner-border-sm + 'Text'
+          </p>
+          <button class="btn btn-primary" disabled>
+            <span class="spinner-border spinner-border-sm"></span>
+          </button>
+          <button class="btn btn-primary" disabled>
+            <span class="spinner-border spinner-border-sm"></span>
+            Loading...
+          </button>
+        </div>
+
+        <div class="container w-75 mb-3 tab-pane fade" id="table">
+          <h1 class="mb-3">Tables</h1>
+
+          <p class="mb-0">
+            &lt;table&gt; table > &lt;thead&gt; > &lt;tr&gt; > &lt;th&gt; + &lt;tbody&gt;
+            table-group-divider > &lt;tr&gt; > &lt;td&gt;+ &lt;tfoot&gt; > &lt;tr&gt; > &lt;th&gt;
+          </p>
+          <table class="table">
+            <caption>
+              &lt;caption&gt;
+            </caption>
+            <thead>
+              <tr>
+                <th>th1</th>
+                <th>th2</th>
+                <th>th3</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+              <tr>
+                <td>td1</td>
+                <td>td2</td>
+                <td>td3</td>
+              </tr>
+              <tr>
+                <td>td1</td>
+                <td>td2</td>
+                <td>td3</td>
+              </tr>
+            </tbody>
+            <tfoot class="table-group-divider">
+              <tr>
+                <th>th1</th>
+                <th>th2</th>
+                <th>th3</th>
+              </tr>
+            </tfoot>
+          </table>
+
+          <p class="mb-0">table table-sm caption-top</p>
+          <table class="table table-sm caption-top">
+            <caption>
+              &lt;caption&gt;
+            </caption>
+            <thead>
+              <tr>
+                <th>th1</th>
+                <th>th2</th>
+                <th>th3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-active">
+                <td>&lt;tr&gt; table-active</td>
+                <td>&lt;tr&gt; table-active</td>
+                <td>&lt;tr&gt; table-active</td>
+              </tr>
+              <tr>
+                <td class="table-active">&lt;td&gt; table-active</td>
+                <td>td2</td>
+                <td>td3</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="mb-0">table table-primary > &lt;tbody&gt; > first &lt;tr&gt; table-success</p>
+          <table class="table table-primary">
+            <thead>
+              <tr>
+                <th>th1</th>
+                <th>th2</th>
+                <th>th3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>td1</td>
+                <td class="table-info">&lt;td&gt; table-info</td>
+                <td>td3</td>
+              </tr>
+              <tr class="table-success">
+                <td>&lt;tr&gt; table-success</td>
+                <td>&lt;tr&gt; table-success</td>
+                <td>&lt;tr&gt; table-success</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <br />
+
+          <p class="mb-0">table table-striped</p>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>th1</th>
+                <th>th2</th>
+                <th>th3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>td1</td>
+                <td>td2</td>
+                <td>td3</td>
+              </tr>
+              <tr>
+                <td>td1</td>
+                <td>td2</td>
+                <td>td3</td>
+              </tr>
+              <tr>
+                <td>td1</td>
+                <td>td2</td>
+                <td>td3</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <br />
+
+          <p class="mb-0">table table-striped-columns</p>
+          <table class="table table-striped-columns">
+            <thead>
+              <tr>
+                <th>th1</th>
+                <th>th2</th>
+                <th>th3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>td1</td>
+                <td>td2</td>
+                <td>td3</td>
+              </tr>
+              <tr>
+                <td>td1</td>
+                <td>td2</td>
+                <td>td3</td>
+              </tr>
+              <tr>
+                <td>td1</td>
+                <td>td2</td>
+                <td>td3</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <br />
+
+          <p class="mb-0">table table-hover</p>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>th1</th>
+                <th>th2</th>
+                <th>th3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>td1</td>
+                <td>td2</td>
+                <td>td3</td>
+              </tr>
+              <tr>
+                <td>td1</td>
+                <td>td2</td>
+                <td>td3</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <br />
+
+          <p class="mb-0">table table-bordered border-primary > &lt;thead&gt; table-dark</p>
+          <table class="table table-bordered border-primary">
+            <thead class="table-dark">
+              <tr>
+                <th>th</th>
+                <th>th</th>
+                <th>th</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>td1</td>
+                <td>td2</td>
+                <td>td3</td>
+              </tr>
+              <tr>
+                <td>td1</td>
+                <td>td2</td>
+                <td>td3</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <hr />
+
+          <p class="mb-0">table table-borderless</p>
+          <table class="table table-borderless">
+            <thead>
+              <tr>
+                <th>th1</th>
+                <th>th2</th>
+                <th>th3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>td1</td>
+                <td>td2</td>
+                <td>td3</td>
+              </tr>
+              <tr>
+                <td>td1</td>
+                <td>td2</td>
+                <td>td3</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <hr />
+
+          <p class="mb-0">table align-middle</p>
+          <table class="table align-middle">
+            <thead>
+              <tr>
+                <th class="w-25">th1</th>
+                <th class="w-25">th2</th>
+                <th class="w-50">th3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="align-bottom">
+                <td>&lt;tr&gt; align-bottom</td>
+                <td>&lt;tr&gt; align-bottom</td>
+                <td>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque mollitia
+                  maiores fugit quam! Ad iure illo quae, fuga ea, at fugiat error eveniet rerum
+                  porro, amet sit. Vel, nulla quae?
+                </td>
+              </tr>
+              <tr>
+                <td class="align-top">&lt;td&gt; align-top</td>
+                <td>td</td>
+                <td>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque mollitia
+                  maiores fugit quam! Ad iure illo quae, fuga ea, at fugiat error eveniet rerum
+                  porro, amet sit. Vel, nulla quae?
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <br />
+
+          <p class="mb-0">table-responsive / th, td min-width: 150px;</p>
+          <div class="table-responsive" id="table">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="col-xl-2 col-lg-3 col-md-4">th1</th>
+                  <th class="col-xl-2 col-lg-3 col-md-4">th2</th>
+                  <th class="col-xl-2 col-lg-3 col-md-4">th3</th>
+                  <th class="col-xl-2 col-lg-3 col-md-4">th4</th>
+                  <th class="col-xl-2 col-lg-3 col-md-4">th5</th>
+                  <th class="col-xl-2 col-lg-3 col-md-4">th6</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, error?</td>
+                  <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, error?</td>
+                  <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, error?</td>
+                  <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, error?</td>
+                  <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, error?</td>
+                  <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, error?</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="toast">
+          <h1 class="mb-3">Toasts</h1>
+          <p>
+            toast-container position-fixed bottom-0 end-0 p-3 > toast #toast1 >
+            <br />
+            toast-header > me-auto + &lt;button&gt; btn-close data-bs-dismiss="toast" +
+            <br />
+            toast-body
+          </p>
+          <button id="btn1" class="btn btn-primary">Toast1</button>
+          <button id="btn2" class="btn btn-primary">Toast2</button>
+          <button id="btn3" class="btn btn-primary">Toast3</button>
+          <button id="btnStack" class="btn btn-primary">Toast Stack</button>
+
+          <p class="m-0 mt-3">Top left: <code>top-0 start-0</code></p>
+          <p class="m-0">Top center: <code>top-0 start-50 translate-middle-x</code></p>
+          <p class="m-0">Top right: <code>top-0 end-0</code></p>
+          <p class="m-0">Middle left: <code>top-50 start-0 translate-middle-y</code></p>
+          <p class="m-0">Middle center: <code>top-50 start-50 translate-middle</code></p>
+          <p class="m-0">Middle right: <code>top-50 end-0 translate-middle-y</code></p>
+          <p class="m-0">Bottom left: <code>bottom-0 start-0</code></p>
+          <p class="m-0">Bottom center: <code>bottom-0 start-50 translate-middle-x</code></p>
+          <p class="m-0">Bottom right: <code>bottom-0 end-0</code></p>
+
+          <div class="toast-container position-fixed p-3 bottom-0 end-0">
+            <div class="toast" id="toast1">
+              <div class="toast-header">
+                <div class="me-auto">toast-header 1</div>
+                <button class="btn-close" data-bs-dismiss="toast"></button>
+              </div>
+              <div class="toast-body">toast-body 1</div>
+            </div>
+          </div>
+
+          <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x mb-3">
+            <div class="toast" id="toast2" data-bs-autohide="false">
+              <div class="toast-body">
+                data-bs-autohide="false"
+                <div class="mt-2 pt-2 border-top">
+                  <button class="btn btn-primary">button</button>
+                  <button class="btn btn-secondary" data-bs-dismiss="toast">
+                    data-bs-dismiss="toast"
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="toast-container position-fixed top-50 start-50 translate-middle">
+            <div class="toast align-items-center text-bg-success" id="toast3">
+              <div class="d-flex">
+                <div class="toast-body">toast text-bg-success</div>
+                <button
+                  class="btn-close btn-close-white me-2 m-auto"
+                  data-bs-dismiss="toast"
+                ></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="toast-container position-fixed bottom-0 end-0 p-3 toastStack">
+            <div class="toast" data-bs-delay="3000">
+              <div class="d-flex">
+                <div class="toast-body">toast data-bs-delay="3000"</div>
+                <button class="btn-close me-2 m-auto" data-bs-dismiss="toast"></button>
+              </div>
+            </div>
+
+            <div class="toast" data-bs-delay="10000">
+              <div class="toast-header">
+                <strong class="me-auto">toast-header</strong>
+                <small class="text-body-secondary">text-body-secondary</small>
+                <button class="btn-close" data-bs-dismiss="toast"></button>
+              </div>
+              <div class="toast-body">toast data-bs-delay="10000"</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="typography">
+          <h1 class="mb-3">Typography</h1>
+
+          <p class="h1">h-1</p>
+          <p class="h2">h-2</p>
+          <p class="h3">h-3</p>
+          <p class="h4">h-4</p>
+          <p class="h5">h-5</p>
+          <p class="h6">h-6</p>
+
+          <br />
+
+          <p class="fs-1">fs-1</p>
+          <p class="fs-2">fs-2</p>
+          <p class="fs-3">fs-3</p>
+          <p class="fs-4">fs-4</p>
+          <p class="fs-5">fs-5</p>
+          <p class="fs-6">fs-6</p>
+
+          <br />
+
+          <p class="display-1">display-1</p>
+          <p class="display-2">display-2</p>
+          <p class="display-3">display-3</p>
+          <p class="display-4">display-4</p>
+          <p class="display-5">display-5</p>
+          <p class="display-6">display-6</p>
+
+          <br />
+
+          <p class="fw-bold">fw-bold</p>
+          <p class="fw-bolder">fw-bolder</p>
+          <p class="fw-semibold">fw-semibold</p>
+          <p class="fw-medium">fw-medium</p>
+          <p class="fw-normal">fw-normal</p>
+          <p class="fw-light">fw-light</p>
+          <p class="fw-lighter">fw-lighter</p>
+          <p class="fst-italic">fst-italic</p>
+          <p class="fst-normal">fst-normal</p>
+          <p class="font-monospace">font-monospace</p>
+          <p class="lead">lead</p>
+
+          <blockquote class="blockquote">blockquote</blockquote>
+
+          <p class="text-opacity-25 text-primary">text-opacity-25</p>
+          <p class="text-opacity-50 text-primary">text-opacity-50</p>
+          <p class="text-opacity-75 text-primary">text-opacity-75</p>
+          <p class="text-opacity-100 text-primary">text-opacity-100</p>
+
+          <br />
+
+          <p><a class="link-opacity-10" href="#">link-opacity-10</a></p>
+          <p><a class="link-opacity-25" href="#">link-opacity-25</a></p>
+          <p><a class="link-opacity-50" href="#">link-opacity-50</a></p>
+          <p><a class="link-opacity-75" href="#">link-opacity-75</a></p>
+          <p><a class="link-opacity-100" href="#">link-opacity-100</a></p>
+
+          <br />
+
+          <p><a href="#" class="link-underline-danger">link-underline-danger</a></p>
+          <p><a href="#" class="link-underline-success">link-underline-success</a></p>
+
+          <br />
+
+          <p><a class="link-offset-1" href="#">link-offset-1</a></p>
+          <p><a class="link-offset-2" href="#">link-offset-2</a></p>
+          <p><a class="link-offset-3" href="#">link-offset-3</a></p>
+          <a
+            href="#"
+            class="d-block link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+            >link-underline-opacity-25 link-underline-opacity-100-hover
+          </a>
+          <a
+            href="#"
+            class="d-block link-offset-2 link-underline-opacity-10 link-underline-opacity-100-hover"
+            >link-underline-opacity-10 link-underline-opacity-100-hover
+          </a>
+          <a
+            href="#"
+            class="d-block link-offset-2 link-underline-opacity-50 link-underline-opacity-75-hover"
+            >link-underline-opacity-25 link-underline-opacity-50-hover
+          </a>
+
+          <br />
+
+          <p class="text-info">
+            text-reset <a href="#" class="text-reset ms-3">text-reset inherit parrent text style</a>
+          </p>
+          <p class="text-decoration-underline">text-decoration-underline</p>
+          <p class="text-decoration-line-through">text-decoration-line-through</p>
+          <a href="#" class="text-decoration-none">&lt;a&gt; text-decoration-none</a>
+
+          <div class="lh-1 mt-4">
+            lh-1
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque id quam reprehenderit
+              possimus, ipsum perferendis excepturi obcaecati praesentium inventore sed commodi nisi
+              minima unde debitis doloribus fuga laudantium. Molestias, voluptatibus.
+            </p>
+          </div>
+          <div class="lh-sm">
+            lh-sm
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque id quam reprehenderit
+              possimus, ipsum perferendis excepturi obcaecati praesentium inventore sed commodi nisi
+              minima unde debitis doloribus fuga laudantium. Molestias, voluptatibus.
+            </p>
+          </div>
+          <div class="lh-base">
+            lh-base
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque id quam reprehenderit
+              possimus, ipsum perferendis excepturi obcaecati praesentium inventore sed commodi nisi
+              minima unde debitis doloribus fuga laudantium. Molestias, voluptatibus.
+            </p>
+          </div>
+          <div class="lh-lg">
+            lh-lg
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque id quam reprehenderit
+              possimus, ipsum perferendis excepturi obcaecati praesentium inventore sed commodi nisi
+              minima unde debitis doloribus fuga laudantium. Molestias, voluptatibus.
+            </p>
+          </div>
+          <br />
+
+          <p>
+            &lt;figure&gt; text-center > &lt;blockquote&gt; blockquote + &lt;figcaption&gt;
+            blockquote-footer
+          </p>
+          <figure class="text-center w-50 border">
+            <blockquote class="blockquote">
+              <p>blockquote</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">blockquote-footer</figcaption>
+          </figure>
+
+          <p class="text-lowercase">text-lowercase</p>
+          <p class="text-uppercase">text-uppercase</p>
+          <p class="text-capitalize">text-capitalize</p>
+
+          <p class="text-start">text-start</p>
+          <p class="text-center">text-center</p>
+          <p class="text-end">text-end</p>
+          <p class="text-sm-end">text-sm-end</p>
+          <p class="text-md-center">text-md-center</p>
+          <p class="text-lg-end">text-lg-end</p>
+          <p class="text-xl-center">text-xl-center</p>
+
+          <p class="text-break">
+            text-break
+            <br />
+            mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+          </p>
+        </div>
+
+        <div class="container mb-3 w-75 tab-pane fade" id="utilities">
+          <h1 class="mb-3">Utilities</h1>
+
+          <p class="m-0">&lt;ul&gt; list-unstyled</p>
+          <ul class="list-unstyled">
+            <li>List item</li>
+            <li>List item</li>
+          </ul>
+
+          <p class="m-0">&lt;ul&gt; list-inline</p>
+          <ul class="list-inline">
+            <li class="list-inline-item">list-inline-item</li>
+            <li class="list-inline-item">list-inline-item</li>
+            <li class="list-inline-item">list-inline-item</li>
+          </ul>
+
+          <hr />
+
+          <div class="bg-info clearfix">
+            <button class="btn btn-primary float-start rounded-pill">clear fix</button>
+            <button class="btn btn-primary float-end rounded-pill">clear fix</button>
+          </div>
+
+          <div class="position-relative row mx-0 my-3">
+            <span class="position-absolute py-3">opacity-0 (hidden)</span>
+            <div class="col text-bg-primary py-3 border opacity-0"></div>
+            <div class="col text-bg-primary py-3 border opacity-25">opacity-25</div>
+            <div class="col text-bg-primary py-3 border opacity-50">opacity-50</div>
+            <div class="col text-bg-primary py-3 border opacity-75">opacity-75</div>
+            <div class="col text-bg-primary py-3 border opacity-100">opacity-100</div>
+          </div>
+
+          <div class="visible">visible.</div>
+          <div class="border">
+            <span>invisible (hidden)</span>
+            <div class="invisible">invisible</div>
+          </div>
+
+          <br />
+          <p class="user-select-all">
+            user-select-all This paragraph will be entirely selected when clicked by the user.
+          </p>
+          <p class="user-select-none">
+            user-select-none This paragraph will not be selectable when clicked by the user.
+          </p>
+          <br />
+
+          <div class="float-start">float-start</div>
+          <br />
+          <div class="float-end">float-end</div>
+          <br />
+          <div class="float-none">float-none</div>
+          <br />
+          <div class="float-lg-end">float-lg-end</div>
+          <br />
+
+          <hr />
+
+          <div class="d-flex flex-wrap gap-3">
+            <button class="focus-ring p-2 border-0">focus-ring</button>
+            <button class="focus-ring p-2 focus-ring-success border-0">focus-ring-success</button>
+            <button class="focus-ring p-2 focus-ring-danger border-0">focus-ring-danger</button>
+            <div class="my-2"></div>
+            <button class="focus-ring p-2 border-0" style="--bs-focus-ring-color: #1e90ff">
+              --bs-focus-ring-color: #1E90FF
+            </button>
+
+            <button
+              class="focus-ring p-2 border-0"
+              style="--bs-focus-ring-x: 10px; --bs-focus-ring-y: 10px; --bs-focus-ring-blur: 4px"
+            >
+              --bs-focus-ring-x: 10px; --bs-focus-ring-y: 10px; --bs-focus-ring-blur: 4px
+            </button>
+          </div>
+
+          <hr />
+
+          <svg style="display: none">
+            <symbol
+              id="icon-box"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+            >
+              <path
+                d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z"
+              />
+            </symbol>
+          </svg>
+
+          <p class="mb-0">&lt;a&gt; icon-link > &lt;svg&gt; bi > &lt;use&gt; href="#icon-box"</p>
+          <a class="icon-link" href="#">
+            <svg class="bi"><use href="#icon-box"></use></svg>
+            icon-link
+          </a>
+
+          <div class="mt-3"></div>
+
+          <a class="icon-link icon-link-hover" href="#">
+            icon-link-hover
+            <svg class="bi"><use href="#icon-box"></use></svg>
+          </a>
+
+          <div class="mt-3"></div>
+
+          <a
+            class="icon-link icon-link-hover"
+            style="
+              --bs-icon-link-transform: translate3d(0, -6px, 0);
+              --bs-link-hover-color-rgb: 25, 135, 84;
+            "
+            href="#"
+          >
+            <svg class="bi"><use href="#icon-box"></use></svg>
+            --bs-icon-link-transform: translate3d(0, -6px, 0);
+            <br />
+            --bs-link-hover-color-rgb: 25, 135, 84;
+          </a>
+
+          <hr />
+
+          <p class="mb-0 mt-3">ratio</p>
+          <div class="d-flex align-items-start text-center">
+            <div class="ratio ratio-1x1 text-bg-primary me-2">
+              <div>1x1</div>
+            </div>
+            <div class="ratio ratio-4x3 text-bg-success me-2">
+              <div>4x3</div>
+            </div>
+            <div class="ratio ratio-16x9 text-bg-primary me-2">
+              <div>16x9</div>
+            </div>
+            <div class="ratio ratio-21x9 text-bg-success me-2">
+              <div>21x9</div>
+            </div>
+            <div class="ratio text-bg-success" style="--bs-aspect-ratio: 50%">
+              <div>custom 2x1 --bs-aspect-ratio: 50%</div>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-6 text-truncate">
+              row > col-6 text-truncate
+              <br />
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ad, quo quae pariatur
+              minus veritatis laborum, debitis ipsum hic nulla illo voluptate facere recusandae
+              voluptas laboriosam soluta expedita voluptates maxime.
+            </div>
+          </div>
+
+          <span class="d-inline-block text-truncate mt-3" style="max-width: 450px">
+            &lt;span&gt; text-truncate / max-width: 450px
+            <br />
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ad, quo quae pariatur
+            minus veritatis laborum, debitis ipsum hic nulla illo voluptate facere recusandae
+            voluptas laboriosam soluta expedita voluptates maxime.
+          </span>
+
+          <div class="d-flex align-items-center">
+            vr / height: 50px; width: 5px
+            <div class="vr mx-4" style="height: 50px; width: 5px"></div>
+            vetical line
+          </div>
+
+          <br />
+
+          <div class="d-flex">
+            <div class="me-3 border overflow-auto" style="width: 200px; height: 100px">
+              <div class="text-bg-primary" style="width: 300px; height: 150px">overflow-auto</div>
+            </div>
+
+            <div class="me-3 border overflow-hidden" style="width: 200px; height: 100px">
+              <div class="text-bg-primary" style="width: 300px; height: 150px">overflow-hidden</div>
+            </div>
+
+            <div class="border overflow-scroll" style="width: 200px; height: 100px">
+              <div class="text-bg-primary" style="width: 300px; height: 150px">overflow-scroll</div>
+            </div>
+
+            <div class="me-3 border overflow-visible" style="width: 200px; height: 100px">
+              <div class="text-bg-primary" style="width: 300px; height: 150px">
+                overflow-visible
+              </div>
+            </div>
+          </div>
+          <div style="height: 8vh"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="vstack gap-2 position-fixed bottom-0 end-0 p-2">
+      <button class="btn btn-primary btn-lg rounded-circle" id="scrollTop">
+        <svg class="fab">
+          <use href="#arrow-up-to-line"></use>
+        </svg>
+      </button>
+      <button class="btn btn-primary btn-lg rounded-circle" data-bs-theme-value="dark">
+        <svg class="fab">
+          <use href="#moon"></use>
+        </svg>
+      </button>
+      <button class="btn btn-primary btn-lg rounded-circle" data-bs-theme-value="light">
+        <svg class="fab">
+          <use href="#lightbulb"></use>
+        </svg>
+      </button>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/darkmodetoggle.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

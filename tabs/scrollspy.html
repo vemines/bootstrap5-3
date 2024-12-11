@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <title>Scrollspy</title>
+    <style>
+      .boxHeight {
+        height: 250px;
+        background-color: #f8f9fa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mb-3 w-75">
+      <h1 class="mb-3">Scrollspy</h1>
+
+      <p class="m-0">
+        &lt;nav&gt; navbar id="scrollspy1" > &lt;ul&gt; nav nav-pills >
+        <br />
+        &lt;li&gt; nav-item > &lt;a&gt; nav-link href="nav1-1" +
+        <br />
+        &lt;li&gt; nav-item-dropdown > &lt;a&gt; nav-link dropdown-toggle data-bs-toggle="dropdown"
+        href="#" > dropdown-menu > &lt;a&gt; dropdown-nav2-href
+      </p>
+      <hr class="m-1" />
+      <p class="mb-0">
+        overflow-auto data-bs-spy="scroll" data-bs-target="#scrollspy1" / height: 200px;
+      </p>
+
+      <nav id="scrollspy1" class="navbar">
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a class="nav-link" href="#nav1-1">#nav1-1</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nav1-2">#nav1-2</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Dropdown</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#nav1-3">#nav1-3</a>
+              <a class="dropdown-item" href="#nav1-4">#nav1-4</a>
+              <a class="dropdown-item" href="#nav1-5">#nav1-5</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div
+        class="overflow-auto"
+        data-bs-spy="scroll"
+        data-bs-target="#scrollspy1"
+        style="height: 200px; margin-top: 0.5rem"
+      >
+        <div class="boxHeight" id="nav1-1"><h4>#nav1-1</h4></div>
+        <div class="boxHeight" id="nav1-2"><h4>#nav1-2</h4></div>
+        <div class="boxHeight" id="nav1-3"><h4>#nav1-3</h4></div>
+        <div class="boxHeight" id="nav1-4"><h4>#nav1-4</h4></div>
+        <div class="boxHeight" id="nav1-5"><h4>#nav1-5</h4></div>
+      </div>
+
+      <hr />
+
+      <p class="m-0">
+        nested nav <br />
+        &lt;nav&gt; nav nav-pills flex-column >
+
+        <br />
+        &lt;a&gt; nav-link href="nav2-1" +
+        <br />
+        &lt;nav&gt; nav nav-pills flex-column > &lt;a&gt; nav-link nav-link ms-3 my-1
+        href="nav2-1-1"
+      </p>
+      <div class="row">
+        <div class="col-3">
+          <nav id="scrollspy2" class="navbar navbar-light bg-light">
+            <nav class="nav nav-pills flex-column">
+              <a class="nav-link" href="#nav2-1">nav2-1</a>
+              <nav class="nav nav-pills flex-column">
+                <a class="nav-link ms-3 my-1" href="#nav2-1-1">nav2-1-1</a>
+                <a class="nav-link ms-3 my-1" href="#nav2-1-2">nav2-1-2</a>
+              </nav>
+              <a class="nav-link" href="#nav2-2">nav2-2</a>
+              <a class="nav-link" href="#nav2-3">nav2-3</a>
+              <nav class="nav nav-pills flex-column">
+                <a class="nav-link ms-3 my-1" href="#nav2-3-1">nav2-3-1</a>
+                <a class="nav-link ms-3 my-1" href="#nav2-3-2">nav2-3-2</a>
+              </nav>
+            </nav>
+          </nav>
+        </div>
+        <div class="col-8">
+          <div
+            class="overflow-auto"
+            data-bs-spy="scroll"
+            data-bs-target="#scrollspy2"
+            style="position: relative; height: 400px; margin-top: 0.5rem"
+          >
+            <div class="boxHeight" id="nav2-1"><h4>#nav2-1</h4></div>
+            <div class="boxHeight" id="nav2-1-1"><h4>#nav2-1-1</h4></div>
+            <div class="boxHeight" id="nav2-1-2"><h4>#nav2-1-2</h4></div>
+            <div class="boxHeight" id="nav2-2"><h4>#nav2-2</h4></div>
+            <div class="boxHeight" id="nav2-3"><h4>#nav2-3</h4></div>
+            <div class="boxHeight" id="nav2-3-1"><h4>#nav2-3-1</h4></div>
+            <div class="boxHeight" id="nav2-3-2"><h4>#nav2-3-2</h4></div>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        list-group > &lt;a&gt; list-group-item list-group-item action
+        <span class="fw-medium">*active*</span>
+        <br />
+      </p>
+      <div class="row">
+        <div class="col-4">
+          <div id="scrollspy3" class="list-group">
+            <a class="list-group-item list-group-item action active" href="#list-group3-1">
+              list-group3-1
+            </a>
+            <a class="list-group-item list-group-item action" href="#list-group3-2">
+              list-group3-2
+            </a>
+            <a class="list-group-item list-group-item action" href="#list-group3-3">
+              list-group3-3
+            </a>
+            <a class="list-group-item list-group-item action" href="#list-group3-4">
+              list-group3-4
+            </a>
+          </div>
+        </div>
+        <div class="col-8">
+          <div
+            class="overflow-auto"
+            data-bs-spy="scroll"
+            data-bs-target="#scrollspy3"
+            style="position: relative; height: 200px; margin-top: 0.5rem"
+          >
+            <div class="boxHeight" id="list-group3-1"><h4>#list-group3-1</h4></div>
+            <div class="boxHeight" id="list-group3-2"><h4>#list-group3-2</h4></div>
+            <div class="boxHeight" id="list-group3-3"><h4>#list-group3-3</h4></div>
+            <div class="boxHeight" id="list-group3-4"><h4>#list-group3-4</h4></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 25vh"></div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

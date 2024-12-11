@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <title>Display & Position</title>
+  </head>
+  <body>
+    <div class="container mb-3 w-75">
+      <h1>Display & Position</h1>
+
+      <div class="border">
+        d-none (hidden)
+        <p class="d-none">d-none</p>
+      </div>
+      <div class="d-inline">d-inline 1</div>
+      <div class="d-inline">d-inline 2</div>
+      <br />
+      <span class="d-block">&lt;span&gt; d-block</span>
+      <span class="d-block">&lt;span&gt; d-block</span>
+      <br />
+      <span class="d-inline-block" style="width: 500px"
+        >&lt;span&gt; d-inline-block / width: 500px</span
+      >
+      <span class="d-inline-block">d-inline-block 2</span>
+      <br />
+      <div class="d-none d-lg-block">d-none d-md-block -- show when > lg</div>
+      <div class="d-block d-lg-none">d-block d-md-none -- show when < lg</div>
+      <br />
+
+      <div class="position-relative border" style="height: 200px">
+        <div class="text-bg-secondary p-2 position-absolute top-0 start-0">top-0 start-0</div>
+        <div class="text-bg-secondary p-2 position-absolute top-0 start-50 translate-middle-x">
+          top-0 start-50
+        </div>
+        <div class="text-bg-secondary p-2 position-absolute top-0 end-0">top-0 end-0</div>
+        <div class="text-bg-secondary p-2 position-absolute top-50 start-0 translate-middle-y">
+          top-50 start-0 translate-middle-y
+        </div>
+        <div class="text-bg-secondary p-2 position-absolute top-50 start-50 translate-middle">
+          top-50 start-50 translate-middle
+        </div>
+        <div class="text-bg-secondary p-2 position-absolute top-50 end-0 translate-middle-y">
+          top-50 end-0 translate-middle-y
+        </div>
+        <div class="text-bg-secondary p-2 position-absolute bottom-0 start-0">bottom-0 start-0</div>
+        <div class="text-bg-secondary p-2 position-absolute bottom-0 start-50 translate-middle-x">
+          bottom-0 start-50 translate-middle-x
+        </div>
+        <div class="text-bg-secondary p-2 position-absolute bottom-0 end-0">bottom-0 end-0</div>
+      </div>
+
+      <div class="position-relative my-3" style="height: 200px; background: #ccc">
+        position-relative / height: 200px; background: #ccc
+        <p class="position-absolute start-0 bottom-0" style="top: 100px">
+          position-absolute start-0 bottom-0 / top: 100px
+        </p>
+        <p class="position-absolute top-0 end-0">position-absolute top-0 end-0</p>
+        <p class="position-absolute">position-absolute</p>
+      </div>
+
+      <span
+        class="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill"
+      >
+        Marker
+        <svg
+          width="1em"
+          height="1em"
+          viewBox="0 0 16 16"
+          class="position-absolute top-100 start-50 translate-middle mt-1"
+          fill="var(--bs-secondary)"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+          />
+        </svg>
+      </span>
+
+      <hr />
+
+      <p class="position-fixed">position-fixed</p>
+      <p class="fixed-top">fixed-top</p>
+      <p class="fixed-bottom">fixed-bottom</p>
+
+      <h4>*** remove position:static for sticky ***</h4>
+      <p class="sticky-top" style="position: static">sticky-top</p>
+      <p class="sticky-sm-top" style="position: static">sticky-sm-top</p>
+      <p class="sticky-md-top" style="position: static">sticky-md-top</p>
+      <p class="sticky-lg-top" style="position: static">sticky-lg-top</p>
+      <p class="sticky-xl-top" style="position: static">sticky-xl-top</p>
+      <p class="sticky-xxl-top" style="position: static">sticky-xxl-top</p>
+      <div style="height: 100vh">height: 100vh</div>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

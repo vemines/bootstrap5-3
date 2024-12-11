@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+
+    <title>Toasts</title>
+  </head>
+  <body>
+    <div class="container mb-3 w-75">
+      <h1 class="mb-3">Toasts</h1>
+      <p>
+        toast-container position-fixed bottom-0 end-0 p-3 > toast #toast1 >
+        <br />
+        toast-header > me-auto + &lt;button&gt; btn-close data-bs-dismiss="toast" +
+        <br />
+        toast-body
+      </p>
+      <button id="btn1" class="btn btn-primary">Toast1</button>
+      <button id="btn2" class="btn btn-primary">Toast2</button>
+      <button id="btn3" class="btn btn-primary">Toast3</button>
+      <button id="btnStack" class="btn btn-primary">Toast Stack</button>
+
+      <p class="m-0 mt-3">Top left: <code>top-0 start-0</code></p>
+      <p class="m-0">Top center: <code>top-0 start-50 translate-middle-x</code></p>
+      <p class="m-0">Top right: <code>top-0 end-0</code></p>
+      <p class="m-0">Middle left: <code>top-50 start-0 translate-middle-y</code></p>
+      <p class="m-0">Middle center: <code>top-50 start-50 translate-middle</code></p>
+      <p class="m-0">Middle right: <code>top-50 end-0 translate-middle-y</code></p>
+      <p class="m-0">Bottom left: <code>bottom-0 start-0</code></p>
+      <p class="m-0">Bottom center: <code>bottom-0 start-50 translate-middle-x</code></p>
+      <p class="m-0">Bottom right: <code>bottom-0 end-0</code></p>
+
+      <div class="toast-container position-fixed p-3 bottom-0 end-0">
+        <div class="toast" id="toast1">
+          <div class="toast-header">
+            <div class="me-auto">toast-header 1</div>
+            <button class="btn-close" data-bs-dismiss="toast"></button>
+          </div>
+          <div class="toast-body">toast-body 1</div>
+        </div>
+      </div>
+
+      <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x mb-3">
+        <div class="toast" id="toast2" data-bs-autohide="false">
+          <div class="toast-body">
+            data-bs-autohide="false"
+            <div class="mt-2 pt-2 border-top">
+              <button class="btn btn-primary">button</button>
+              <button class="btn btn-secondary" data-bs-dismiss="toast">
+                data-bs-dismiss="toast"
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="toast-container position-fixed top-50 start-50 translate-middle">
+        <div class="toast align-items-center text-bg-success" id="toast3">
+          <div class="d-flex">
+            <div class="toast-body">toast text-bg-success</div>
+            <button class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="toast-container position-fixed bottom-0 end-0 p-3 toastStack">
+        <div class="toast" data-bs-delay="3000">
+          <div class="d-flex">
+            <div class="toast-body">toast data-bs-delay="3000"</div>
+            <button class="btn-close me-2 m-auto" data-bs-dismiss="toast"></button>
+          </div>
+        </div>
+
+        <div class="toast" data-bs-delay="10000">
+          <div class="toast-header">
+            <strong class="me-auto">toast-header</strong>
+            <small class="text-body-secondary">text-body-secondary</small>
+            <button class="btn-close" data-bs-dismiss="toast"></button>
+          </div>
+          <div class="toast-body">toast data-bs-delay="10000"</div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      const btn1 = document.querySelector('#btn1');
+      const btn2 = document.querySelector('#btn2');
+      const btn3 = document.querySelector('#btn3');
+      const toast1 = document.querySelector('#toast1');
+      const toast2 = document.querySelector('#toast2');
+      const toast3 = document.querySelector('#toast3');
+
+      const btnStack = document.querySelector('#btnStack');
+      const toastStack = document.querySelector('.toastStack');
+
+      const toast1Bootstrap = bootstrap.Toast.getOrCreateInstance(toast1);
+      btn1.addEventListener('click', () => toast1Bootstrap.show());
+      const toast2Bootstrap = bootstrap.Toast.getOrCreateInstance(toast2);
+      btn2.addEventListener('click', () => toast2Bootstrap.show());
+      const toast3Bootstrap = bootstrap.Toast.getOrCreateInstance(toast3);
+      btn3.addEventListener('click', () => toast3Bootstrap.show());
+
+      btnStack.addEventListener('click', function () {
+        const toastElements = toastStack.querySelectorAll('.toast');
+        toastElements.forEach((toastEl) => {
+          const toast = new bootstrap.Toast(toastEl);
+          toast.show();
+        });
+      });
+    </script>
+  </body>
+</html>

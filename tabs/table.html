@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <title>Tables</title>
+  </head>
+  <body>
+    <div class="container w-75">
+      <h1 class="mb-3">Tables</h1>
+
+      <p class="mb-0">
+        &lt;table&gt; table > &lt;thead&gt; > &lt;tr&gt; > &lt;th&gt; + &lt;tbody&gt;
+        table-group-divider > &lt;tr&gt; > &lt;td&gt;+ &lt;tfoot&gt; > &lt;tr&gt; > &lt;th&gt;
+      </p>
+      <table class="table">
+        <caption>
+          &lt;caption&gt;
+        </caption>
+        <thead>
+          <tr>
+            <th>th1</th>
+            <th>th2</th>
+            <th>th3</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr>
+            <td>td1</td>
+            <td>td2</td>
+            <td>td3</td>
+          </tr>
+          <tr>
+            <td>td1</td>
+            <td>td2</td>
+            <td>td3</td>
+          </tr>
+        </tbody>
+        <tfoot class="table-group-divider">
+          <tr>
+            <th>th1</th>
+            <th>th2</th>
+            <th>th3</th>
+          </tr>
+        </tfoot>
+      </table>
+
+      <p class="mb-0">table table-sm caption-top</p>
+      <table class="table table-sm caption-top">
+        <caption>
+          &lt;caption&gt;
+        </caption>
+        <thead>
+          <tr>
+            <th>th1</th>
+            <th>th2</th>
+            <th>th3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-active">
+            <td>&lt;tr&gt; table-active</td>
+            <td>&lt;tr&gt; table-active</td>
+            <td>&lt;tr&gt; table-active</td>
+          </tr>
+          <tr>
+            <td class="table-active">&lt;td&gt; table-active</td>
+            <td>td2</td>
+            <td>td3</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="mb-0">table table-primary > &lt;tbody&gt; > first &lt;tr&gt; table-success</p>
+      <table class="table table-primary">
+        <thead>
+          <tr>
+            <th>th1</th>
+            <th>th2</th>
+            <th>th3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>td1</td>
+            <td class="table-info">&lt;td&gt; table-info</td>
+            <td>td3</td>
+          </tr>
+          <tr class="table-success">
+            <td>&lt;tr&gt; table-success</td>
+            <td>&lt;tr&gt; table-success</td>
+            <td>&lt;tr&gt; table-success</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br />
+
+      <p class="mb-0">table table-striped</p>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>th1</th>
+            <th>th2</th>
+            <th>th3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>td1</td>
+            <td>td2</td>
+            <td>td3</td>
+          </tr>
+          <tr>
+            <td>td1</td>
+            <td>td2</td>
+            <td>td3</td>
+          </tr>
+          <tr>
+            <td>td1</td>
+            <td>td2</td>
+            <td>td3</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br />
+
+      <p class="mb-0">table table-striped-columns</p>
+      <table class="table table-striped-columns">
+        <thead>
+          <tr>
+            <th>th1</th>
+            <th>th2</th>
+            <th>th3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>td1</td>
+            <td>td2</td>
+            <td>td3</td>
+          </tr>
+          <tr>
+            <td>td1</td>
+            <td>td2</td>
+            <td>td3</td>
+          </tr>
+          <tr>
+            <td>td1</td>
+            <td>td2</td>
+            <td>td3</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br />
+
+      <p class="mb-0">table table-hover</p>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>th1</th>
+            <th>th2</th>
+            <th>th3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>td1</td>
+            <td>td2</td>
+            <td>td3</td>
+          </tr>
+          <tr>
+            <td>td1</td>
+            <td>td2</td>
+            <td>td3</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br />
+
+      <p class="mb-0">table table-bordered border-primary > &lt;thead&gt; table-dark</p>
+      <table class="table table-bordered border-primary">
+        <thead class="table-dark">
+          <tr>
+            <th>th</th>
+            <th>th</th>
+            <th>th</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>td1</td>
+            <td>td2</td>
+            <td>td3</td>
+          </tr>
+          <tr>
+            <td>td1</td>
+            <td>td2</td>
+            <td>td3</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr />
+
+      <p class="mb-0">table table-borderless</p>
+      <table class="table table-borderless">
+        <thead>
+          <tr>
+            <th>th1</th>
+            <th>th2</th>
+            <th>th3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>td1</td>
+            <td>td2</td>
+            <td>td3</td>
+          </tr>
+          <tr>
+            <td>td1</td>
+            <td>td2</td>
+            <td>td3</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr />
+
+      <p class="mb-0">table align-middle</p>
+      <table class="table align-middle">
+        <thead>
+          <tr>
+            <th class="w-25">th1</th>
+            <th class="w-25">th2</th>
+            <th class="w-50">th3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="align-bottom">
+            <td>&lt;tr&gt; align-bottom</td>
+            <td>&lt;tr&gt; align-bottom</td>
+            <td>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque mollitia maiores
+              fugit quam! Ad iure illo quae, fuga ea, at fugiat error eveniet rerum porro, amet sit.
+              Vel, nulla quae?
+            </td>
+          </tr>
+          <tr>
+            <td class="align-top">&lt;td&gt; align-top</td>
+            <td>td</td>
+            <td>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque mollitia maiores
+              fugit quam! Ad iure illo quae, fuga ea, at fugiat error eveniet rerum porro, amet sit.
+              Vel, nulla quae?
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br />
+
+      <style>
+        #table th,
+        #table td {
+          min-width: 150px;
+        }
+      </style>
+
+      <p class="mb-0">table-responsive / th, td min-width: 150px;</p>
+      <div class="table-responsive" id="table">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="col-xl-2 col-lg-3 col-md-4">th1</th>
+              <th class="col-xl-2 col-lg-3 col-md-4">th2</th>
+              <th class="col-xl-2 col-lg-3 col-md-4">th3</th>
+              <th class="col-xl-2 col-lg-3 col-md-4">th4</th>
+              <th class="col-xl-2 col-lg-3 col-md-4">th5</th>
+              <th class="col-xl-2 col-lg-3 col-md-4">th6</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, error?</td>
+              <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, error?</td>
+              <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, error?</td>
+              <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, error?</td>
+              <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, error?</td>
+              <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, error?</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <title>Dropdowns</title>
+  </head>
+  <body>
+    <div class="container mb-3 w-75">
+      <h1 class="mb-3">Dropdowns</h1>
+
+      <p>
+        dropdown > &lt;<span class="fw-medium">button / a</span>&gt; data-bs-toggle="dropdown"
+        <br />
+        &lt;ul&gt; dropdown-menu > &lt;li&gt; > &lt;a&gt; dropdown-item
+      </p>
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+          &lt;button&gt;
+        </button>
+        <a
+          class="btn btn-success dropdown-toggle"
+          data-bs-toggle="dropdown"
+          data-bs-auto-close="inside"
+        >
+          &lt;a&gt;
+        </a>
+        <button
+          class="btn btn-primary dropdown-toggle btn-sm"
+          data-bs-toggle="dropdown"
+          data-bs-auto-close="inside"
+        >
+          btn-sm data-bs-auto-close="inside"
+        </button>
+        <button
+          class="btn btn-primary dropdown-toggle btn-lg"
+          data-bs-toggle="dropdown"
+          data-bs-auto-close="false"
+        >
+          btn-lg data-bs-auto-close="false"
+        </button>
+
+        <ul class="dropdown-menu">
+          <li><a href="#" class="dropdown-item"> dropdown-item</a></li>
+          <li><a href="#" class="dropdown-item"> dropdown-item</a></li>
+        </ul>
+      </div>
+
+      <p class="mb-0 mt-2">
+        btn-group > &lt;button&gt; + &lt;button&gt; dropdown-toggle dropdown-toggle-split
+        data-bs-toggle="dropdown"
+        <br />
+        &lt;ul&gt; dropdown-menu > &lt;li&gt;
+      </p>
+      <div class="btn-group">
+        <button class="btn btn-success">btn btn-success</button>
+        <button
+          class="btn btn-success dropdown-toggle dropdown-toggle-split"
+          data-bs-toggle="dropdown"
+        ></button>
+        <ul class="dropdown-menu">
+          <li><h5 class="dropdown-item-text">&lt;h5&gt; dropdown-item-text</h5></li>
+          <li><button class="dropdown-item">&lt;li&gt; &lt;button&gt; dropdown-item</button></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><button class="dropdown-item active">&lt;button&gt; dropdown-item active</button></li>
+          <li>
+            <button class="dropdown-item disabled">&lt;button&gt; dropdown-item disabled</button>
+          </li>
+        </ul>
+      </div>
+
+      <p class="mt-3 mb-0">dropup</p>
+      <div class="dropup mb-3">
+        <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+          dropdown-toggle
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#" class="dropdown-item">dropdown-item Lorem, ipsum.</a></li>
+          <li><a href="#" class="dropdown-item">dropdown-item Lorem, ipsum.</a></li>
+        </ul>
+      </div>
+
+      <p class="m-0">dropup-center</p>
+      <div class="dropup-center mb-3">
+        <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+          dropdown-toggle
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#" class="dropdown-item">dropdown-item Lorem, ipsum.</a></li>
+          <li><a href="#" class="dropdown-item">dropdown-item Lorem, ipsum.</a></li>
+        </ul>
+      </div>
+
+      <p class="m-0">dropend</p>
+      <div class="dropend mb-3">
+        <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+          dropdown-toggle
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#" class="dropdown-item">dropdown-item Lorem, ipsum.</a></li>
+          <li><a href="#" class="dropdown-item">dropdown-item Lorem, ipsum.</a></li>
+        </ul>
+      </div>
+
+      <p class="m-0">dropstart</p>
+      <div class="dropstart mb-3">
+        <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+          dropdown-toggle
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#" class="dropdown-item">dropdown-item</a></li>
+          <li><a href="#" class="dropdown-item">dropdown-item</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="height: 30vh"></div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

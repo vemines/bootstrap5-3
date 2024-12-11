@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <title>Accordion (Collapse)</title>
+  </head>
+  <body>
+    <div class="container mb-3 w-75">
+      <h1 class="mb-3">Accordion (Collapse)</h1>
+
+      <p>
+        accordion #accordion1 > accordion-item >
+        <br />
+        accordion-header > &lt;button&gt; accordion-button
+        <span class="fw-medium">*collapsed*</span>
+        data-bs-toggle="collapse" data-bs-target="#accordion1-1" +
+        <br />
+        accordion-collapse <span class="fw-medium">*collapse show / collapsed*</span> #accordion1-1
+        data-bs-parent="#accordion1"
+      </p>
+      <div id="accordion1" class="accordion mb-3">
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <button
+              class="accordion-button"
+              data-bs-toggle="collapse"
+              data-bs-target="#accordion1-1"
+            >
+              accordion-button 1
+            </button>
+          </div>
+          <div
+            id="accordion1-1"
+            class="accordion-collapse collapse show"
+            data-bs-parent="#accordion1"
+          >
+            <div class="accordion-body">accordion-body 1</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#accordion1-2"
+            >
+              accordion-button 2 collapsed
+            </button>
+          </h2>
+          <div id="accordion1-2" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+            <div class="accordion-body">accordion-body 2 collapsed</div>
+          </div>
+        </div>
+      </div>
+
+      <p>accordion-flush</p>
+      <div id="accordion2" class="accordion accordion-flush mb-3">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#accordion2-1"
+            >
+              accordion-button
+            </button>
+          </h2>
+          <div id="accordion2-1" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+            <div class="accordion-body">accordion-body 1</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#accordion2-2"
+            >
+              accordion-button
+            </button>
+          </h2>
+          <div id="accordion2-2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+            <div class="accordion-body">accordion-body 2</div>
+          </div>
+        </div>
+      </div>
+
+      <p>no data-bs-parent</p>
+      <div id="accordion3" class="accordion mb-3">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              data-bs-toggle="collapse"
+              data-bs-target="#accordion3-1"
+            >
+              accordion-button
+            </button>
+          </h2>
+          <div id="accordion3-1" class="accordion-collapse collapse show">
+            <div class="accordion-body">accordion-body 1</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              data-bs-toggle="collapse"
+              data-bs-target="#accordion3-2"
+            >
+              accordion-button
+            </button>
+          </h2>
+          <div id="accordion3-2" class="accordion-collapse collapse show">
+            <div class="accordion-body">accordion-body 2</div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+      <p>
+        &lt;button / a&gt; data-bs-toggle="collapse" {data-bs-target="#collapse1" /
+        href="#collapse1"}
+      </p>
+      <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapse1">
+        button
+      </button>
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapse1"> a </a>
+
+      <div class="collapse" id="collapse1">
+        <div class="card card-body">collapse id="collapse1" > card card-body</div>
+      </div>
+
+      <div class="mt-3">
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapse2-1"
+          >&lt;a&gt; href="#collapse2-1"</a
+        >
+        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapse2-2">
+          &lt;button&gt; data-bs-target="#collapse2-2"
+        </button>
+        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target=".multi-collapse">
+          data-bs-target=".multi-collapse"
+        </button>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="collapse multi-collapse" id="collapse2-1">
+            <div class="card card-body">
+              collapse multi-collapse id="collapse2-1" > card card-body
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="collapse multi-collapse" id="collapse2-2">
+            <div class="card card-body">
+              collapse multi-collapse id="collapse2-2" > card card-body
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 10vh"></div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

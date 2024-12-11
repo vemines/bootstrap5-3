@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <title>Grid Columns</title>
+  </head>
+  <body>
+    <div class="container mb-3 w-75 border">
+      <h1 class="mb-3">Grid Columns</h1>
+
+      <p class="mb-0">row</p>
+      <div class="container">
+        <div class="row">
+          <div class="col text-bg-primary p-2 border">col</div>
+          <div class="col text-bg-primary p-2 border">col</div>
+        </div>
+        <div class="row">
+          <div class="col text-bg-primary p-2 border">col</div>
+          <div class="col text-bg-primary p-2 border">col</div>
+          <div class="col text-bg-primary p-2 border">col</div>
+        </div>
+        <div class="row">
+          <div class="col-6 text-bg-primary p-2 border">col-6</div>
+          <div class="col-6 text-bg-primary p-2 border">col-6</div>
+        </div>
+        <div class="row">
+          <div class="col-4 text-bg-primary p-2 border">col-4</div>
+          <div class="col-8 text-bg-primary p-2 border">col-8</div>
+        </div>
+
+        <div class="text-center my-3">
+          <div class="row justify-content-start">
+            <div class="col-4 text-bg-primary p-2 border">justify-content-start</div>
+            <div class="col-4 text-bg-primary p-2 border">justify-content-start</div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-4 text-bg-primary p-2 border">justify-content-center</div>
+            <div class="col-4 text-bg-primary p-2 border">justify-content-center</div>
+          </div>
+          <div class="row justify-content-end">
+            <div class="col-4 text-bg-primary p-2 border">justify-content-end</div>
+            <div class="col-4 text-bg-primary p-2 border">justify-content-end</div>
+          </div>
+          <div class="row justify-content-around">
+            <div class="col-4 text-bg-primary p-2 border">justify-content-around</div>
+            <div class="col-4 text-bg-primary p-2 border">justify-content-around</div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-4 text-bg-primary p-2 border">justify-content-between</div>
+            <div class="col-4 text-bg-primary p-2 border">justify-content-between</div>
+          </div>
+          <div class="row justify-content-evenly">
+            <div class="col-4 text-bg-primary p-2 border">justify-content-evenly</div>
+            <div class="col-4 text-bg-primary p-2 border">justify-content-evenly</div>
+          </div>
+          <div class="row justify-content-lg-between">
+            <div class="col-4 text-bg-primary p-2 border">justify-content-lg-between</div>
+            <div class="col-4 text-bg-primary p-2 border">justify-content-lg-between</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-wrap text-center mb-3" style="row-gap: 1rem">
+        <div class="d-flex align-items-start border" style="height: 100px">
+          <div class="text-bg-primary p-2 border">align-items-start</div>
+          <div class="text-bg-primary p-2 border">align-items-start</div>
+        </div>
+        <div class="d-flex align-items-end border" style="height: 100px">
+          <div class="text-bg-primary p-2 border">align-items-end</div>
+          <div class="text-bg-primary p-2 border">align-items-end</div>
+        </div>
+        <div class="d-flex align-items-center border" style="height: 100px">
+          <div class="text-bg-primary p-2 border">align-items-center</div>
+          <div class="text-bg-primary p-2 border">align-items-center</div>
+        </div>
+        <div class="d-flex align-items-baseline border" style="height: 100px">
+          <div class="text-bg-primary p-2 border">align-items-baseline</div>
+          <div class="text-bg-primary p-2 border">align-items-baseline</div>
+        </div>
+        <div class="d-flex align-items-stretch border" style="height: 100px">
+          <div class="text-bg-primary p-2 border">align-items-stretch</div>
+          <div class="text-bg-primary p-2 border">align-items-stretch</div>
+        </div>
+        <div class="d-flex align-items-lg-center border" style="height: 100px">
+          <div class="text-bg-primary p-2 border">align-items-lg-center</div>
+          <div class="text-bg-primary p-2 border">align-items-lg-center</div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="text-center mb-3">
+          <div class="row">
+            <div class="col-4 text-bg-primary p-2 border">col-4</div>
+            <div class="col-4 text-bg-primary p-2 border">col-4</div>
+
+            <div class="w-100">w-100 -- break row</div>
+
+            <div class="col-4 text-bg-primary p-2 border">col-4</div>
+            <div class="col-4 text-bg-primary p-2 border">col-4</div>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-lg-4 offset-lg-4 p-0 border">
+            <div class="p-2 text-bg-primary">col-lg-4 offset-lg-4</div>
+          </div>
+          <div class="col-lg-4 p-0 border">
+            <div class="p-2 text-bg-primary">col-lg-4</div>
+          </div>
+        </div>
+
+        <div class="text-center mb-3">
+          <div class="row">
+            <div class="col-4 text-bg-primary p-2 border">col-4</div>
+            <div class="col-4 ms-auto text-bg-primary p-2 border">col-4 ms-auto</div>
+          </div>
+          <div class="row">
+            <div class="col-3 ms-auto text-bg-primary p-2 border">col-3 ms-auto</div>
+            <div class="col-3 ms-auto text-bg-primary p-2 border">col-3 ms-auto</div>
+          </div>
+          <div class="row">
+            <div class="col-auto text-bg-primary p-2 border me-auto">col-auto me-auto</div>
+            <div class="col-auto text-bg-primary p-2 border">col-auto</div>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-lg-6 text-bg-primary p-2 border">col-lg-6</div>
+          <div class="col-lg-6 text-bg-primary p-2 border">col-lg-6</div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-sm-6 col-lg-3 text-bg-primary p-2 border">col-sm-6 col-lg-3</div>
+          <div class="col-sm-6 col-lg-3 text-bg-primary p-2 border">col-sm-6 col-lg-3</div>
+          <div class="col-sm-6 col-lg-3 text-bg-primary p-2 border">col-sm-6 col-lg-3</div>
+          <div class="col-sm-6 col-lg-3 text-bg-primary p-2 border">col-sm-6 col-lg-3</div>
+        </div>
+
+        <p class="mb-0">row row-cols-1 row-cols-md-2 row-cols-lg-3</p>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 mb-3">
+          <div class="col text-bg-primary p-2 border">col</div>
+          <div class="col text-bg-primary p-2 border">col</div>
+          <div class="col text-bg-primary p-2 border">col</div>
+          <div class="col text-bg-primary p-2 border">col</div>
+        </div>
+
+        <p class="mb-0">nesting, row in 3rd column me-0</p>
+        <div class="row mb-3">
+          <div class="col text-bg-primary p-2 border">col</div>
+          <div class="col text-bg-primary p-2 border">col</div>
+          <div class="col text-bg-primary border p-0">
+            <div class="row me-0">
+              <div class="col text-bg-success p-2">col</div>
+              <div class="col text-bg-success p-2">col</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h4>row gx-5</h4>
+      <div class="row gx-5 mb-3">
+        <div class="col-lg-4">
+          <div class="p-3 text-bg-primary">col-lg-4</div>
+        </div>
+        <div class="col-lg-4">
+          <div class="p-3 text-bg-primary">col-lg-4</div>
+        </div>
+        <div class="col-lg-4">
+          <div class="p-3 text-bg-primary">col-lg-4</div>
+        </div>
+      </div>
+
+      <h4>order</h4>
+      <div class="row container mb-3 mx-0 px-0">
+        <div class="col text-bg-primary p-2 border order-2">html 1 order-2</div>
+        <div class="col text-bg-primary p-2 border order-4">html 2 order-4</div>
+        <div class="col text-bg-primary p-2 border order-1">html 3 order-1</div>
+        <div class="col text-bg-primary p-2 border order-3">html 4 order-3</div>
+      </div>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <title>Utilities</title>
+  </head>
+  <body>
+    <div class="container mb-4 w-75">
+      <h1 class="mb-3">Utilities</h1>
+
+      <p class="m-0">&lt;ul&gt; list-unstyled</p>
+      <ul class="list-unstyled">
+        <li>List item</li>
+        <li>List item</li>
+      </ul>
+
+      <p class="m-0">&lt;ul&gt; list-inline</p>
+      <ul class="list-inline">
+        <li class="list-inline-item">list-inline-item</li>
+        <li class="list-inline-item">list-inline-item</li>
+        <li class="list-inline-item">list-inline-item</li>
+      </ul>
+
+      <hr />
+
+      <div class="bg-info clearfix">
+        <button class="btn btn-primary float-start rounded-pill">clear fix</button>
+        <button class="btn btn-primary float-end rounded-pill">clear fix</button>
+      </div>
+
+      <div class="position-relative row mx-0 my-3">
+        <span class="position-absolute py-3">opacity-0 (hidden)</span>
+        <div class="col text-bg-primary py-3 border opacity-0"></div>
+        <div class="col text-bg-primary py-3 border opacity-25">opacity-25</div>
+        <div class="col text-bg-primary py-3 border opacity-50">opacity-50</div>
+        <div class="col text-bg-primary py-3 border opacity-75">opacity-75</div>
+        <div class="col text-bg-primary py-3 border opacity-100">opacity-100</div>
+      </div>
+
+      <div class="visible">visible.</div>
+      <div class="border">
+        <span>invisible (hidden)</span>
+        <div class="invisible">invisible</div>
+      </div>
+
+      <br />
+      <p class="user-select-all">
+        user-select-all This paragraph will be entirely selected when clicked by the user.
+      </p>
+      <p class="user-select-none">
+        user-select-none This paragraph will not be selectable when clicked by the user.
+      </p>
+      <br />
+
+      <div class="float-start">float-start</div>
+      <br />
+      <div class="float-end">float-end</div>
+      <br />
+      <div class="float-none">float-none</div>
+      <br />
+      <div class="float-lg-end">float-lg-end</div>
+      <br />
+
+      <hr />
+
+      <div class="d-flex flex-wrap gap-3">
+        <button class="focus-ring p-2 border-0">focus-ring</button>
+        <button class="focus-ring p-2 focus-ring-success border-0">focus-ring-success</button>
+        <button class="focus-ring p-2 focus-ring-danger border-0">focus-ring-danger</button>
+        <div class="my-2"></div>
+        <button class="focus-ring p-2 border-0" style="--bs-focus-ring-color: #1e90ff">
+          --bs-focus-ring-color: #1E90FF
+        </button>
+
+        <button
+          class="focus-ring p-2 border-0"
+          style="--bs-focus-ring-x: 10px; --bs-focus-ring-y: 10px; --bs-focus-ring-blur: 4px"
+        >
+          --bs-focus-ring-x: 10px; --bs-focus-ring-y: 10px; --bs-focus-ring-blur: 4px
+        </button>
+      </div>
+
+      <hr />
+
+      <svg style="display: none">
+        <symbol
+          id="icon-box"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 16 16"
+          fill="currentColor"
+          width="16"
+          height="16"
+        >
+          <path
+            d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z"
+          />
+        </symbol>
+      </svg>
+
+      <p class="mb-0">&lt;a&gt; icon-link > &lt;svg&gt; bi > &lt;use&gt; href="#icon-box"</p>
+      <a class="icon-link" href="#">
+        <svg class="bi"><use href="#icon-box"></use></svg>
+        icon-link
+      </a>
+
+      <div class="mt-3"></div>
+
+      <a class="icon-link icon-link-hover" href="#">
+        icon-link-hover
+        <svg class="bi"><use href="#icon-box"></use></svg>
+      </a>
+
+      <div class="mt-3"></div>
+
+      <a
+        class="icon-link icon-link-hover"
+        style="
+          --bs-icon-link-transform: translate3d(0, -6px, 0);
+          --bs-link-hover-color-rgb: 25, 135, 84;
+        "
+        href="#"
+      >
+        <svg class="bi"><use href="#icon-box"></use></svg>
+        --bs-icon-link-transform: translate3d(0, -6px, 0);
+        <br />
+        --bs-link-hover-color-rgb: 25, 135, 84;
+      </a>
+
+      <hr />
+
+      <p class="mb-0 mt-3">ratio</p>
+      <div class="d-flex align-items-start text-center">
+        <div class="ratio ratio-1x1 text-bg-primary me-2">
+          <div>1x1</div>
+        </div>
+        <div class="ratio ratio-4x3 text-bg-success me-2">
+          <div>4x3</div>
+        </div>
+        <div class="ratio ratio-16x9 text-bg-primary me-2">
+          <div>16x9</div>
+        </div>
+        <div class="ratio ratio-21x9 text-bg-success me-2">
+          <div>21x9</div>
+        </div>
+        <div class="ratio text-bg-success" style="--bs-aspect-ratio: 50%">
+          <div>custom 2x1 --bs-aspect-ratio: 50%</div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-6 text-truncate">
+          row > col-6 text-truncate
+          <br />
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ad, quo quae pariatur
+          minus veritatis laborum, debitis ipsum hic nulla illo voluptate facere recusandae voluptas
+          laboriosam soluta expedita voluptates maxime.
+        </div>
+      </div>
+
+      <span class="d-inline-block text-truncate mt-3" style="max-width: 450px">
+        &lt;span&gt; text-truncate / max-width: 450px
+        <br />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ad, quo quae pariatur minus
+        veritatis laborum, debitis ipsum hic nulla illo voluptate facere recusandae voluptas
+        laboriosam soluta expedita voluptates maxime.
+      </span>
+
+      <div class="d-flex align-items-center">
+        vr / height: 50px; width: 5px
+        <div class="vr mx-4" style="height: 50px; width: 5px"></div>
+        vetical line
+      </div>
+
+      <br />
+
+      <div class="d-flex">
+        <div class="me-3 border overflow-auto" style="width: 200px; height: 100px">
+          <div class="text-bg-primary" style="width: 300px; height: 150px">overflow-auto</div>
+        </div>
+
+        <div class="me-3 border overflow-hidden" style="width: 200px; height: 100px">
+          <div class="text-bg-primary" style="width: 300px; height: 150px">overflow-hidden</div>
+        </div>
+
+        <div class="border overflow-scroll" style="width: 200px; height: 100px">
+          <div class="text-bg-primary" style="width: 300px; height: 150px">overflow-scroll</div>
+        </div>
+
+        <div class="me-3 border overflow-visible" style="width: 200px; height: 100px">
+          <div class="text-bg-primary" style="width: 300px; height: 150px">overflow-visible</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 8vh"></div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

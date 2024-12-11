@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <title>Forms & Input</title>
+  </head>
+  <body>
+    <div class="container w-75 mb-3">
+      <h1 class="mb-3">Forms & Input</h1>
+
+      <p>
+        &lt;form&gt; > &lt;label&gt; form-label for="input1" +
+        <br />
+        &lt;input&gt; form-control id="input1" name="input1" + form-text
+      </p>
+      <form>
+        <div class="mb-3">
+          <label for="input1" class="form-label">form-label + form-control</label>
+          <input type="email" class="form-control" id="input1" required />
+          <div class="form-text">form-text</div>
+        </div>
+        <div class="mb-3">
+          <label for="input2" class="form-label">form-control form-control-sm</label>
+          <input type="email" class="form-control form-control-sm" id="input2" />
+        </div>
+        <div class="mb-3">
+          <label for="input3" class="form-label">form-control form-control-lg</label>
+          <input type="email" class="form-control form-control-lg" id="input3" />
+        </div>
+
+        <p class="mb-0">form-floating > &lt;input&gt; + &lt;label&gt;</p>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="input4" placeholder="" />
+          <label for="input4">form-floating</label>
+        </div>
+
+        <p class="mb-0">form-floating > &lt;textarea&gt; / height: 100px</p>
+        <div class="form-floating mb-3">
+          <textarea
+            class="form-control"
+            placeholder="Leave a comment here"
+            id="input5"
+            style="height: 100px"
+          ></textarea
+          ><label for="input5">form-floating</label>
+        </div>
+
+        <p class="mb-0">form-floating > &lt;select&gt;</p>
+        <div class="form-floating">
+          <select class="form-select" id="input6">
+            <option selected>selected</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+          </select>
+          <label for="input6">form-floating > &lt;select&gt; </label>
+        </div>
+
+        <input class="form-control my-3" placeholder="Disabled input" disabled />
+        <input class="form-control" placeholder="Readonly input" readonly />
+
+        <div class="mt-3 row">
+          <label for="input7" class="col-md-4 col-form-label">
+            &lt;input&gt; form-control-plaintext
+          </label>
+          <div class="col-md-8">
+            <input
+              type="text"
+              class="form-control-plaintext"
+              id="input7"
+              value="email@example.com"
+            />
+          </div>
+        </div>
+
+        <p class="mt-3 mb-0">row > col-auto</p>
+        <div class="row">
+          <div class="col-auto">
+            <label for="password" class="col-form-label">col-form-label</label>
+          </div>
+          <div class="col-auto"><input type="password" id="password" class="form-control" /></div>
+          <div class="col-auto"><span class="form-text"> form-text </span></div>
+        </div>
+
+        <div class="my-3">
+          <label for="input8" class="form-label"> &lt;input&gt; type="file"</label>
+          <input class="form-control" type="file" id="input8" multiple />
+        </div>
+
+        <div class="mb-3">
+          <label for="input9" class="form-label">
+            &lt;input&gt; form-control-color type="color"
+          </label>
+          <input type="color" class="form-control form-control-color" id="input9" value="#563d7c" />
+        </div>
+
+        <div class="mb-3">
+          <label for="input10" class="form-label">
+            &lt;input&gt; list="datalistOptions" + &lt;datalist&gt; #datalistOptions
+          </label>
+          <input
+            class="form-control"
+            list="datalistOptions"
+            id="input10"
+            placeholder="Type to search..."
+          />
+          <datalist id="datalistOptions">
+            <option value="San Francisco"></option>
+            <option value="Los Angeles"></option>
+            <option value="Chicago"></option>
+          </datalist>
+        </div>
+
+        <div class="mb-3">
+          <textarea class="form-control" placeholder="Message">value</textarea>
+        </div>
+
+        <div class="mb-3">
+          <input type="checkbox" class="form-check-input" id="input11" />
+          <label for="input11" class="form-check-label">
+            &lt;input&gt; form-check-input + &lt;label&gt;
+          </label>
+        </div>
+
+        <div class="form-check form-switch">
+          <input
+            type="checkbox"
+            id="input12"
+            class="form-check-input me-2"
+            style="width: 40px; height: 20px"
+          />
+          <label for="input12" class="form-check-label">
+            form-check form-switch > &lt;input&gt; / width: 40px; height: 15px; + &lt;label&gt;
+          </label>
+        </div>
+        <br />
+
+        <div class="row mb-3">
+          <label for="input13" class="col-2 col-form-label col-form-label-sm">
+            col-form-label-sm
+          </label>
+          <div class="col-10">
+            <input type="email" class="form-control form-control-sm" id="input13" />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="input14" class="col-sm-2 col-form-label col-form-label-lg">
+            col-form-label-lg
+          </label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control form-control-lg" id="input14" />
+          </div>
+        </div>
+
+        <p class="mb-0">&lt;select&gt; form-select > &lt;option&gt;</p>
+        <select class="form-select mb-3">
+          <option>default option</option>
+          <option value="value">value</option>
+        </select>
+
+        <select class="form-select form-select-sm mb-3">
+          <option>form-select-sm</option>
+          <option value="value">value</option>
+        </select>
+
+        <select class="form-select form-select-lg mb-3">
+          <option>form-select-lg</option>
+          <option value="value">value</option>
+        </select>
+        <br />
+
+        <p>form-check form-check-inline > &lt;input&gt; + &lt;label&gt;</p>
+        <div class="form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="input15" />
+          <label for="input15" class="form-check-label">form-check-label 1</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="input16" />
+          <label for="input16" class="form-check-label">form-check-label 2</label>
+        </div>
+
+        <div class="my-3">
+          <input type="checkbox" class="btn-check" id="input17" />
+          <label class="btn btn-outline-primary" for="input17">
+            &lt;input&gt; btn-check type="checkbox"
+          </label>
+        </div>
+
+        <div class="mb-2">
+          <label for="input18" class="form-label">&lt;input&gt; form-range type="range" </label>
+          <input type="range" class="form-range" id="input18" />
+        </div>
+        <div class="mb-2">
+          <label for="input19" class="form-label">&lt;input&gt; min="0" max="5" step="0.5"</label>
+          <input type="range" class="form-range" id="input19" min="0" max="5" step="0.5" />
+        </div>
+      </form>
+
+      <div>input-group</div>
+      <form>
+        <div class="input-group mb-3">
+          <span class="input-group-text">input-group-text</span>
+          <input type="email" class="form-control" placeholder="form-control" />
+          <span class="input-group-text">input-group-text</span>
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">input-group-text</span>
+          <textarea class="form-control" placeholder="form-control"></textarea>
+        </div>
+
+        <div class="input-group input-group-sm mb-3">
+          <span class="input-group-text">input-group-sm</span>
+          <input type="email" class="form-control" placeholder="form-control" />
+          <span class="input-group-text">input-group-sm</span>
+        </div>
+
+        <div class="input-group input-group-lg mb-3">
+          <span class="input-group-text">input-group-lg</span>
+          <input type="email" class="form-control" placeholder="form-control" />
+          <span class="input-group-text">input-group-lg</span>
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-text">
+            <input class="form-check-input mt-0" type="checkbox" />
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            value="input-group-text > &lt;input&gt; form-check-input type=&OpenCurlyDoubleQuote;checkbox&CloseCurlyDoubleQuote;"
+          />
+        </div>
+
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" />
+          <button class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">
+            &lt;button&gt; dropdown-toggle data-bs-toggle="dropdown" +<br />
+            &lt;ul&gt; dropdown-menu dropdown-menu-end > &lt;li&gt; > &lt;a&gt;
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">dropdown-item</a></li>
+            <li><a class="dropdown-item" href="#">dropdown-item</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">dropdown-item</a></li>
+          </ul>
+        </div>
+
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="input20">&lt;label&gt;</label>
+          <select class="form-select" id="input20">
+            <option selected>Default value.</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+          </select>
+        </div>
+      </form>
+
+      <p class="mb-0">
+        &lt;form&gt; form-validation 'novalidate'
+        <br />
+        *** copy script***
+      </p>
+      <form class="form-validation" novalidate>
+        <div class="mb-3">
+          <label for="input21" class="form-label">form-label</label>
+          <input type="text" class="form-control" id="input21" name="username" required />
+          <div class="invalid-feedback">invalid-feedback</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" required />
+          <div class="valid-feedback">valid-feedback</div>
+          <div class="invalid-feedback">invalid-feedback</div>
+        </div>
+
+        <div class="mb-3">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="checkbox" required />
+            <label class="form-check-label" for="checkbox"> Agree to terms and conditions </label>
+            <div class="invalid-feedback">invalid-feedback</div>
+          </div>
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Submit" />
+      </form>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script>
+      const form = document.querySelector('.form-validation');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        if (!form.checkValidity()) {
+          form.classList.add('was-validated');
+        } else {
+          const formData = new FormData(form);
+
+          // formData.forEach((value, key) => {
+          //   console.log(key, value);
+          // });
+
+          // form.submit();
+        }
+      });
+    </script>
+  </body>
+</html>

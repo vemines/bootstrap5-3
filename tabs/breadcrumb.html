@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <title>Breadcrumb</title>
+  </head>
+  <body>
+    <div class="container mb-3 w-75">
+      <h1 class="mb-3">Breadcrumb</h1>
+
+      <p>
+        &lt;nav&gt; > &lt;ul&gt; breadcrumb > &lt;li&gt; breadcrumb-item
+        <span class="fw-medium">*active*</span> > &lt;a&gt;
+      </p>
+      <nav>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active"><a href="#">Active</a></li>
+        </ul>
+      </nav>
+
+      <p class="m-0">--bs-breadcrumb-divider: '>';</p>
+      <nav style="--bs-breadcrumb-divider: '>'">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active"><a href="#">Active</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

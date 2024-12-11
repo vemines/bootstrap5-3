@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <title>List Groups</title>
+  </head>
+  <body>
+    <div class="container mb-3 w-75">
+      <h1 class="mb-3">List Groups</h1>
+
+      <p class="mb-0">&lt;ul&gt; list-group > &lt;li&gt; list-group-item</p>
+      <ul class="list-group w-sm-50 mb-3">
+        <li class="list-group-item">list-group-item</li>
+        <li class="list-group-item list-group-item-primary">list-group-item-primary</li>
+        <li class="list-group-item list-group-item-primary list-group-item-action">
+          list-group-item-action
+        </li>
+        <li class="list-group-item active">list-group-item active</li>
+        <li class="list-group-item disabled">list-group-item disabled</li>
+      </ul>
+
+      <p class="mb-0 mt-3">list-group list-group-flush</p>
+      <div class="list-group list-group-flush mb-3">
+        <a href="#" class="list-group-item">&lt;a&gt; </a>
+        <button class="list-group-item">&lt;button&gt;</button>
+        <button class="list-group-item" disabled>&lt;button&gt; 'disabled'</button>
+      </div>
+
+      <p>
+        &lt;input&gt; form-check-input type="<span class="fw-medium">checkbox / radio</span>" +
+        &lt;label&gt; form-check-label
+      </p>
+      <ul class="list-group mb-3">
+        <li class="list-group-item">
+          <input class="form-check-input me-1" type="checkbox" id="listgroup1-1" />
+          <label class="form-check-label" for="listgroup1-1">checkbox</label>
+        </li>
+        <li class="list-group-item">
+          <input class="form-check-input me-1" type="checkbox" id="listgroup1-2" />
+          <label class="form-check-label" for="listgroup1-2">checkbox</label>
+        </li>
+      </ul>
+
+      <ul class="list-group">
+        <li class="list-group-item">
+          <input
+            class="form-check-input me-1"
+            type="radio"
+            name="radio"
+            id="listgroup2-1"
+            checked
+          />
+          <label class="form-check-label" for="listgroup2-1">radio</label>
+        </li>
+        <li class="list-group-item">
+          <input class="form-check-input me-1" type="radio" name="radio" id="listgroup2-2" />
+          <label class="form-check-label" for="listgroup2-2"> radio</label>
+        </li>
+      </ul>
+
+      <p class="m-0 mt-3">list-group list-group-numbered with &lt;ol&gt;</p>
+      <ol class="list-group list-group-numbered mb-3">
+        <li class="list-group-item">list-group-item</li>
+        <li class="list-group-item active">list-group-item active</li>
+      </ol>
+      <hr />
+
+      <p class="m-0">list-group-horizontal</p>
+      <ul class="list-group list-group-horizontal mb-3">
+        <li class="list-group-item">list-group-item</li>
+        <li class="list-group-item">list-group-item</li>
+      </ul>
+
+      <p class="m-0">list-group-horizontal-xl</p>
+      <ul class="list-group list-group-horizontal-xl">
+        <li class="list-group-item">list-group-item</li>
+        <li class="list-group-item">list-group-item</li>
+      </ul>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

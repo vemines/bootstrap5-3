@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <title>Nav & Tab</title>
+  </head>
+  <body>
+    <div class="container mb-3 w-75">
+      <h1 class="mb-3">Nav & Tab</h1>
+
+      <p class="mb-0">&lt;ul&gt; nav > &lt;li&gt; nav-item > &lt;a&gt;</p>
+      <ul class="nav border">
+        <li class="nav-item">
+          <a class="nav-link active" href="#"> nav-link active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">nav-link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">nav-link disabled</a>
+        </li>
+      </ul>
+
+      <p class="mb-0 mt-3">&lt;nav&gt; nav > &lt;a&gt; nav-link</p>
+      <nav class="nav border mb-3">
+        <a class="nav-link active" href="#">active</a>
+        <a class="nav-link" href="#">nav-link</a>
+        <a class="nav-link disabled" href="#">disabled</a>
+      </nav>
+
+      <p class="mb-0">justify-content-center</p>
+      <nav class="nav justify-content-center border mb-3">
+        <a class="nav-link active" href="#">active</a>
+        <a class="nav-link" href="#">nav-link</a>
+        <a class="nav-link disabled" href="#">disabled</a>
+      </nav>
+
+      <p class="mb-0">justify-content-end</p>
+      <nav class="nav justify-content-end border mb-3">
+        <a class="nav-link active" href="#">active</a>
+        <a class="nav-link" href="#">nav-link</a>
+        <a class="nav-link disabled" href="#">disabled</a>
+      </nav>
+
+      <p class="mb-0">nav flex-column</p>
+      <nav class="nav flex-column border mb-3">
+        <a class="nav-link active" href="#">active</a>
+        <a class="nav-link" href="#">nav-link</a>
+        <a class="nav-link disabled" href="#">disabled</a>
+      </nav>
+
+      <p class="mb-0">nav-tabs</p>
+      <ul class="nav nav-tabs border mb-3">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">nav-link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">disabled</a>
+        </li>
+      </ul>
+
+      <p class="mb-0">nav-pills</p>
+      <ul class="nav nav-pills border mb-3">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">nav-link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">disabled</a>
+        </li>
+      </ul>
+
+      <p class="mb-0">nav-pills nav-fill</p>
+      <ul class="nav nav-pills nav-fill border mb-3">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Longer nav link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">nav-link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">disabled</a>
+        </li>
+      </ul>
+
+      <p class="mb-0">nav-pills nav-justified</p>
+      <nav class="nav nav-pills nav-justified border mb-3">
+        <a class="nav-link active" href="#">active</a>
+        <a class="nav-link" href="#">Longer nav link</a>
+        <a class="nav-link" href="#">nav-link</a>
+        <a class="nav-link disabled" href="#">disabled</a>
+      </nav>
+
+      <p class="mb-0">nav-pills flex-column flex-md-row</p>
+      <nav class="nav nav-pills flex-column flex-md-row border mb-3">
+        <a class="flex-sm-fill text-sm-center nav-link active" href="#">active</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="#">nav-link</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="#">nav-link</a>
+        <a class="flex-sm-fill text-sm-center nav-link disabled" href="#">disabled</a>
+      </nav>
+
+      <p class="mb-0">
+        &lt;li&gt; nav-item dropdown > &lt;a&gt; nav-link dropdown-toggle data-bs-toggle="dropdown"
+        > dropdown-menu > dropdown-item
+      </p>
+      <ul class="nav nav-tabs border mb-3">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">active</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">dropdown-toggle</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">dropdown-item</a>
+            <a class="dropdown-item" href="#">dropdown-item</a>
+            <div class="dropdown-divider"></div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">nav-link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">disabled</a>
+        </li>
+      </ul>
+
+      <p class="mb-0">nav-pills</p>
+      <ul class="nav nav-pills border mb-3">
+        <li class="nav-item">
+          <a class="nav-link" href="#">nav-link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown"
+            >dropdown-toggle</a
+          >
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">dropdown-item</a>
+            <a class="dropdown-item" href="#">dropdown-item</a>
+            <div class="dropdown-divider"></div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">nav-link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">disabled</a>
+        </li>
+      </ul>
+
+      <p class="mb-0 mt-3">data-bs-toggle="tab" href="#nav-home"</p>
+      <nav class="nav nav-tabs border">
+        <a class="nav-item nav-link active" data-bs-toggle="tab" href="#nav-home">Home</a>
+        <a class="nav-item nav-link" data-bs-toggle="tab" href="#nav-profile">Profile</a>
+        <a class="nav-item nav-link" data-bs-toggle="tab" href="#nav-contact">Contact</a>
+      </nav>
+      <div class="tab-content p-3 my-3 border">
+        <div class="tab-pane fade show active" id="nav-home">
+          tab-pane fade show active id="nav-home"
+        </div>
+        <div class="tab-pane fade" id="nav-profile">tab-pane fade id="nav-profile"</div>
+        <div class="tab-pane fade" id="nav-contact">tab-pane fade id="nav-contact"</div>
+      </div>
+
+      <p class="mb-0 mt-3">data-bs-toggle="pill"</p>
+      <nav class="nav nav-tabs nav-pills border">
+        <a class="nav-item nav-link active" data-bs-toggle="pill" href="#pills-home">Home</a>
+        <a class="nav-item nav-link" data-bs-toggle="pill" href="#pills-profile">Profile</a>
+        <a class="nav-item nav-link" data-bs-toggle="pill" href="#pills-contact">Contact</a>
+      </nav>
+
+      <div class="tab-content p-3 my-3 border">
+        <div class="tab-pane fade show active" id="pills-home">id="pills-home"</div>
+        <div class="tab-pane fade" id="pills-profile">id="pills-profile"</div>
+        <div class="tab-pane fade" id="pills-contact">id="pills-contact"</div>
+      </div>
+
+      <div class="nav flex-column nav-pills border" id="v-pills-tab">
+        <a class="nav-link active" data-bs-toggle="pill" href="#col-home">nav-link active</a>
+        <a class="nav-link" data-bs-toggle="pill" href="#col-profile">Profile</a>
+        <a class="nav-link" data-bs-toggle="pill" href="#col-messages">Messages</a>
+        <a class="nav-link" data-bs-toggle="pill" href="#col-settings">Settings</a>
+      </div>
+      <div class="tab-content p-3 my-3 border">
+        <div class="tab-pane fade show active" id="col-home">id="col-home"</div>
+        <div class="tab-pane fade" id="col-profile">id="col-profile"</div>
+        <div class="tab-pane fade" id="col-messages">id="col-messages"</div>
+        <div class="tab-pane fade" id="col-settings">id="col-settings"</div>
+      </div>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

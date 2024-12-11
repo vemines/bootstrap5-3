@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+
+    <title>Offcanvas</title>
+  </head>
+  <body>
+    <div class="container mb-5">
+      <h1 class="mb-3">Offcanvas</h1>
+
+      <p class="mb-3">
+        &lt;button&gt; data-bs-toggle="offcanvas" data-bs-target="#offcanvas1"
+
+        <br />
+        offcanvas offcanvas-start #offcanvas1 > offcanvas-header > &lt;h5&gt; offcanvas-title +
+        &lt;button&gt; btn-close data-bs-dismiss="offcanvas" +
+        <br />
+        offcanvas-body
+      </p>
+      <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvas1">
+        data-bs-target="#offcanvas1"
+      </button>
+      <div class="offcanvas offcanvas-start" id="offcanvas1">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">offcanvas-title</h5>
+          <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">offcanvas-body</div>
+      </div>
+
+      <div class="mt-3"></div>
+      <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvas2">
+        data-bs-scroll="true"
+      </button>
+      <div class="offcanvas offcanvas-start" id="offcanvas2" data-bs-scroll="true">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">offcanvas-title</h5>
+          <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">offcanvas-body</div>
+      </div>
+
+      <div class="mt-3"></div>
+      <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvas3">
+        data-bs-scroll="true" data-bs-backdrop="false"
+      </button>
+      <div
+        class="offcanvas offcanvas-start"
+        id="offcanvas3"
+        data-bs-scroll="true"
+        data-bs-backdrop="false"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">offcanvas-title</h5>
+          <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">offcanvas-body</div>
+      </div>
+
+      <div class="mt-3"></div>
+      <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvas4">
+        data-bs-backdrop="static"
+      </button>
+      <div class="offcanvas offcanvas-start" id="offcanvas4" data-bs-backdrop="static">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">offcanvas-title</h5>
+          <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">offcanvas-body</div>
+      </div>
+
+      <div class="mt-3"></div>
+      <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvas5">
+        offcanvas-top
+      </button>
+      <div class="offcanvas offcanvas-top" id="offcanvas5">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">offcanvas-title</h5>
+          <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">offcanvas-body</div>
+      </div>
+
+      <div class="mt-3"></div>
+      <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvas6">
+        offcanvas-end
+      </button>
+      <div class="offcanvas offcanvas-end" id="offcanvas6">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">offcanvas-title</h5>
+          <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">offcanvas-body</div>
+      </div>
+
+      <div class="mt-3"></div>
+      <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvas7">
+        offcanvas-bottom
+      </button>
+      <div class="offcanvas offcanvas-bottom" id="offcanvas7">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">offcanvas-title</h5>
+          <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">offcanvas-body</div>
+      </div>
+
+      <div class="mt-3"></div>
+
+      <button
+        class="btn btn-primary d-lg-none"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvas8"
+      >
+        Toggle offcanvas
+      </button>
+
+      <div class="alert alert-info d-none d-lg-block">
+        Resize < lg for display button
+        <br />
+        Show offcanvas-body when > lg, if trigger button when > lg add backdrop only.
+        <br />
+        Hide when &lt; lg, trigger button show normal offcanvas
+      </div>
+
+      <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="offcanvas8">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">offcanvas-header</h5>
+          <button
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            data-bs-target="#offcanvas8"
+          ></button>
+        </div>
+        <div class="offcanvas-body">offcanvas-body</div>
+      </div>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <title>Flexbox</title>
+  </head>
+  <body>
+    <div class="container mb-3 w-75">
+      <h1 class="mb-3">Flexbox</h1>
+
+      <div class="d-flex">
+        <div class="text-bg-primary p-2 border">d-flex</div>
+        <div class="text-bg-primary p-2 border">d-flex</div>
+        <div class="text-bg-primary p-2 border">d-flex</div>
+      </div>
+
+      <br />
+
+      <div class="d-flex flex-column">
+        <div class="text-bg-success p-2 border">flex-column</div>
+        <div class="text-bg-success p-2 border">flex-column</div>
+        <div class="text-bg-success p-2 border">flex-column</div>
+      </div>
+
+      <br />
+
+      <div class="d-flex flex-column flex-lg-row">
+        <div class="text-bg-primary p-2 border">flex-column flex-lg-row</div>
+        <div class="text-bg-primary p-2 border">flex-column flex-lg-row</div>
+        <div class="text-bg-primary p-2 border">flex-column flex-lg-row</div>
+      </div>
+
+      <br />
+
+      <div class="d-flex flex-wrap">
+        <div class="text-bg-success p-2 border">flex-wrap</div>
+        <div class="text-bg-success p-2 border">flex-wrap</div>
+        <div class="text-bg-success p-2 border">flex-wrap</div>
+        <div class="text-bg-success p-2 border">flex-wrap</div>
+        <div class="text-bg-success p-2 border">flex-wrap</div>
+        <div class="text-bg-success p-2 border">flex-wrap</div>
+        <div class="text-bg-success p-2 border">flex-wrap</div>
+        <div class="text-bg-success p-2 border">flex-wrap</div>
+        <div class="text-bg-success p-2 border">flex-wrap</div>
+        <div class="text-bg-success p-2 border">flex-wrap</div>
+        <div class="text-bg-success p-2 border">flex-wrap</div>
+        <div class="text-bg-success p-2 border">flex-wrap</div>
+      </div>
+
+      <hr />
+
+      <div class="d-flex justify-content-end mb-3">
+        <div class="text-bg-primary p-2 border">justify-content-end</div>
+        <div class="text-bg-primary p-2 border">justify-content-end</div>
+        <div class="text-bg-primary p-2 border">justify-content-end</div>
+      </div>
+
+      <div class="d-flex justify-content-around mb-3">
+        <div class="text-bg-primary p-2 border">justify-content-around</div>
+        <div class="text-bg-primary p-2 border">justify-content-around</div>
+        <div class="text-bg-primary p-2 border">justify-content-around</div>
+      </div>
+
+      <div class="d-flex justify-content-between mb-3">
+        <div class="text-bg-primary p-2 border">justify-content-between</div>
+        <div class="text-bg-primary p-2 border">justify-content-between</div>
+        <div class="text-bg-primary p-2 border">justify-content-between</div>
+      </div>
+
+      <div class="d-flex flex-column align-items-end mb-3">
+        <div class="text-bg-primary p-2 border">flex-column align-items-end</div>
+        <div class="text-bg-primary p-2 border">flex-column align-items-end</div>
+        <div class="text-bg-primary p-2 border">flex-column align-items-end</div>
+      </div>
+
+      <div class="d-flex flex-column align-items-center mb-3">
+        <div class="text-bg-primary p-2 border">flex-column align-items-center</div>
+        <div class="text-bg-primary p-2 border">flex-column align-items-center</div>
+        <div class="text-bg-primary p-2 border">flex-column align-items-center</div>
+      </div>
+
+      <div class="d-flex flex-column mb-3">
+        <div class="text-bg-primary p-2 align-self-center">align-self-center</div>
+        <div class="text-bg-primary p-2 align-self-end">align-self-end</div>
+        <div class="text-bg-primary p-2 border align-self-start">align-self-start</div>
+      </div>
+
+      <div class="d-flex mb-3">
+        <div class="text-bg-primary border p-2 flex-fill">flex-fill item with a lot of content</div>
+        <div class="text-bg-primary border p-2 flex-fill">flex-fill</div>
+        <div class="text-bg-primary border p-2 flex-fill">flex-fill</div>
+      </div>
+
+      <div class="d-flex mb-3">
+        <div class="text-bg-primary border p-2 flex-grow-1">flex-grow-1</div>
+        <div class="text-bg-primary border p-2">flex item</div>
+        <div class="text-bg-primary border p-2">flex item</div>
+      </div>
+
+      <div class="d-flex mb-3">
+        <div class="text-bg-primary border p-2 w-100">w-100</div>
+        <div class="text-bg-primary border p-2 flex-shrink-1">flex-shrink-1</div>
+      </div>
+
+      <div class="d-flex flex-wrap container text-center my-3" style="row-gap: 1rem">
+        <div
+          class="d-flex align-content-start flex-wrap border border-2 w-50"
+          style="height: 100px"
+        >
+          <span class="text-bg-primary p-2 border">align-content-start</span>
+          <span class="text-bg-primary p-2 border">align-content-start</span>
+          <span class="text-bg-primary p-2 border">align-content-start</span>
+        </div>
+        <div class="d-flex align-content-end flex-wrap border border-2 w-50" style="height: 100px">
+          <span class="text-bg-primary p-2 border">align-content-end</span>
+          <span class="text-bg-primary p-2 border">align-content-end</span>
+          <span class="text-bg-primary p-2 border">align-content-end</span>
+        </div>
+        <div
+          class="d-flex align-content-center flex-wrap border border-2 w-50"
+          style="height: 100px"
+        >
+          <span class="text-bg-primary p-2 border">align-content-center </span>
+          <span class="text-bg-primary p-2 border">align-content-center </span>
+          <span class="text-bg-primary p-2 border">align-content-center </span>
+        </div>
+        <div
+          class="d-flex align-content-stretch flex-wrap border border-2 w-50"
+          style="height: 100px"
+        >
+          <span class="text-bg-primary p-2 border">align-content-stretch </span>
+          <span class="text-bg-primary p-2 border">align-content-stretch </span>
+          <span class="text-bg-primary p-2 border">align-content-stretch </span>
+        </div>
+        <div
+          class="d-flex align-content-between flex-wrap border border-2 w-50"
+          style="height: 150px"
+        >
+          <span class="text-bg-primary p-2 border">align-content-between </span>
+          <span class="text-bg-primary p-2 border">align-content-between </span>
+          <span class="text-bg-primary p-2 border">align-content-between </span>
+          <span class="text-bg-primary p-2 border">align-content-between </span>
+          <span class="text-bg-primary p-2 border">align-content-between </span>
+        </div>
+        <div
+          class="d-flex align-content-around flex-wrap border border-2 w-50"
+          style="height: 150px"
+        >
+          <span class="text-bg-primary p-2 border">align-content-around </span>
+          <span class="text-bg-primary p-2 border">align-content-around </span>
+          <span class="text-bg-primary p-2 border">align-content-around </span>
+          <span class="text-bg-primary p-2 border">align-content-around </span>
+          <span class="text-bg-primary p-2 border">align-content-around </span>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

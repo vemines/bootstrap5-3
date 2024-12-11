@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <title>Badges</title>
+  </head>
+  <body>
+    <div class="container mb-3 w-75">
+      <h1 class="mb-3">Badges</h1>
+
+      <span class="badge text-bg-primary">badge text-bg-primary</span>
+      <span class="badge text-bg-success">badge text-bg-success</span>
+
+      <span class="badge rounded-pill text-bg-primary">rounded-pill</span>
+      <span class="badge rounded-pill text-bg-success">rounded-pill</span>
+
+      <br />
+
+      <button class="btn btn-primary mt-3">
+        btn btn-primary <span class="badge text-bg-dark">&lt;span&gt; badge text-bg-dark</span>
+      </button>
+
+      <p class="my-2">bg-danger position-absolute top-0 start-100 translate-middle</p>
+      <button class="btn btn-primary position-relative">
+        &lt;span&gt; rounded-pill
+        <span
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+        >
+          99+
+        </span>
+      </button>
+
+      <div class="mt-3"></div>
+
+      <button class="btn btn-primary position-relative">
+        &lt;span&gt; p-2 border border-light rounded-circle
+        <span
+          class="position-absolute top-0 start-100 translate-middle bg-danger p-2 border border-light rounded-circle"
+        >
+        </span>
+      </button>
+
+      <p class="mt-3 mb-1">badge size inherit parrent font-size</p>
+      <h1>h1<span class="ms-2 badge bg-primary">badge bg-primary</span></h1>
+      <h3>h3<span class="ms-2 badge bg-success">badge bg-success</span></h3>
+      <h5>h5<span class="ms-2 badge bg-info">badge bg-info</span></h5>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

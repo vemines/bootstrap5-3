@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+
+    <title>Modal</title>
+  </head>
+  <body>
+    <div class="container mb-3 w-75">
+      <h1 class="mb-3">Modal</h1>
+
+      <p class="mb-1">
+        &lt;button&gt data-bs-toggle="modal" / data-bs-dismiss="modal1" +
+        <br />
+        modal fade #modal1 > modal-dialog > modal-content >
+        <br />
+        modal-header > &lt;h4&gt; modal-title + &lt;button&gt; btn-close data-bs-dismiss="modal" +
+        <br />
+        modal-body +
+        <br />
+        modal-footer > &lt;button&gt; data-bs-dismiss="modal" + &lt;button&gt;
+      </p>
+      <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal1">
+        data-bs-toggle="modal" data-bs-target="#modal1"
+      </button>
+
+      <div class="modal fade" id="modal1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">modal-title</h4>
+              <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">modal-body</div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button class="btn btn-primary">Action</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="mb-0">data-bs-backdrop="static" -- no close by click outside</p>
+      <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal2">
+        data-bs-backdrop="static"
+      </button>
+      <div class="modal fade" id="modal2" data-bs-backdrop="static">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">modal-title</h4>
+              <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">modal-body</div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="mb-0">modal-dialog modal-dialog-centered</p>
+      <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal3">
+        modal-dialog-centered
+      </button>
+      <div class="modal fade" id="modal3" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">modal-title</h4>
+              <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">modal-body</div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="mb-0">modal-dialog modal-dialog-scrollable -- scroll inside body</p>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal4">
+        modal-dialog-scrollable
+      </button>
+
+      <div class="modal fade" id="modal4">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">modal-title</h4>
+              <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              modal-body > height: 120vh
+              <div style="height: 120vh"></div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button class="btn btn-primary">Action</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <p class="mb-0 mt-3">
+        popover and tooltip in modal
+        <br />
+        &lt;button&gt; data-bs-toggle="popover" title="title" data-bs-content="data-bs-content"
+        data-bs-container="body"
+        <br />
+        &lt;a&gt; data-bs-toggle="tooltip" title="title" data-bs-container="body"
+      </p>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal5">
+        Open modal
+      </button>
+      <div class="modal fade" id="modal5">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">modal-title</h4>
+              <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <h5>data-bs-container="body" ***impotant***</h5>
+              <button
+                class="btn btn-secondary"
+                data-bs-toggle="popover"
+                data-bs-content="data-bs-content"
+                data-bs-container="body"
+                title="title"
+              >
+                Popover
+              </button>
+
+              <hr />
+
+              <a href="#" data-bs-toggle="tooltip" data-bs-container="body" title="title">
+                Tooltip
+              </a>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button class="btn btn-primary">Action</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-3 mb-0">Additional modal + no .fade -- flashing</p>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal6-1">
+        Open modal
+      </button>
+      <div class="modal" id="modal6-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">modal-title 1</h4>
+              <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">Open Modal 2</div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" data-bs-target="#modal6-2" data-bs-toggle="modal">
+                Open Modal 2
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="modal6-2">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">modal-title 2</h4>
+              <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">Close and open Modal 1</div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" data-bs-target="#modal6-1" data-bs-toggle="modal">
+                Back to first
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-3">Size</div>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal7-1">
+        normal
+      </button>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal7-2">
+        modal-sm
+      </button>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal7-3">
+        modal-lg
+      </button>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal7-4">
+        modal-xl
+      </button>
+
+      <div class="modal" id="modal7-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">normal max-width: 500px</h4>
+              <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="modal7-2">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">modal-sm max-width: 300px</h4>
+              <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="modal7-3">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">modal-lg max-width: 800px</h4>
+              <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="modal7-4">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">modal-xl max-width: 1140px</h4>
+              <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-3 mb-0">modal-fullscreen</p>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal8">
+        modal-fullscreen
+      </button>
+
+      <div class="modal" id="modal8">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">modal-fullscreen</h4>
+              <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">modal-body</div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-3 mb-0">modal-fullscreen-lg-down -- below lg open fullscreen modal</p>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal9">
+        modal-fullscreen-lg-down
+      </button>
+
+      <div class="modal" id="modal9">
+        <div class="modal-dialog modal-fullscreen-lg-down">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">modal-fullscreen</h4>
+              <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">modal-body</div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Initialize tooltips and popovers
+      document.addEventListener('DOMContentLoaded', function () {
+        var tooltipTriggerList = [].slice.call(
+          document.querySelectorAll('[data-bs-toggle="tooltip"]'),
+        );
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+
+        var popoverTriggerList = [].slice.call(
+          document.querySelectorAll('[data-bs-toggle="popover"]'),
+        );
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+          return new bootstrap.Popover(popoverTriggerEl);
+        });
+      });
+    </script>
+  </body>
+</html>

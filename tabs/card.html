@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <title>Cards</title>
+  </head>
+  <body>
+    <div class="container mb-3 w-75">
+      <h1 class="mb-3">Cards</h1>
+
+      <p>
+        card > card-header + &lt;img&gt; card-img-top + card-body + &lt;img&gt; card-img-bottom +
+        card-footer
+      </p>
+
+      <div class="card" style="width: 25rem">
+        <div class="card-header">card-header</div>
+        <img src="https://placehold.co/200x200" class="card-img-top" alt="" />
+        <div class="card-body">
+          <h5 class="card-title">card-title</h5>
+          <h6 class="card-subtitle mb-2">card-subtitle</h6>
+          <p class="card-text">card-text</p>
+          <a href="#" class="btn btn-primary">btn btn-primary</a>
+          <a href="#" class="card-link ms-3">card-link</a>
+        </div>
+        <img src="https://placehold.co/200x200" class="card-img-bottom" alt="card-img-bottom" />
+        <div class="card-footer">card-footer</div>
+      </div>
+
+      <hr />
+
+      <p>text-center border-primary bg-transparent</p>
+      <div class="card text-center border-primary bg-transparent w-50">
+        <div class="card-header">card-header</div>
+        <div class="card-body">
+          <h5 class="card-title">card-title</h5>
+          <p class="card-text">card-text</p>
+          <a href="#" class="btn btn-primary">btn btn-primary</a>
+        </div>
+        <div class="card-footer text-muted">card-footer text-muted</div>
+      </div>
+
+      <hr />
+
+      <p>card text-bg-color</p>
+      <div class="hstack gap-2">
+        <div class="card text-bg-primary w-25">
+          <div class="card-body">
+            <h5 class="card-title">card-title</h5>
+            <p class="card-text">card-text</p>
+          </div>
+        </div>
+        <div class="card text-bg-success w-25">
+          <div class="card-body">
+            <h5 class="card-title">card-title</h5>
+            <p class="card-text">card-text</p>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <p>card-group gap-2 > card * 3</p>
+      <div class="card-group gap-2">
+        <div class="card">
+          <img src="https://placehold.co/200x200" class="card-img-top" alt="card-img-top" />
+          <div class="card-body">
+            <h5 class="card-title">card-title</h5>
+            <p class="card-text">card-text</p>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum, harum!
+            </p>
+          </div>
+          <div class="card-footer">card-footer</div>
+        </div>
+        <div class="card">
+          <img src="https://placehold.co/200x200" class="card-img-top" alt="card-img-top" />
+          <div class="card-body">
+            <h5 class="card-title">card-title</h5>
+            <p class="card-text">card-text</p>
+          </div>
+          <div class="card-footer">card-footer</div>
+        </div>
+        <div class="card">
+          <img src="https://placehold.co/200x200" class="card-img-top" alt="card-img-top" />
+          <div class="card-body">
+            <h5 class="card-title">card-title</h5>
+            <p class="card-text">card-text</p>
+          </div>
+          <div class="card-footer">card-footer</div>
+        </div>
+      </div>
+
+      <hr />
+
+      <p>
+        card text-white > &lt;img&lt; card-img +
+        <br />
+        card-img-overlay bg-dark / --bs-bg-opacity: 0.4; height: 100px
+      </p>
+      <div class="card text-white" style="width: 300px">
+        <img src="https://placehold.co/200x200" class="card-img" alt="" />
+        <div class="card-img-overlay bg-dark" style="--bs-bg-opacity: 0.4; height: 100px">
+          <h5 class="card-title">card-title</h5>
+          <p class="card-text">card-text</p>
+        </div>
+      </div>
+
+      <br />
+
+      <p>card > row > &lt;img&gt; col-4 + col-8</p>
+      <div class="card mb-3 w-50">
+        <div class="row">
+          <div class="col-4">
+            <img src="https://placehold.co/200x200" class="img-fluid rounded-start" />
+          </div>
+          <div class="col-8">
+            <div class="card-body">
+              <h5 class="card-title">card-title</h5>
+              <p class="card-text">
+                <small class="text-body-secondary">&lt;small&gt; text-body-secondary</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

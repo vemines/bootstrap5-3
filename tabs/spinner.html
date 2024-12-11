@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <title>Spinners</title>
+  </head>
+  <body>
+    <div class="container mb-3 w-75">
+      <h1 class="mb-3">Spinners</h1>
+
+      <p class="mb-0">spinner-border</p>
+      <div class="spinner-border"></div>
+
+      <p class="mb-0 mt-3">spinner-border text-color</p>
+      <div class="spinner-border text-primary"></div>
+      <div class="spinner-border text-success"></div>
+
+      <p class="mb-0 mt-3">spinner-grow</p>
+      <div class="spinner-grow"></div>
+      <div class="spinner-grow text-primary"></div>
+      <div class="spinner-grow text-success"></div>
+
+      <p class="mb-0 mt-3">spinner-border-sm</p>
+      <div class="spinner-border spinner-border-sm mb-3"></div>
+
+      <p class="mb-0 mt-3">spinner-border / height: 60px; width: 60px</p>
+      <div class="spinner-border" style="height: 60px; width: 60px"></div>
+
+      <br />
+
+      <p class="mb-0 mt-3">
+        &lt;button&gt; > &lt;span&gt; spinner-border spinner-border-sm + 'Text'
+      </p>
+      <button class="btn btn-primary" disabled>
+        <span class="spinner-border spinner-border-sm"></span>
+      </button>
+      <button class="btn btn-primary" disabled>
+        <span class="spinner-border spinner-border-sm"></span>
+        Loading...
+      </button>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

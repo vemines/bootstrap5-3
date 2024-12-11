@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <title>Carousel</title>
+    <style>
+      .carousel-item {
+        height: 30vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mb-3 w-75">
+      <h1 class="mb-3">Carousel</h1>
+
+      <p>
+        carousel slide #slider data-bs-ride="carousel" >
+        <br />
+        carousel-indicators > &lt;button&gt;
+        <span class="fw-medium">*active*</span>
+        data-bs-slide-to="0++" data-bs-target="#slider"
+        <br />
+        carousel-inner > carousel-item
+        <span class="fw-medium">*active*</span> data-bs-interval="5000" > &lt;img&gt; +
+        carousel-caption d-none d-lg-block bg-secondary opacity-75
+        <br />
+        &lt;button&gt; carousel-control-<span class="fw-medium">*prev / next*</span>
+        data-bs-slide="<span class="fw-medium">*prev / next*</span>" data-bs-target="#slider" >
+        &lt;span&gt; carousel-control-<span class="fw-medium">*prev / next*</span>-icon bg-secondary
+      </p>
+
+      <div class="carousel slide" id="slider" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button class="active" data-bs-slide-to="0" data-bs-target="#slider"></button>
+          <button data-bs-slide-to="1" data-bs-target="#slider"></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="5000">
+            <img src="https://placehold.co/600x300" class="d-block w-100" />
+            <div class="carousel-caption d-none d-lg-block bg-secondary opacity-75">
+              <h5>h5 carousel title</h5>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, asperiores!</p>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-bs-interval="5000">
+            <img src="https://placehold.co/650x320" class="d-block w-100" />
+            <div class="carousel-caption d-none d-md-block bg-secondary opacity-75">
+              <h5>Lorem ipsum dolor sit amet.</h5>
+              <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#slider">
+          <span class="carousel-control-prev-icon bg-secondary"></span>
+        </button>
+        <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#slider">
+          <span class="carousel-control-next-icon bg-secondary"></span>
+        </button>
+      </div>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

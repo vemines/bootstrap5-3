@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <title>Popovers & Tooltips</title>
+  </head>
+  <body>
+    <div class="container mb-5">
+      <h1 class="mb-3">Popovers & Tooltips</h1>
+
+      <p class="m-0">data-bs-toggle="popover" data-bs-content="popover"</p>
+      <p class="mb-3">
+        data-bs-placement= <span class="fw-medium">"top" / "right" / "bottom" / "left"</span>
+      </p>
+      <button
+        class="btn btn-secondary"
+        data-bs-toggle="popover"
+        data-bs-placement="top"
+        data-bs-content="popover"
+      >
+        data-bs-placement="top"
+      </button>
+
+      <button
+        class="btn btn-secondary"
+        data-bs-toggle="popover"
+        data-bs-placement="right"
+        data-bs-content="popover"
+        data-bs-trigger="hover"
+      >
+        data-bs-trigger="hover"
+      </button>
+
+      <button
+        class="btn btn-secondary"
+        data-bs-toggle="popover"
+        data-bs-placement="left"
+        data-bs-content="popover"
+        data-bs-trigger="focus"
+      >
+        data-bs-trigger="focus"
+      </button>
+
+      <button
+        class="btn btn-secondary"
+        data-bs-toggle="popover"
+        data-bs-placement="bottom"
+        data-bs-content="popover"
+        data-bs-trigger="hover focus"
+      >
+        data-bs-trigger="hover focus"
+      </button>
+
+      <hr />
+
+      <p class="mb-1">data-bs-toggle="tooltip"</p>
+      <button
+        class="btn btn-secondary"
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Tooltip on top"
+      >
+        data-bs-placement="top"
+      </button>
+      <button
+        class="btn btn-secondary"
+        data-bs-toggle="tooltip"
+        data-bs-placement="right"
+        title="Tooltip on right"
+      >
+        data-bs-placement="right"
+      </button>
+      <button
+        class="btn btn-secondary"
+        data-bs-toggle="tooltip"
+        data-bs-placement="bottom"
+        title="Tooltip on bottom"
+      >
+        data-bs-placement="bottom"
+      </button>
+      <button
+        class="btn btn-secondary"
+        data-bs-toggle="tooltip"
+        data-bs-placement="left"
+        title="Tooltip on left"
+      >
+        data-bs-placement="left"
+      </button>
+
+      <button
+        class="btn btn-secondary"
+        data-bs-toggle="tooltip"
+        data-bs-html="true"
+        title="<i>Tooltip</i> <b>HTML</b>"
+      >
+        title="&lt;i&gt;Tooltip&lt;/i&gt; &lt;b&gt;HTML&lt;b&gt;"
+      </button>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script>
+      var popoverTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="popover"]'),
+      );
+      popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl);
+      });
+
+      var tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]'),
+      );
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+    </script>
+  </body>
+</html>
