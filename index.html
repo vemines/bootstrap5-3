@@ -30,7 +30,7 @@
     </style>
   </head>
   <body>
-    <svg width="0" height="0" class="hidden">
+    <svg width="0" height="0" style="display: none">
       <symbol id="arrow-up-to-line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
         <path
           d="M24 32C10.7 32 0 42.7 0 56S10.7 80 24 80H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H24zM209.5 167.6c-4.5-4.8-10.9-7.6-17.5-7.6s-12.9 2.7-17.5 7.6l-128 136c-9.1 9.7-8.6 24.8 1 33.9s24.8 8.6 33.9-1L168 244.5V328 456c0 13.3 10.7 24 24 24s24-10.7 24-24V328 244.5l86.5 91.9c9.1 9.7 24.3 10.1 33.9 1s10.1-24.3 1-33.9l-128-136z"
@@ -57,7 +57,6 @@
         />
       </symbol>
     </svg>
-
     <template id="tab-template">
       <li class="nav-item border border-3 rounded-3">
         <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-company"></button>
@@ -70,7 +69,7 @@
       </div>
 
       <div class="tab-content mt-2">
-        <div class="container mb-3 w-75 tab-pane fade show active" id="accordion-collapse">
+        <div class="container mb-3 w-75 tab-pane fade" id="accordion-collapse">
           <h1 class="mb-3">Accordion (Collapse)</h1>
 
           <p>
@@ -2942,16 +2941,16 @@
           </div>
         </div>
 
-        <div class="container mb-3 w-75 tab-pane fade" id="scrollspy">
+        <div class="container mb-3 w-75 tab-pane fade show active" id="scrollspy">
           <h1 class="mb-3">Scrollspy</h1>
 
           <p class="m-0">
             &lt;nav&gt; navbar id="scrollspy1" > &lt;ul&gt; nav nav-pills >
             <br />
-            &lt;li&gt; nav-item > &lt;a&gt; nav-link href="nav1-1" +
+            &lt;li&gt; nav-item > &lt;a&gt; nav-link href="scrollspy1-1" +
             <br />
             &lt;li&gt; nav-item-dropdown > &lt;a&gt; nav-link dropdown-toggle
-            data-bs-toggle="dropdown" href="#" > dropdown-menu > &lt;a&gt; dropdown-nav2-href
+            data-bs-toggle="dropdown" href="#" > dropdown-menu > &lt;a&gt; dropdown-scrollspy2-href
           </p>
           <hr class="m-1" />
           <p class="mb-0">
@@ -2960,14 +2959,14 @@
 
           <nav id="scrollspy1" class="navbar">
             <ul class="nav nav-pills">
-              <li class="nav-item"><a class="nav-link" href="#nav1-1">#nav1-1</a></li>
-              <li class="nav-item"><a class="nav-link" href="#nav1-2">#nav1-2</a></li>
+              <li class="nav-item"><a class="nav-link" href="#scrollspy1-1">#scrollspy1-1</a></li>
+              <li class="nav-item"><a class="nav-link" href="#scrollspy1-2">#scrollspy1-2</a></li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Dropdown</a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#nav1-3">#nav1-3</a>
-                  <a class="dropdown-item" href="#nav1-4">#nav1-4</a>
-                  <a class="dropdown-item" href="#nav1-5">#nav1-5</a>
+                  <a class="dropdown-item" href="#scrollspy1-3">#scrollspy1-3</a>
+                  <a class="dropdown-item" href="#scrollspy1-4">#scrollspy1-4</a>
+                  <a class="dropdown-item" href="#scrollspy1-5">#scrollspy1-5</a>
                 </div>
               </li>
             </ul>
@@ -2979,11 +2978,11 @@
             data-bs-target="#scrollspy1"
             style="height: 200px; margin-top: 0.5rem"
           >
-            <div class="boxHeight" id="nav1-1"><h4>#nav1-1</h4></div>
-            <div class="boxHeight" id="nav1-2"><h4>#nav1-2</h4></div>
-            <div class="boxHeight" id="nav1-3"><h4>#nav1-3</h4></div>
-            <div class="boxHeight" id="nav1-4"><h4>#nav1-4</h4></div>
-            <div class="boxHeight" id="nav1-5"><h4>#nav1-5</h4></div>
+            <div class="boxHeight" id="scrollspy1-1"><h4>#scrollspy1-1</h4></div>
+            <div class="boxHeight" id="scrollspy1-2"><h4>#scrollspy1-2</h4></div>
+            <div class="boxHeight" id="scrollspy1-3"><h4>#scrollspy1-3</h4></div>
+            <div class="boxHeight" id="scrollspy1-4"><h4>#scrollspy1-4</h4></div>
+            <div class="boxHeight" id="scrollspy1-5"><h4>#scrollspy1-5</h4></div>
           </div>
 
           <hr />
@@ -2993,25 +2992,25 @@
             &lt;nav&gt; nav nav-pills flex-column >
 
             <br />
-            &lt;a&gt; nav-link href="nav2-1" +
+            &lt;a&gt; nav-link href="scrollspy2-1" +
             <br />
             &lt;nav&gt; nav nav-pills flex-column > &lt;a&gt; nav-link nav-link ms-3 my-1
-            href="nav2-1-1"
+            href="scrollspy2-1-1"
           </p>
           <div class="row">
             <div class="col-3">
               <nav id="scrollspy2" class="navbar navbar-light bg-light">
                 <nav class="nav nav-pills flex-column">
-                  <a class="nav-link" href="#nav2-1">nav2-1</a>
+                  <a class="nav-link" href="#scrollspy2-1">scrollspy2-1</a>
                   <nav class="nav nav-pills flex-column">
-                    <a class="nav-link ms-3 my-1" href="#nav2-1-1">nav2-1-1</a>
-                    <a class="nav-link ms-3 my-1" href="#nav2-1-2">nav2-1-2</a>
+                    <a class="nav-link ms-3 my-1" href="#scrollspy2-1-1">scrollspy2-1-1</a>
+                    <a class="nav-link ms-3 my-1" href="#scrollspy2-1-2">scrollspy2-1-2</a>
                   </nav>
-                  <a class="nav-link" href="#nav2-2">nav2-2</a>
-                  <a class="nav-link" href="#nav2-3">nav2-3</a>
+                  <a class="nav-link" href="#scrollspy2-2">scrollspy2-2</a>
+                  <a class="nav-link" href="#scrollspy2-3">scrollspy2-3</a>
                   <nav class="nav nav-pills flex-column">
-                    <a class="nav-link ms-3 my-1" href="#nav2-3-1">nav2-3-1</a>
-                    <a class="nav-link ms-3 my-1" href="#nav2-3-2">nav2-3-2</a>
+                    <a class="nav-link ms-3 my-1" href="#scrollspy2-3-1">scrollspy2-3-1</a>
+                    <a class="nav-link ms-3 my-1" href="#scrollspy2-3-2">scrollspy2-3-2</a>
                   </nav>
                 </nav>
               </nav>
@@ -3023,13 +3022,13 @@
                 data-bs-target="#scrollspy2"
                 style="position: relative; height: 400px; margin-top: 0.5rem"
               >
-                <div class="boxHeight" id="nav2-1"><h4>#nav2-1</h4></div>
-                <div class="boxHeight" id="nav2-1-1"><h4>#nav2-1-1</h4></div>
-                <div class="boxHeight" id="nav2-1-2"><h4>#nav2-1-2</h4></div>
-                <div class="boxHeight" id="nav2-2"><h4>#nav2-2</h4></div>
-                <div class="boxHeight" id="nav2-3"><h4>#nav2-3</h4></div>
-                <div class="boxHeight" id="nav2-3-1"><h4>#nav2-3-1</h4></div>
-                <div class="boxHeight" id="nav2-3-2"><h4>#nav2-3-2</h4></div>
+                <div class="boxHeight" id="scrollspy2-1"><h4>#scrollspy2-1</h4></div>
+                <div class="boxHeight" id="scrollspy2-1-1"><h4>#scrollspy2-1-1</h4></div>
+                <div class="boxHeight" id="scrollspy2-1-2"><h4>#scrollspy2-1-2</h4></div>
+                <div class="boxHeight" id="scrollspy2-2"><h4>#scrollspy2-2</h4></div>
+                <div class="boxHeight" id="scrollspy2-3"><h4>#scrollspy2-3</h4></div>
+                <div class="boxHeight" id="scrollspy2-3-1"><h4>#scrollspy2-3-1</h4></div>
+                <div class="boxHeight" id="scrollspy2-3-2"><h4>#scrollspy2-3-2</h4></div>
               </div>
             </div>
           </div>
@@ -3042,17 +3041,17 @@
           <div class="row">
             <div class="col-4">
               <div id="scrollspy3" class="list-group">
-                <a class="list-group-item list-group-item action active" href="#list-group3-1">
-                  list-group3-1
+                <a class="list-group-item list-group-item action active" href="#scrollspy3-1">
+                  scrollspy3-1
                 </a>
-                <a class="list-group-item list-group-item action" href="#list-group3-2">
-                  list-group3-2
+                <a class="list-group-item list-group-item action" href="#scrollspy3-2">
+                  scrollspy3-2
                 </a>
-                <a class="list-group-item list-group-item action" href="#list-group3-3">
-                  list-group3-3
+                <a class="list-group-item list-group-item action" href="#scrollspy3-3">
+                  scrollspy3-3
                 </a>
-                <a class="list-group-item list-group-item action" href="#list-group3-4">
-                  list-group3-4
+                <a class="list-group-item list-group-item action" href="#scrollspy3-4">
+                  scrollspy3-4
                 </a>
               </div>
             </div>
@@ -3063,10 +3062,10 @@
                 data-bs-target="#scrollspy3"
                 style="position: relative; height: 200px; margin-top: 0.5rem"
               >
-                <div class="boxHeight" id="list-group3-1"><h4>#list-group3-1</h4></div>
-                <div class="boxHeight" id="list-group3-2"><h4>#list-group3-2</h4></div>
-                <div class="boxHeight" id="list-group3-3"><h4>#list-group3-3</h4></div>
-                <div class="boxHeight" id="list-group3-4"><h4>#list-group3-4</h4></div>
+                <div class="boxHeight" id="scrollspy3-1"><h4>#scrollspy3-1</h4></div>
+                <div class="boxHeight" id="scrollspy3-2"><h4>#scrollspy3-2</h4></div>
+                <div class="boxHeight" id="scrollspy3-3"><h4>#scrollspy3-3</h4></div>
+                <div class="boxHeight" id="scrollspy3-4"><h4>#scrollspy3-4</h4></div>
               </div>
             </div>
             <div style="height: 25vh"></div>

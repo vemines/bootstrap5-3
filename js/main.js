@@ -1,4 +1,5 @@
 const tabs = [
+  'scrollspy',
   'accordion-collapse',
   'alert',
   'badge',
@@ -25,7 +26,6 @@ const tabs = [
   'placeholder',
   'popover-tooltip',
   'progress-bar',
-  'scrollspy',
   'size-spacing',
   'spinner',
   'table',
