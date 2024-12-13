@@ -17,8 +17,8 @@ This project is designed for learning purposes, making it easier to understand a
 1. **Clone the Repository**:
 
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/vemines/bootstrap5-3.git
+   cd bootstrap5-3
    ```
 
 2. **Open the `index.html` File**:
