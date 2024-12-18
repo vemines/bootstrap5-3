@@ -10,15 +10,15 @@ This project is designed for learning purposes, making it easier to understand a
 
 **Note:** aria attributes, roles, and other non-UI elements have been removed simplify the code for learning. However, it is recommended to understand and implement accessibility features in production projects. For full examples, refer to the official documentation.
 
-[Demo link](https://vemines.github.io/bootstrap5-3)
+You can view a live demo of the project at: [Live demo](https://vemines.github.io/bootstrap5-3)
 
 ## Getting Started
 
 1. **Clone the Repository**:
 
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/vemines/bootstrap5-3.git
+   cd bootstrap5-3
    ```
 
 2. **Open the `index.html` File**:
